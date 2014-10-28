@@ -15,7 +15,7 @@ layout: default
           <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
         </h2>
         <div>
-        	{{ post.content | split:"<!-- more -->" | first | strip_html }}
+        	{{ post.content | split:"<!-- more -->" | first }}
         </div>
       </li>
     {% endfor %}
