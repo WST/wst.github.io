@@ -1,0 +1,11 @@
+# Site settings
+title: Илья Аверков
+email: admin@jsmart.web.id
+description: Веб-программист. Электронщик. Индонезист. Ассистирующий спидраннер. Скукота, одним словом.
+baseurl: "" # the subpath of your site, e.g. /blog/
+url: "http://wst.github.io" # the base hostname & protocol for your site
+twitter_username: sayawst
+github_username: WST
+
+# Build settings
+markdown: kramdown
