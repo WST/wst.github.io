@@ -1,26 +1,19 @@
----
-layout: default
----
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>AverkovNET</title>
+		<link rel="stylesheet" href="/style.css" />
+	</head>
+	<body>
+		<div id="wrapper">
+			<div id="container">
+				<div id="pony"></div>
+				<h1>Averkov<span id="net">Net</span></h1>
 
-<div class="home">
-
-  <!--<h1 class="page-heading">Блог</h1>-->
-
-  <ul class="post-list">
-    {% for post in site.posts %}
-      <li>
-        <span class="post-meta">{{ post.date | date: "%b %-d, %Y" }}</span>
-
-        <h2>
-          <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
-        </h2>
-        <div>
-        	{{ post.content | split:"<!-- more -->" | first }}
-        </div>
-      </li>
-    {% endfor %}
-  </ul>
-
-  <!--<p class="rss-subscribe"><a href="{{ "/feed.xml" | prepend: site.baseurl }}">Подписаться на обновления</a></p>-->
-
-</div>
+				<ul id="links"><li><a href="http://averkov.web.id/" title="My personal blog in Russian language">My blog</a></li><li><a href="http://www.youtube.com/user/sylabulus/">Sonic TAS</a></li><li><a href="http://www.panoramio.com/user/4356402">Panoramio</a></li><li><a href="https://github.com/WST">Github</a></li><li><a href="http://vk.com/sylabulus">VK</a></li></ul>
+			</div>
+			
+			<img class="bg" src="/images/bg.jpg" />
+		</div>
+	</body>
+</html>
