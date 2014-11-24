@@ -7,7 +7,7 @@ img.bg { min-height: 100%; min-width: 1024px;  width: 100%; height: auto; positi
 	z-index: 5 !important;
 	position: fixed;
 	bottom: 120px;
-	left: 200px;
+	left: 10%;
 }
 
 h1 {
@@ -24,7 +24,7 @@ h1 {
 	display: inline;
 	color: #fff;
 	font-family: 'Verdana', sans-serif;
-	font-size: 8pt;
+	font-size: 11px;
 	background-color: #000000;
 	padding: 8px;
 	margin-left: 50px;
@@ -57,4 +57,26 @@ h1 {
 	width: 200px;
 	height: 233px;
 	background-image: url('/images/applebloom_element.png');
+	z-index: 10 !important;
+}
+
+#about {
+	z-index: 5 !important;
+	position: fixed;
+	bottom: 300px;
+	left: 35%;
+	background-color: #000;
+	padding: 24px;
+	width: 600px;
+	height: auto;
+	color: #eee;
+	font-family: 'Georgia', serif;
+	display: none;
+}
+
+#about p {
+	line-height: 26px;
+	font-size: 16px;
+	padding: 0px 0px 0px 0px;
+	margin: 0px;
 }
