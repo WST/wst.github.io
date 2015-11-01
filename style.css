@@ -1,18 +1,16 @@
 
-html,body{	margin:0 auto;	padding:0; width:100%;	height:100%; background-color:#b7bbbe; }
-img.bg { min-height: 100%; min-width: 1024px;  width: 100%; height: auto; position: fixed; top: -10%; left: 0; }
-#wrapper{	min-height:100%;	position:relative; }
+html,body{margin: 0px; padding: 0px; background-color: #132140; width: 100%; height: 100%;}
 
-#container {
-	z-index: 5 !important;
-	position: fixed;
-	bottom: 120px;
-	left: 10%;
+body {
+	background-image: url('/images/abbg.png');
+	background-position: 50% 50%;
+	background-repeat: no-repeat;
+	background-size: contain;
 }
 
 h1 {
 	font-family: 'Georgia', serif;
-	font-size: 80px;
+	font-size: 40px;
 	/*opacity: 0.8;*/
 	color: #eee;
 	background-color: #000000;
@@ -50,28 +48,14 @@ h1 {
 	color: #fff;
 }
 
-#pony {
-	position: relative;
-	top: 28px;
-	left: 50px;
-	width: 200px;
-	height: 233px;
-	background-image: url('/images/applebloom_element.png');
-	z-index: 10 !important;
-}
-
 #about {
-	z-index: 5 !important;
-	position: fixed;
-	bottom: 300px;
-	left: 35%;
 	background-color: #000;
 	padding: 24px;
 	width: 600px;
-	height: auto;
 	color: #eee;
 	font-family: 'Georgia', serif;
 	display: none;
+	margin: 32px;
 }
 
 #about p {
