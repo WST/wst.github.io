@@ -59,7 +59,9 @@ h1 {
 	display: none;
 	position: absolute;
 	top: 200px;
-	left: calc(50% - 300px);;
+	left: calc(50% - 324px);
+	margin: 0px;
+	padding: 0px;
 }
 
 #text p {
