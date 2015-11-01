@@ -5,10 +5,10 @@ function aboutMe() {
 	var about = document.getElementById('about');
 
 	if(visible) {
-		about.className = "animated fadeOutRight";
+		about.className = "animated bounceOut";
 	} else {
 		about.style.display = 'block';
-		about.className = "animated fadeInRight";
+		about.className = "animated fadeInDown";
 	}
 
 	visible = !visible;
