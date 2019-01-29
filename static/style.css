@@ -1,7 +1,11 @@
+html {
+	font-size: 16pt;
+}
+
 body {
 	font-family: 'Tahoma', 'Arial', 'DejaVu Sans', sans-serif;
 	margin: 50px 25px;
-	background-color: #abb0c0;
+	background-color: #606b7a;
 }
 
 body,td,th,div,p {
@@ -18,7 +22,7 @@ a:hover {
 }
 
 header, footer, div.page {
-	width: 760px;
+	width: 1200px;
 	margin: 0 auto;
 	background: #fff;
 	padding: 20px 30px;
@@ -59,5 +63,9 @@ div.page {
 }
 
 div.page p {
-	font-family: 'Tahoma', 'Arial', 'DejaVu Sans', sans-serif;
+	font-family: 'Verdana', 'Tahoma', 'Arial', 'DejaVu Sans', sans-serif;
+}
+
+footer {
+	color: #555;
 }
