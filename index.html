@@ -1,54 +1,34 @@
-<!DOCTYPE html>
-<html>
-	<head>
-		<title>AverkovNet</title>
-		<link rel="stylesheet" href="/style.css" />
-		<link rel="stylesheet" href="/animate.min.css" />
-		<meta http-equiv="content-type" content="text/html;charset=utf-8" />
-		<script type="text/javascript" language="JavaScript" src="common.js"></script>
-		<meta name='yandex-verification' content='754494989eab8ec2' />
-		<link rel="shortcut icon" href="/favicon.ico" />
-	</head>
-	<body>
+<!doctype html>
+<meta charset="utf-8">
+<link rel="stylesheet" href="./static/style.css">
+<title>Welcome to Блог! — Блог</title>
+<body>
+  <header>
+    <h1>AverkovNET</h1>
+    <nav>
+      <ul class="nav navbar-nav">
+        <li class="active"><a href="./">Домой</a></li>
+        
+          <li><a href="./blog/">Блог</a></li>
+        
+          <li><a href="./articles/">Статьи</a></li>
+        
+          <li><a href="./gallery/">Фотогалерея</a></li>
+        
+          <li><a href="./about/">Об авторе</a></li>
+        
+      </ul>
+    </nav>
+  </header>
+  <div class="page">
+    
+  <h2>Welcome to Блог!</h2>
+  <p>This is a basic demo website that shows how to use Lektor for a basic
+website with some pages and a blog.</p>
 
-		<div id="container">
-			<h1>Averkov<span id="net">Net</span></h1>
-			<ul id="links"><li><a href="http://averkov.web.id/" title="My personal blog in Russian language">Blog</a></li><li><a href="http://mail.averkov.net/" title="Mail web interface">webmail</a></li><li><a href="http://instagram.com/sylabulus" title="My page on Instagram">Instagram</a></li><li><a href="https://www.flickr.com/people/158126341@N04/" title="My flickr profile">flickr</a></li><li><a href="http://www.youtube.com/user/sylabulus/videos" title="My tool-assisted speedruns">TAS</a></li><li><a href="http://www.panoramio.com/user/4356402" title="Photos of the places I visit">Panoramio</a></li><li><a href="http://last.fm/user/sylabulus" title="My music">last.fm</a></li><li><a href="https://github.com/WST" title="My code">Github</a></li><li><a href="http://vk.com/sylabulus" title="My personal VK page">VK</a></li><li><a href="http://mkpnet.ru" title="The company I work in">mkpnet</a></li><li><a href="#" onclick="return aboutMe();" title="whois whoami.me">whois</a></li></ul>
-		</div>
 
-		<div id="about">
-			<div id="text"><p>Hi! I’m Ilya Averkov, an expert web developer, tool-assisting speedrunner and electronic hobbyist living in Krasnogvardeyskoe, Adyghea. I have experience with such things as: Python, Django, Flask, PHP, uWSGI, nginx, XMPP, Postfix, Gens-rerecording, Arch Linux, OpAmps and <i>a&nbsp;lot</i> of other fun stuff.</p></div>
-			<div id="pony">
-				<img src="/images/pinkie.png" alt="Pinkie" border="0" />
-			</div>
-		</div>
-
-
-		<!-- Yandex.Metrika counter -->
-<script type="text/javascript">
-(function (d, w, c) {
-    (w[c] = w[c] || []).push(function() {
-        try {
-            w.yaCounter23884351 = new Ya.Metrika({id:23884351,
-                    clickmap:true,
-                    trackLinks:true,
-                    accurateTrackBounce:true});
-        } catch(e) { }
-    });
-
-    var n = d.getElementsByTagName("script")[0],
-        s = d.createElement("script"),
-        f = function () { n.parentNode.insertBefore(s, n); };
-    s.type = "text/javascript";
-    s.async = true;
-    s.src = (d.location.protocol == "https:" ? "https:" : "http:") + "//mc.yandex.ru/metrika/watch.js";
-
-    if (w.opera == "[object Opera]") {
-        d.addEventListener("DOMContentLoaded", f, false);
-    } else { f(); }
-})(document, window, "yandex_metrika_callbacks");
-</script>
-<noscript><div><img src="//mc.yandex.ru/watch/23884351" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
-<!-- /Yandex.Metrika counter -->
-	</body>
-</html>
+  </div>
+  <footer>
+    ©&nbsp;2019 Илья&nbsp;Аверков (WST)
+  </footer>
+</body>
