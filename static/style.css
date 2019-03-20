@@ -7,7 +7,7 @@ html {
 }
 
 body {
-	font-family: 'Tahoma', 'Arial', 'DejaVu Sans', sans-serif;
+	font-family: 'Noto Sans UI', 'Noto Sans', 'Arial', 'Tahoma', 'DejaVu Sans', 'Verdana', sans-serif;
 	margin: 50px 25px;
 	background-color: #606b7a;
 	background-image: url('/static/images/background.png');
@@ -78,7 +78,9 @@ div.page {
 }
 
 div.page p {
-	font-family: 'Tahoma', 'Arial', 'DejaVu Sans', sans-serif;
+	/*font-family: 'Noto Sans UI', 'Noto Sans', 'Arial', 'Tahoma', 'DejaVu Sans', sans-serif;*/
+	font-family: 'Tahoma', 'Arial', 'Noto Sans UI', 'Noto Sans', 'DejaVu Sans', sans-serif;
+	color: #222;
 }
 
 footer {
