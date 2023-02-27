@@ -7,7 +7,7 @@ html {
 }
 
 body {
-	font-family: 'Noto Sans UI', 'Noto Sans', 'Arial', 'Tahoma', 'DejaVu Sans', 'Verdana', sans-serif;
+	font-family: "Bitter", "Georgia", "Liberation Serif", "Times New Roman", "Nimbus Roman", "DejaVu Serif", serif;
 	margin: 50px 25px;
 	background-color: #606b7a;
 	background-image: url('/static/images/background.png');
@@ -19,15 +19,15 @@ body,td,th,div,p {
 }
 
 a {
-	color: #2a99b6;
+	color: #2b6495;
 }
 
 a:hover {
-	color: #33bbdf;
+	color: #1e75c0;
 }
 
 header h1 a {
-	color: #246272;
+	color: #2b6495;
 	text-decoration: none;
 }
 
@@ -69,7 +69,7 @@ header nav ul li {
 }
 
 header nav ul li.active a {
-	background-color: #2a99b6;
+	background-color: #2b6495;
 	color: #fff;
 }
 
@@ -78,11 +78,26 @@ div.page {
 }
 
 div.page p {
-	/*font-family: 'Noto Sans UI', 'Noto Sans', 'Arial', 'Tahoma', 'DejaVu Sans', sans-serif;*/
-	font-family: 'Tahoma', 'Arial', 'Noto Sans UI', 'Noto Sans', 'DejaVu Sans', sans-serif;
-	color: #222;
+	line-height: 25pt;
+	color: #333;
 }
 
 footer {
 	color: #555;
+}
+
+/* хлебные крошки */
+ul.breadcrumb { padding: 0px; list-style: none; }
+ul.breadcrumb li { display: inline; }
+ul.breadcrumb li+li:before { padding: 8px; color: #cb635b; content: "/\00a0"; }
+ul.breadcrumb li a { text-decoration: underline; }
+ul.breadcrumb li a:hover { color: #01447e; text-decoration: underline; }
+ul.breadcrumb h2 { display: inline; font-size: 18pt; }
+
+/* подсвеченный текст */
+span.highlight { background-color: #ffed76; }
+
+h1,h2,h3,h4 {
+	color: #444;
+	font-weight: normal;
 }
