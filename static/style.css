@@ -26,6 +26,13 @@ a:hover {
 	color: #1e75c0;
 }
 
+header {
+	background-image: url('/static/images/header.jpg');
+	background-repeat: no-repeat;
+	border-top-left-radius: 8px;
+	border-top-right-radius: 8px;
+}
+
 header h1 a {
 	color: #2b6495;
 	text-decoration: none;
@@ -38,7 +45,7 @@ header h1 a:hover {
 header, footer, div.page {
 	width: 1200px;
 	margin: 0 auto;
-	background: #fff;
+	background-color: #fff;
 	padding: 20px 30px;
 }
 
@@ -77,13 +84,19 @@ div.page {
 	background: #f5fbff;
 }
 
-div.page p {
+div.page p,div.page ul li,div.page ol li {
 	line-height: 25pt;
 	color: #333;
 }
 
+div.page p {
+	margin: 0pt 0pt 22pt 0pt;
+}
+
 footer {
 	color: #555;
+	border-bottom-left-radius: 8px;
+	border-bottom-right-radius: 8px;
 }
 
 /* хлебные крошки */
@@ -99,5 +112,40 @@ span.highlight { background-color: #ffed76; }
 
 h1,h2,h3,h4 {
 	color: #444;
-	font-weight: normal;
+	/*font-weight: normal;*/
+}
+
+span.command {
+	/*font-family: 'PT Mono', monospace;*/
+	border: 1px solid #ddd;
+	padding: 2px;
+	border-radius: 3px;
+	color: #de6161;
+	background-color: #fff;
+	font-size: 16pt;
+}
+
+p.article-image {
+	text-align: center;
+}
+
+p.article-image-bordered img {
+	border: 1px solid #ddd;
+	border-radius: 4px;
+}
+
+/* листинг кода */
+div.hll {
+	border: 1px solid #ddd;
+	border-radius: 4px;
+	background-color: #fff;
+	padding: 8px;
+	margin: 0pt 0pt 22pt 0pt;
+}
+
+div.hll pre {
+	margin: 0px;
+	padding: 0px;
+	font-family: 'PT Mono', monospace;
+	font-size: 16pt;
 }
