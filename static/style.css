@@ -115,6 +115,9 @@ h1,h2,h3,h4 {
 	/*font-weight: normal;*/
 }
 
+h3 { font-size: 16pt; margin-bottom: -16px; }
+h4 {}
+
 span.command {
 	/*font-family: 'PT Mono', monospace;*/
 	border: 1px solid #ddd;
