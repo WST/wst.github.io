@@ -103,6 +103,8 @@
       display: inline-block;
       margin-left: 6px;
       animation: cursorBlink 2s ease-in-out infinite;
+      width: 0;
+      overflow: visible;
     }
     
     @keyframes cursorBlink {
@@ -201,6 +203,7 @@
       color: var(--accent);
       text-shadow: 0 0 10px rgba(0,255,128,.18);
       will-change: contents, filter;
+      font-size: 1.2em;
     }
 
     /* caret for the skill line */
