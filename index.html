@@ -102,7 +102,15 @@
       content: "_";
       display: inline-block;
       margin-left: 6px;
-      opacity: var(--cursor-opacity, 0.9);
+      animation: cursorBlink 2s ease-in-out infinite;
+    }
+    
+    @keyframes cursorBlink {
+      0% { opacity: 0.15; }
+      25% { opacity: 0.9; }
+      50% { opacity: 0.15; }
+      75% { opacity: 0.9; }
+      100% { opacity: 0.15; }
     }
 
     .subtitle {
@@ -378,19 +386,6 @@
       idx = nextTagIndex();
       animateTo(TAGS[idx]);
     }, INTERVAL_MS);
-
-    // Smooth cursor animation
-    const h1El = document.querySelector('h1');
-    let cursorStartTime = performance.now();
-    
-    function cursorLoop() {
-      const elapsed = performance.now() - cursorStartTime;
-      const phase = (elapsed / 1000) * Math.PI * 2; // 1 second cycle
-      const opacity = 0.15 + (0.75 * (Math.sin(phase) + 1) / 2); // smooth transition from 0.15 to 0.9
-      h1El.style.setProperty('--cursor-opacity', opacity.toString());
-      requestAnimationFrame(cursorLoop);
-    }
-    requestAnimationFrame(cursorLoop);
 
     // ======= SUBTLE BACKGROUND GAME (Snake or Game of Life) =======
     ;(function(){
