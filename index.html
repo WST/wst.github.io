@@ -37,6 +37,8 @@
       filter: blur(.25px) saturate(70%);
       image-rendering: pixelated; /* crispy grid */
       pointer-events: none;
+      will-change: transform;
+      transform: translateZ(0); /* force GPU acceleration */
     }
 
     body::before,
@@ -568,11 +570,33 @@
         }
       }
 
-      // orchestrate
-      let last=0, acc=0, interval = prefersReduce ? 1000 : 120; // ms per frame
+      // orchestrate with performance optimization
+      let last=0, acc=0, frameCount=0, lastFPS=0;
+      let interval = prefersReduce ? 1000 : 120; // ms per frame
+      
+      // Adaptive frame rate for mobile devices
+      if (window.innerWidth <= 768 || /iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)) {
+        interval = Math.max(interval, 200); // slower on mobile
+      }
+      
       function loop(ts){
         if (!last) last = ts;
         const dt = ts - last; last = ts; acc += dt;
+        frameCount++;
+        
+        // Calculate FPS every second
+        if (ts - lastFPS >= 1000) {
+          const fps = frameCount;
+          frameCount = 0;
+          lastFPS = ts;
+          
+          // Adaptive interval based on performance
+          if (fps < 30 && interval < 300) {
+            interval += 20; // slow down if FPS is low
+          } else if (fps > 50 && interval > 80) {
+            interval -= 10; // speed up if FPS is high
+          }
+        }
         
         // Check if it's time to switch from life to snake
         if (GAME === 'life' && (performance.now() - gameStartTime) > LIFE_DURATION) {
