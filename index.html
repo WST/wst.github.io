@@ -207,6 +207,14 @@
       opacity: .9;
     }
 
+    /* Hide skills prefix on mobile devices */
+    @media (max-width: 768px) {
+      .skill-line::before {
+        content: "";
+        margin-right: 0;
+      }
+    }
+
     #skillword {
       display: inline-flex;
       gap: .06em;
