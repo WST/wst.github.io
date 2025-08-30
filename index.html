@@ -217,6 +217,50 @@
       }
     }
 
+    /* Adaptive spacing for small screens */
+    @media (max-height: 900px) {
+      .wrap {
+        padding: 2rem 1rem;
+      }
+      .profile-photo {
+        margin-bottom: 1.5rem;
+      }
+      .subtitle {
+        margin-bottom: 1rem;
+      }
+      .skill-line {
+        margin-top: 1rem;
+      }
+      .social-section { 
+        margin-top: 1.5rem;
+      }
+      .foot { 
+        bottom: 0.5rem;
+      }
+    }
+
+    /* Even more compact for very small screens */
+    @media (max-height: 750px) {
+      .wrap {
+        padding: 1.5rem 1rem;
+      }
+      .profile-photo {
+        margin-bottom: 1rem;
+      }
+      .subtitle {
+        margin-bottom: 0.8rem;
+      }
+      .skill-line {
+        margin-top: 0.8rem;
+      }
+      .social-section { 
+        margin-top: 1rem; 
+      }
+      .foot { 
+        bottom: 0.25rem; 
+      }
+    }
+
     #skillword {
       display: inline-flex;
       gap: .06em;
@@ -248,6 +292,7 @@
       font-family: 'Fira Mono', 'Fira Code', ui-monospace, monospace;
       white-space: pre;
       z-index: 1;
+      display: none;
     }
 
     .ping-dot {
