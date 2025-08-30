@@ -7,6 +7,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Fira+Mono:wght@400;500;700&display=swap" rel="stylesheet">
   <style>
     :root {
       --bg: #000;
@@ -22,7 +23,7 @@
       background: var(--bg);
       color: var(--fg);
       margin: 0;
-      font-family: 'Fira Code', ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+      font-family: 'Fira Mono', 'Fira Code', ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
       letter-spacing: 0.5px;
       overflow: hidden;
     }
@@ -87,6 +88,22 @@
       height: 100%;
       padding: 3rem 1rem;
       text-align: center;
+    }
+
+    .profile-photo {
+      margin: 0 auto 2rem auto;
+      width: 220px;
+      height: 220px;
+      border-radius: 50%;
+      overflow: hidden;
+      background: var(--bg);
+    }
+
+    .profile-photo img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
     }
 
     h1 {
@@ -218,7 +235,7 @@
       opacity: .65;
       user-select: none;
       letter-spacing: .1em;
-      font-family: 'Fira Code', ui-monospace, monospace;
+      font-family: 'Fira Mono', 'Fira Code', ui-monospace, monospace;
       white-space: pre;
       z-index: 1;
     }
@@ -241,6 +258,9 @@
   <div class="grid" aria-hidden="true"></div>
   <div class="wrap">
     <main>
+      <div class="profile-photo">
+        <img src="/static/images/me.jpg" alt="Ilya Averkov" loading="lazy">
+      </div>
       <h1>Ilya Averkov</h1>
 
       <p class="subtitle">Backend developer. DevOps engineer. Network administrator.</p>
@@ -277,7 +297,7 @@
   <script>
     // === CONFIG ===
     const TAGS = [
-      "HTML", "CSS", "PHP", "Python", "C", "C++", "JavaScript", "bash", "Git", "Subversion", "Github", "Redmine", "Gitlab", "gitlab-runner", "CMake", "CPack", "uWSGI", "nginx", "Apache", "PHP-FPM", "Composer", "PEAR", "PECL", "PHP-FIG", "PHPUnit", "Psalm", "Twig", "GuzzleHttp", "Django", "Django REST Framework", "Django Crispy Forms", "Django Grappelli", "Jinja2", "MySQL", "SQLite", "MongoDB", "Lektor", "sphinx-doc", "syslog-ng", "XML", "DOM", "expat", "XMPP", "ejabberd", "Prosody", "Openfire", "XEP-0114", "mcabber", "qxmpp", "libgloox", "RSS", "GeoIP", "Linux", "FreeBSD", "NetBSD", "OpenVZ", "Virtuozzo 7", "Docker", "docker-compose", "nmap", "libpcap", "NetFlow", "SNMP", "BGP", "UTM5", "RADIUS", "rrdtool", "MikroTik", "RouterOS", "Postfix", "Dovecot", "Roundcube", "ClamAV", "SpamAssassin", "Bind9", "PowerDNS", "PowerDNS Recursor", "iptables", "ebtables", "iproute2", "bridge-utils", "tcptraceroute", "qemu-kvm", "libvirt", "VMmanager", "DHCP", "IPMI", "IPv6", "NDP", "NFS", "epoll", "libmaycloud", "SOAP", "python-lxml", "python-requests", "Firezone", "Outline", "Flussonic", "ffmpeg", "systemd", "ssh", "scp", "Raspbian", "Armbian", "Midnight Commander", "links", "GIMP", "Sublime Text", "Visual Studio Code", "Cursor", "ChatGPT", "DipTrace", "nasi goreng", "operational amplifiers", "Microcontrollers", "Film development (D-76, C-41)", "Silines RODOS relays"
+      "HTML", "CSS", "PHP", "Python", "C", "C++", "JavaScript", "bash", "Git", "Subversion", "Github", "Redmine", "Gitlab", "gitlab-runner", "CMake", "CPack", "uWSGI", "nginx", "Apache", "PHP-FPM", "Composer", "PEAR", "PECL", "PHP-FIG", "PHPUnit", "Psalm", "Twig", "GuzzleHttp", "Django", "Django REST Framework", "Django Crispy Forms", "Django Grappelli", "Jinja2", "MySQL", "SQLite", "MongoDB", "Lektor", "sphinx-doc", "syslog-ng", "XML", "DOM", "expat", "XMPP", "ejabberd", "Prosody", "Openfire", "XEP-0114", "mcabber", "qxmpp", "libgloox", "RSS", "GeoIP", "Linux", "FreeBSD", "NetBSD", "OpenVZ", "Virtuozzo 7", "Docker", "docker-compose", "nmap", "libpcap", "NetFlow", "SNMP", "BGP", "UTM5", "RADIUS", "rrdtool", "MikroTik", "RouterOS", "Postfix", "Dovecot", "Roundcube", "ClamAV", "SpamAssassin", "Bind9", "PowerDNS", "PowerDNS Recursor", "iptables", "ebtables", "iproute2", "bridge-utils", "tcptraceroute", "qemu-kvm", "libvirt", "VMmanager", "DHCP", "IPMI", "IPv6", "NDP", "NFS", "epoll", "libmaycloud", "SOAP", "python-lxml", "python-requests", "Firezone", "Outline", "Flussonic", "ffmpeg", "systemd", "ssh", "scp", "Raspbian", "Armbian", "Midnight Commander", "links", "GIMP", "Sublime Text", "Visual Studio Code", "Cursor", "ChatGPT", "DipTrace", "nasi goreng", "operational amplifiers", "Microcontrollers", "Film development (D-76, C-41)", "Silines RODOS relays", "pdftk", "К574УД1А audio"
     ];
     const INTERVAL_MS = 5000; // 5 seconds
 
