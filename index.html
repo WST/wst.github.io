@@ -1,1 +1,479 @@
-<!doctype html><head><meta charset="utf-8"><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=PT+Mono&display=swap" rel="stylesheet"><link href="https://fonts.googleapis.com/css2?family=Bitter:wght@500;800&display=swap" rel="stylesheet"><link rel="stylesheet" href="/static/style.css?v=3"><script src="/static/instantclick.min.js?v=1" data-no-instant></script><link rel="stylesheet" href="/static/pygments.css"><title>Приветствую! — AverkovNET</title><link rel="shortcut icon" href="/static/icons/favicon.ico"></head><body><header><h1><a class="hover" href="/">AverkovNET</a></h1><nav><ul class="nav navbar-nav"><li class="active"><a href="/">Об авторе</a></li><li><a href="/articles/">Статьи</a></li><li><a href="/gallery/">Фотогалерея</a></li><li><a href="/social/">Контакты</a></li></ul></nav></header><div class="page"><ul class="breadcrumb"><h2>Приветствую!</h2></ul><p>Меня зовут Илья. Значительную часть жизни я посвятил сфере телекоммуникаций и моей стихией были серверные шкафы, гул сетевого оборудования и десятки гигабит в секунду, проходящие буквально сквозь мои пальцы, но сейчас я работаю обычным Senior Backend Developer. Мои увлечения включают программирование, электронику, <a href="/articles/photography/">фотографию</a>, <a href="/articles/tas/">скоростное инструментально-ассистированное прохождение ретро-игр</a>, а также всё, что так или иначе связано с Индонезией, которую я считаю абсолютно потрясающей страной и горячо люблю всей душой.</p><p>В прошлом мне нравилось вести блоги (свой первый сайт я создал в 2002 году и уже тогда придерживался такого формата, хотя слово «блог» ещё толком не существовало), но так как в нынешнее время мне это уже не так интересно (мода берёт своё и я фактически перебрался в социальные сети), теперь здесь остаётся минималистичный сайт для отдельных текстовых публикаций, в основном, предназначенных для того, чтобы скидывать ссылки на них во всё тех же социальных сетях.</p><p>Если говорить об IT, примерный список всяких-разных шляп, с которыми я в той или иной степени умею работать, таков: HTML, CSS, PHP, Python, C, C++, JavaScript, bash, Git, Subversion, Github, Redmine, Gitlab, gitlab-runner, CMake, CPack, uWSGI, nginx, Apache, PHP-FPM, Composer, PEAR, PECL, PHP-FIG, PHPUnit, Psalm, Twig, Guzzle, Django, Django REST Framework, Django Crispy Forms, Django Grappelli, Jinja, MySQL, PostgreSQL, SQLite, MongoDB, Lektor, Sphinx (тот, который для документации, а не для поиска), syslog-ng, XML, DOM, expat, XMPP, ejabberd, Prosody, Openfire, XEP-0114, mcabber, qxmpp, libgloox, RSS, GeoIP, Linux, FreeBSD, NetBSD, OpenVZ, Virtuozzo 7, Docker, docker-compose, nmap, libpcap, NetFlow, SNMP, UTM5, RADIUS, rrdtool, RouterOS, Postfix, Dovecot, Roundcube, ClamAV, SpamAssassin, Bind9, PowerDNS, PowerDNS Recursor, iptables, ebtables, bridge-utils, tcptraceroute, qemu-kvm, libvirt, VMmanager, DHCP, IPMI, IPv6, NDP, NFS, epoll, libmaycloud, SOAP, python-lxml, python-requests, Firezone, Flussonic, ffmpeg, systemd, ssh, scp, Raspbian, Armbian, Midnight Commander, links, GIMP, Inkscape, Sublime Text, Visual Studio Code.</p><p>Я почти никогда в своей жизни не работал с ОС Windows и мне абсолютно непонятна разного рода связанная с этим ностальгия, равно как и ностальгия по временам, когда не было смартфонов и нейросетей. Я считаю, что прогресс должен служить людям и успешно делает их жизнь лучше. Однако, у меня есть определённая ностальгия по таким штукам как фотоплёнки, Радио-86РК, Sega Genesis, кассетные магнитофоны и прочая подобная лабуда. При этом я не считаю, что «раньше трава была зеленее» и занимаюсь всем этим исключительно по принципу «why not», а не потому что «ламповый звук живой, а полупроводниковый — мёртвый». А ещё я не пользуюсь xmonad, emacs, vim, zsh, tmux и сплит-клавиатурами, а то мало ли, что вы самостоятельно додумали, читая список выше 😁</p></div><footer> ©&nbsp;Илья&nbsp;Аверков (WST) </footer><script data-no-instant>InstantClick.init('mousedown');</script></body>
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Ilya Averkov</title>
+  <style>
+    :root {
+      --bg: #000;
+      --fg: #c8facc;
+      --dim: #0c2b0f;
+      --grid: #0c4018;
+      --accent: #9affb3;
+      --shadow: rgba(0, 0, 0, .75);
+    }
+
+    html, body {
+      height: 100%;
+      background: var(--bg);
+      color: var(--fg);
+      margin: 0;
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+      letter-spacing: 0.5px;
+      overflow: hidden;
+    }
+
+    /* background game canvas (very subtle) */
+    #bg {
+      position: fixed;
+      inset: 0;
+      z-index: 0;
+      opacity: .12;              /* keep it dim */
+      filter: blur(.25px) saturate(70%);
+      image-rendering: pixelated; /* crispy grid */
+      pointer-events: none;
+    }
+
+    body::before,
+    body::after {
+      content: "";
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+    }
+
+    /* faint network motif */
+    body::before {
+      background:
+        radial-gradient(circle at 25% 20%, var(--grid) 1px, transparent 1px) 0 0/40px 40px,
+        radial-gradient(circle at 75% 60%, var(--grid) 1px, transparent 1px) 0 0/40px 40px,
+        radial-gradient(circle at 15% 80%, var(--grid) 1px, transparent 1px) 0 0/40px 40px,
+        radial-gradient(circle at 55% 10%, var(--grid) 1px, transparent 1px) 0 0/40px 40px;
+      opacity: .35;
+      filter: blur(.2px);
+    }
+
+    .grid {
+      position: fixed;
+      inset: 0;
+      background:
+        repeating-linear-gradient(120deg, transparent 0 40px, color-mix(in oklch, var(--grid), transparent 60%) 40px 41px),
+        repeating-linear-gradient(60deg, transparent 0 40px, color-mix(in oklch, var(--grid), transparent 60%) 40px 41px);
+      mask: radial-gradient(80% 80% at 50% 50%, #000 60%, transparent 100%);
+      opacity: .18;
+      z-index: 0; /* above game but below content */
+    }
+
+    @media (prefers-reduced-motion: no-preference) {
+      body::after {
+        background: linear-gradient(transparent 95%, rgba(0,0,0,.25) 95%);
+        background-size: 100% 3px;
+        mix-blend-mode: overlay;
+        animation: buzz 8s linear infinite;
+        opacity: .6;
+      }
+      @keyframes buzz { to { transform: translateY(3px); } }
+    }
+
+    .wrap {
+      position: relative;
+      z-index: 1;
+      display: grid;
+      place-items: center;
+      height: 100%;
+      padding: 3rem 1rem;
+      text-align: center;
+    }
+
+    h1 {
+      font-weight: 700;
+      font-size: clamp(32px, 6vw, 72px);
+      margin: 0 0 1.2rem 0;
+      text-shadow: 0 0 12px color-mix(in oklch, var(--accent), transparent 70%), 0 0 32px rgba(0,255,128,.15);
+      display: block;
+      position: relative;
+    }
+
+    h1::after {
+      content: "_";
+      display: inline-block;
+      margin-left: 6px;
+      opacity: .9;
+      animation: cursor .9s steps(2) infinite;
+    }
+    @keyframes cursor { 50% { opacity: .15; } }
+
+    /* === Console-style skill line === */
+    .skill-line {
+      margin-top: 1.5rem;
+      display: inline-block;
+      padding: .6rem .9rem;
+      border-radius: .5rem;
+      border: 1px dashed #0e3b19;
+      background: linear-gradient(#031507, #020a05);
+      box-shadow: 0 10px 40px var(--shadow), inset 0 0 40px rgba(0,255,128,.05);
+      position: relative;
+      line-height: 1;
+    }
+
+    .skill-line::before { /* fake prompt */
+      content: "$ skills:";
+      color: color-mix(in oklch, var(--fg), #6aff90 25%);
+      margin-right: .65rem;
+      opacity: .9;
+    }
+
+    #skillword {
+      display: inline-flex;
+      gap: .06em;
+      vertical-align: baseline;
+    }
+
+    .glyph {
+      min-width: .62em;
+      display: inline-block;
+      text-transform: uppercase;
+      color: var(--accent);
+      text-shadow: 0 0 10px rgba(0,255,128,.18);
+      will-change: contents, filter;
+    }
+
+    /* caret for the skill line */
+    .caret { display: inline-block; width: .6ch; }
+    .caret::after { content: "_"; animation: cursor .9s steps(2) infinite; }
+
+    /* Footer */
+    .foot {
+      position: fixed;
+      bottom: .75rem; left: 0; right: 0;
+      text-align: center;
+      font-size: 10px;
+      opacity: .65;
+      user-select: none;
+      letter-spacing: .1em;
+      font-family: ui-monospace, monospace;
+      white-space: pre;
+      z-index: 1;
+    }
+
+    .ping-dot {
+      display: inline-block;
+      width: 6px;
+      height: 6px;
+      background: var(--accent);
+      border-radius: 50%;
+      margin-left: 4px;
+      animation: blinkPing 1s infinite;
+    }
+
+    @keyframes blinkPing { 0%, 80%, 100% { opacity: 0; } 40% { opacity: 1; } }
+  </style>
+</head>
+<body>
+  <canvas id="bg" aria-hidden="true"></canvas>
+  <div class="grid" aria-hidden="true"></div>
+  <div class="wrap">
+    <main>
+      <h1>Ilya Averkov</h1>
+
+      <!-- Console-like animated skill line -->
+      <div class="skill-line" role="img" aria-label="Навыки: консольная строка">
+        <span id="skillword" aria-hidden="false"></span>
+        <span class="caret" aria-hidden="true"></span>
+      </div>
+    </main>
+  </div>
+
+  <div class="foot" aria-hidden="true">/* route add default 10.0.0.1; ping -i 5 world <span class="ping-dot"></span> */</div>
+
+  <script>
+    // === CONFIG ===
+    const TAGS = [
+      "HTML", "CSS", "PHP", "Python", "C", "C++", "JavaScript", "bash", "Git", "Subversion", "Github", "Redmine", "Gitlab", "gitlab-runner", "CMake", "CPack", "uWSGI", "nginx", "Apache", "PHP-FPM", "Composer", "PEAR", "PECL", "PHP-FIG", "PHPUnit", "Psalm", "Twig", "Guzzle", "Django", "Django REST Framework", "Django Crispy Forms", "Django Grappelli", "Jinja", "MySQL", "SQLite", "MongoDB", "Lektor", "sphinx-doc", "syslog-ng", "XML", "DOM", "expat", "XMPP", "ejabberd", "Prosody", "Openfire", "XEP-0114", "mcabber", "qxmpp", "libgloox", "RSS", "GeoIP", "Linux", "FreeBSD", "NetBSD", "OpenVZ", "Virtuozzo 7", "Docker", "docker-compose", "nmap", "libpcap", "NetFlow", "SNMP", "BGP", "UTM5", "RADIUS", "rrdtool", "RouterOS", "Postfix", "Dovecot", "Roundcube", "ClamAV", "SpamAssassin", "Bind9", "PowerDNS", "PowerDNS Recursor", "iptables", "ebtables", "bridge-utils", "tcptraceroute", "qemu-kvm", "libvirt", "VMmanager", "DHCP", "IPMI", "IPv6", "NDP", "NFS", "epoll", "libmaycloud", "SOAP", "python-lxml", "python-requests", "Firezone", "Flussonic", "ffmpeg", "systemd", "ssh", "scp", "Raspbian", "Armbian", "Midnight Commander", "links", "GIMP", "Inkscape", "Sublime Text", "Visual Studio Code"
+    ];
+    const INTERVAL_MS = 5000; // 5 seconds
+
+    // Glyph set for scrambling (mix of hex, symbols, ASCII)
+    const GLYPHS = "0123456789ABCDEF/*.-_|#@$%&+<>[]{}~".split("");
+
+    const REDUCED = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    const maxLen = TAGS.reduce((m, s) => Math.max(m, s.length), 0);
+    const wordEl = document.getElementById('skillword');
+
+    // Create fixed number of glyph spans
+    const spans = [];
+    for (let i = 0; i < maxLen; i++) {
+      const s = document.createElement('span');
+      s.className = 'glyph';
+      s.textContent = ' ';
+      wordEl.appendChild(s);
+      spans.push(s);
+    }
+
+    function padUpper(word) {
+      return word.toUpperCase().padEnd(maxLen, ' ');
+    }
+
+    function randomGlyph() {
+      return GLYPHS[(Math.random() * GLYPHS.length) | 0];
+    }
+
+    // Per-letter scramble animation to a target word
+    function animateTo(word) {
+      const target = padUpper(word);
+
+      // Respect reduced motion
+      if (REDUCED) {
+        for (let i = 0; i < maxLen; i++) spans[i].textContent = target[i];
+        trimInvisible(word.length);
+        return;
+      }
+
+      const now = performance.now();
+      // letter-by-letter stagger
+      const baseDelay = 30;               // ms between glyph frames
+      const perLetterStagger = 35;        // ms between letters starting
+      const minFlips = 6, maxFlips = 14;  // how many random frames before landing
+
+      spans.forEach((span, i) => {
+        const ch = target[i];
+        const flips = (Math.random() * (maxFlips - minFlips) + minFlips) | 0;
+        const startAt = now + i * perLetterStagger;
+
+        let frame = 0;
+        function tick(t) {
+          if (t < startAt) { requestAnimationFrame(tick); return; }
+          if (frame < flips) {
+            span.textContent = randomGlyph();
+            // subtle flash for the active cell
+            span.style.filter = 'brightness(1.6)';
+            setTimeout(() => span.style.filter = '', baseDelay);
+            frame++;
+            setTimeout(() => requestAnimationFrame(tick), baseDelay);
+          } else {
+            span.textContent = ch;
+          }
+        }
+        requestAnimationFrame(tick);
+      });
+
+      trimInvisible(word.length);
+    }
+
+    // Hide extra cells so the line width matches the current word
+    function trimInvisible(len) {
+      spans.forEach((s, i) => s.style.display = i < len ? 'inline-block' : 'none');
+    }
+
+    // Boot
+    function shuffle(array){
+      for (let i=array.length-1; i>0; i--){
+        const j = (Math.random()*(i+1))|0;
+        [array[i], array[j]] = [array[j], array[i]];
+      }
+      return array;
+    }
+
+    let order = shuffle([...Array(TAGS.length).keys()]);
+    let pointer = 0;
+    let lastShown = null;
+
+    function nextTagIndex(){
+      if (pointer >= order.length){
+        order = shuffle(order);
+        pointer = 0;
+        // avoid immediate repeat across reshuffle boundaries
+        if (lastShown !== null && order.length > 1 && order[0] === lastShown){
+          const j = 1 + ((Math.random()*(order.length-1))|0);
+          [order[0], order[j]] = [order[j], order[0]];
+        }
+      }
+      const idx = order[pointer++];
+      lastShown = idx;
+      return idx;
+    }
+
+    let idx = nextTagIndex();
+    animateTo(TAGS[idx]);
+
+    setInterval(() => {
+      idx = nextTagIndex();
+      animateTo(TAGS[idx]);
+    }, INTERVAL_MS);
+
+    // ======= SUBTLE BACKGROUND GAME (Snake or Game of Life) =======
+    ;(function(){
+      const canvas = document.getElementById('bg');
+      const ctx = canvas.getContext('2d');
+      const prefersReduce = REDUCED; // reuse
+
+      let W, H, COLS, ROWS, CELL;
+      function resize(){
+        W = canvas.width = innerWidth;
+        H = canvas.height = innerHeight;
+        // choose a cell size that yields ~80-120 columns
+        CELL = Math.max(6, Math.floor(Math.min(W, H) / 90));
+        COLS = Math.floor(W / CELL);
+        ROWS = Math.floor(H / CELL);
+      }
+      addEventListener('resize', resize, {passive:true});
+      resize();
+
+      // shared draw util
+      function drawCell(x, y, v){
+        if (!v) return;
+        const px = x * CELL, py = y * CELL;
+        // soft glow rectangles
+        ctx.fillStyle = 'rgba(154,255,179,0.9)';
+        ctx.fillRect(px, py, CELL, CELL);
+        ctx.fillStyle = 'rgba(0,0,0,0.85)';
+        ctx.fillRect(px+1, py+1, Math.max(1,CELL-2), Math.max(1,CELL-2));
+        ctx.fillStyle = 'rgba(154,255,179,0.25)';
+        ctx.fillRect(px+1, py+1, Math.max(1,CELL-2), Math.max(1,CELL-2));
+      }
+
+      // decide game at load
+      const GAME = Math.random() < 0.5 ? 'snake' : 'life';
+
+      // ===== Conway's Game of Life =====
+      let a,b;
+      function lifeInit(){
+        a = new Uint8Array(COLS*ROWS);
+        for (let i=0;i<a.length;i++) a[i] = Math.random()<0.18?1:0;
+      }
+      function lifeStep(){
+        b = new Uint8Array(COLS*ROWS);
+        const w = COLS, h = ROWS;
+        for (let y=0;y<h;y++){
+          for (let x=0;x<w;x++){
+            const i = y*w+x;
+            let n=0;
+            for (let dy=-1;dy<=1;dy++){
+              for (let dx=-1;dx<=1;dx++){
+                if (dx===0&&dy===0) continue;
+                const nx=(x+dx+w)%w, ny=(y+dy+h)%h;
+                n += a[ny*w+nx];
+              }
+            }
+            const alive = a[i];
+            b[i] = (alive && (n===2||n===3)) || (!alive && n===3) ? 1:0;
+          }
+        }
+        a = b;
+      }
+      function lifeDraw(){
+        ctx.clearRect(0,0,W,H);
+        for (let y=0;y<ROWS;y++){
+          for (let x=0;x<COLS;x++){
+            drawCell(x,y,a[y*COLS+x]);
+          }
+        }
+      }
+
+      // ===== Snake (autonomous) =====
+      let snake, dir, food, snakeGrid;
+      function snakeInit(){
+        snakeGrid = new Uint8Array(COLS*ROWS);
+        const midx = (COLS/2)|0, midy = (ROWS/2)|0;
+        snake = [{x:midx,y:midy}];
+        dir = {x:1,y:0};
+        placeFood();
+      }
+      function placeFood(){
+        let x,y,tries=0;
+        do { x=(Math.random()*COLS)|0; y=(Math.random()*ROWS)|0; tries++; }
+        while (occupies(x,y) && tries<1000);
+        food = {x,y};
+      }
+      function occupies(x,y){
+        for (let i=0;i<snake.length;i++) if (snake[i].x===x && snake[i].y===y) return true;
+        return false;
+      }
+      function snakeStep(){
+        // very simple AI: try to go toward food; avoid immediate self-collision
+        function turnLeft(d){ return {x:-d.y,y:d.x}; }
+        function turnRight(d){ return {x:d.y,y:-d.x}; }
+        function forward(p,d){ return {x:(p.x+d.x+COLS)%COLS,y:(p.y+d.y+ROWS)%ROWS}; }
+        const head = snake[0];
+        const forwardPos = forward(head,dir);
+        const leftPos = forward(head,turnLeft(dir));
+        const rightPos = forward(head,turnRight(dir));
+        function safe(pos){ return !occupies(pos.x,pos.y); }
+        // greedy toward food with fallback
+        const dx = (food.x - head.x + COLS) % COLS; const dy = (food.y - head.y + ROWS) % ROWS;
+        const preferX = (dx>COLS/2? -1: 1)* (dx===0?0:1);
+        const preferY = (dy>ROWS/2? -1: 1)* (dy===0?0:1);
+        const options = [];
+        // rank directions: toward food axes first
+        const cand = [
+          {d:dir, p:forwardPos, score: (preferX*dir.x + preferY*dir.y)},
+          {d:turnLeft(dir), p:leftPos, score: (preferX*turnLeft(dir).x + preferY*turnLeft(dir).y)},
+          {d:turnRight(dir), p:rightPos, score: (preferX*turnRight(dir).x + preferY*turnRight(dir).y)}
+        ].sort((A,B)=>B.score-A.score);
+        let chosen = cand.find(c=>safe(c.p)) || cand[0];
+        dir = chosen.d;
+        const newHead = chosen.p;
+
+        snake.unshift(newHead);
+        if (newHead.x===food.x && newHead.y===food.y){
+          placeFood();
+        } else {
+          snake.pop();
+        }
+      }
+      function snakeDraw(){
+        ctx.clearRect(0,0,W,H);
+        // food
+        drawCell(food.x, food.y, 1);
+        // snake body (monotone brightness)
+        const alpha = 0.45; // uniform opacity for all segments
+        for (let i=snake.length-1;i>=0;i--){
+          const p = snake[i];
+          const px = p.x*CELL, py = p.y*CELL;
+          ctx.fillStyle = `rgba(154,255,179,${alpha})`;
+          ctx.fillRect(px,py,CELL,CELL);
+          ctx.fillStyle = 'rgba(0,0,0,0.85)';
+          ctx.fillRect(px+1,py+1,Math.max(1,CELL-2),Math.max(1,CELL-2));
+          ctx.fillStyle = `rgba(154,255,179,${alpha*0.4})`;
+          ctx.fillRect(px+1,py+1,Math.max(1,CELL-2),Math.max(1,CELL-2));
+        }
+      }
+
+      // orchestrate
+      let last=0, acc=0, interval = prefersReduce ? 1000 : 120; // ms per frame
+      function loop(ts){
+        if (!last) last = ts;
+        const dt = ts - last; last = ts; acc += dt;
+        if (acc >= interval){
+          acc = 0;
+          if (GAME==='life') { lifeStep(); lifeDraw(); }
+          else { snakeStep(); snakeDraw(); }
+        }
+        requestAnimationFrame(loop);
+      }
+
+      function boot(){
+        if (Math.random()<0.5) { // re-randomize slightly toward variety
+          if (GAME==='life') lifeInit(); else snakeInit();
+        } else { if (GAME==='life') lifeInit(); else snakeInit(); }
+        // draw first frame
+        if (GAME==='life') lifeDraw(); else snakeDraw();
+        requestAnimationFrame(loop);
+      }
+
+      // reinit on resize to keep grid crisp
+      let resizeTO;
+      addEventListener('resize', ()=>{
+        clearTimeout(resizeTO);
+        resizeTO = setTimeout(()=>{
+          if (GAME==='life') lifeInit(); else snakeInit();
+        }, 150);
+      });
+
+      boot();
+    })();
+  </script>
+</body>
+</html>
