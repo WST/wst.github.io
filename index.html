@@ -99,10 +99,8 @@
       content: "_";
       display: inline-block;
       margin-left: 6px;
-      opacity: .9;
-      animation: cursor .9s steps(2) infinite;
+      opacity: var(--cursor-opacity, 0.9);
     }
-    @keyframes cursor { 50% { opacity: .15; } }
 
     /* === Console-style skill line === */
     .skill-line {
@@ -140,8 +138,7 @@
     }
 
     /* caret for the skill line */
-    .caret { display: inline-block; width: .6ch; }
-    .caret::after { content: "_"; animation: cursor .9s steps(2) infinite; }
+    .caret { display: none; }
 
     /* Footer */
     .foot {
@@ -302,6 +299,19 @@
       idx = nextTagIndex();
       animateTo(TAGS[idx]);
     }, INTERVAL_MS);
+
+    // Smooth cursor animation
+    const h1El = document.querySelector('h1');
+    let cursorStartTime = performance.now();
+    
+    function cursorLoop() {
+      const elapsed = performance.now() - cursorStartTime;
+      const phase = (elapsed / 1000) * Math.PI * 2; // 1 second cycle
+      const opacity = 0.15 + (0.75 * (Math.sin(phase) + 1) / 2); // smooth transition from 0.15 to 0.9
+      h1El.style.setProperty('--cursor-opacity', opacity.toString());
+      requestAnimationFrame(cursorLoop);
+    }
+    requestAnimationFrame(cursorLoop);
 
     // ======= SUBTLE BACKGROUND GAME (Snake or Game of Life) =======
     ;(function(){
