@@ -313,8 +313,10 @@
       function resize(){
         W = canvas.width = innerWidth;
         H = canvas.height = innerHeight;
-        // choose a cell size that yields ~80-120 columns
-        CELL = Math.max(6, Math.floor(Math.min(W, H) / 90));
+        // choose a cell size that yields ~80-120 columns, accounting for device pixel ratio
+        const dpr = window.devicePixelRatio || 1;
+        const baseCellSize = Math.max(6, Math.floor(Math.min(W, H) / 90));
+        CELL = Math.max(baseCellSize, Math.floor(baseCellSize * Math.min(dpr, 2))); // cap at 2x to avoid too large cells
         COLS = Math.floor(W / CELL);
         ROWS = Math.floor(H / CELL);
       }
