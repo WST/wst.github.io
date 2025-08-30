@@ -102,6 +102,14 @@
       opacity: var(--cursor-opacity, 0.9);
     }
 
+    .subtitle {
+      font-size: clamp(16px, 3vw, 24px);
+      margin: 0 0 1.5rem 0;
+      opacity: 0.8;
+      font-weight: 400;
+      letter-spacing: 0.3px;
+    }
+
     /* === Console-style skill line === */
     .skill-line {
       margin-top: 1.5rem;
@@ -145,7 +153,7 @@
       position: fixed;
       bottom: .75rem; left: 0; right: 0;
       text-align: center;
-      font-size: 10px;
+      font-size: 12px;
       opacity: .65;
       user-select: none;
       letter-spacing: .1em;
@@ -173,6 +181,8 @@
   <div class="wrap">
     <main>
       <h1>Ilya Averkov</h1>
+
+      <p class="subtitle">Backend developer. DevOps engineer. Network administrator.</p>
 
       <!-- Console-like animated skill line -->
       <div class="skill-line" role="img" aria-label="Навыки: консольная строка">
