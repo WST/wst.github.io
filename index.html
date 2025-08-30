@@ -421,9 +421,9 @@
       }
 
       // game state management
-      let GAME = Math.random() < 0.5 ? 'snake' : 'life';
+      let GAME = 'snake'; // always start with snake
       let gameStartTime = performance.now();
-      const LIFE_DURATION = 5 * 60 * 1000; // 5 minutes in milliseconds
+      const LIFE_DURATION = 1 * 60 * 1000; // 1 minute in milliseconds
 
       // ===== Conway's Game of Life =====
       let a,b;
