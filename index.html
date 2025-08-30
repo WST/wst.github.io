@@ -346,8 +346,10 @@
         ctx.fillRect(px+1, py+1, Math.max(1,CELL-2), Math.max(1,CELL-2));
       }
 
-      // decide game at load
-      const GAME = Math.random() < 0.5 ? 'snake' : 'life';
+      // game state management
+      let GAME = Math.random() < 0.5 ? 'snake' : 'life';
+      let gameStartTime = performance.now();
+      const LIFE_DURATION = 5 * 60 * 1000; // 5 minutes in milliseconds
 
       // ===== Conway's Game of Life =====
       let a,b;
@@ -428,13 +430,18 @@
         dir = chosen.d;
         const newHead = chosen.p;
 
+        // Check for collision with self
+        if (occupies(newHead.x, newHead.y)) {
+          // Game over - switch to life
+          GAME = 'life';
+          gameStartTime = performance.now();
+          lifeInit();
+          return;
+        }
+        
         snake.unshift(newHead);
         if (newHead.x===food.x && newHead.y===food.y){
           placeFood();
-          // limit snake length to 255 cells
-          if (snake.length > 255) {
-            snake.pop();
-          }
         } else {
           snake.pop();
         }
@@ -461,6 +468,14 @@
       function loop(ts){
         if (!last) last = ts;
         const dt = ts - last; last = ts; acc += dt;
+        
+        // Check if it's time to switch from life to snake
+        if (GAME === 'life' && (performance.now() - gameStartTime) > LIFE_DURATION) {
+          GAME = 'snake';
+          gameStartTime = performance.now();
+          snakeInit();
+        }
+        
         if (acc >= interval){
           acc = 0;
           if (GAME==='life') { lifeStep(); lifeDraw(); }
@@ -470,6 +485,7 @@
       }
 
       function boot(){
+        gameStartTime = performance.now();
         if (Math.random()<0.5) { // re-randomize slightly toward variety
           if (GAME==='life') lifeInit(); else snakeInit();
         } else { if (GAME==='life') lifeInit(); else snakeInit(); }
