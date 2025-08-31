@@ -362,7 +362,7 @@
   <script>
     // === CONFIG ===
     const TAGS = [
-      "HTML", "CSS", "PHP", "Python", "C", "C++", "JavaScript", "bash", "Git", "Subversion", "Github", "Redmine", "Gitlab", "gitlab-runner", "CMake", "CPack", "uWSGI", "nginx", "Apache", "PHP-FPM", "Composer", "PEAR", "PECL", "PHP-FIG", "PHPUnit", "Psalm", "Twig", "GuzzleHttp", "Django", "Django REST Framework", "Django Crispy Forms", "Django Grappelli", "Jinja2", "MySQL", "SQLite", "MongoDB", "Lektor", "sphinx-doc", "syslog-ng", "XML", "DOM", "expat", "XMPP", "ejabberd", "Prosody", "Openfire", "XEP-0114", "mcabber", "qxmpp", "libgloox", "RSS", "GeoIP", "Linux", "FreeBSD", "NetBSD", "OpenVZ", "Virtuozzo 7", "Docker", "docker-compose", "nmap", "libpcap", "NetFlow", "SNMP", "BGP", "UTM5", "RADIUS", "rrdtool", "MikroTik", "RouterOS", "Postfix", "Dovecot", "Roundcube", "ClamAV", "SpamAssassin", "Bind9", "PowerDNS", "PowerDNS Recursor", "iptables", "ebtables", "iproute2", "bridge-utils", "tcptraceroute", "qemu-kvm", "libvirt", "VMmanager", "DHCP", "IPMI", "IPv6", "IPv6 NDP", "NFS", "epoll", "libmaycloud", "SOAP", "python-lxml", "python-requests", "Firezone", "Outline", "Flussonic", "ffmpeg", "systemd", "ssh", "scp", "Raspbian", "Armbian", "Midnight Commander", "links", "GIMP", "Sublime Text", "Visual Studio Code", "Cursor", "ChatGPT", "DipTrace", "nasi goreng", "operational amplifiers", "Microcontrollers", "Film dev (D-76, C-41)", "Darkroom printing", "Silines RODOS relays", "pdftk", "К574УД1А audio", "PhpStorm", "CLion", "PyCharm", "Psi+", "DataGrip"
+      "HTML", "CSS", "PHP", "Python", "C", "C++", "JavaScript", "bash", "Git", "Subversion", "Github", "Redmine", "Gitlab", "gitlab-runner", "CMake", "CPack", "uWSGI", "nginx", "Apache", "PHP-FPM", "Composer", "PEAR", "PECL", "PHP-FIG", "PHPUnit", "Psalm", "Twig", "GuzzleHttp", "Django", "Django REST Framework", "Django Crispy Forms", "Django Grappelli", "Jinja2", "MySQL", "SQLite", "MongoDB", "Lektor", "sphinx-doc", "syslog-ng", "XML", "DOM", "expat", "XMPP", "ejabberd", "Prosody", "Openfire", "XEP-0114", "mcabber", "qxmpp", "libgloox", "RSS", "GeoIP", "Linux", "FreeBSD", "NetBSD", "OpenVZ", "Virtuozzo 7", "Docker", "docker-compose", "nmap", "libpcap", "NetFlow", "SNMP", "BGP", "UTM5", "RADIUS", "rrdtool", "MikroTik", "RouterOS", "Postfix", "Dovecot", "Roundcube", "ClamAV", "SpamAssassin", "Bind9", "PowerDNS", "PowerDNS Recursor", "iptables", "ebtables", "iproute2", "bridge-utils", "tcptraceroute", "qemu-kvm", "libvirt", "VMmanager", "DHCP", "IPMI", "IPv6", "IPv6 NDP", "NFS", "epoll", "libmaycloud", "SOAP", "python-lxml", "python-requests", "Firezone", "Outline", "Flussonic", "ffmpeg", "systemd", "sysvinit", "ssh", "scp", "Raspbian", "Armbian", "Midnight Commander", "links", "GIMP", "Sublime Text", "Visual Studio Code", "Cursor", "ChatGPT", "DipTrace", "nasi goreng", "operational amplifiers", "Microcontrollers", "Film dev (D-76, C-41)", "Darkroom printing", "Silines RODOS relays", "pdftk", "К574УД1А audio", "PhpStorm", "CLion", "PyCharm", "Psi+", "DataGrip", "Sun Fire"
     ];
     const INTERVAL_MS = 5000; // 5 seconds
 
@@ -512,6 +512,7 @@
       let GAME = 'snake'; // always start with snake
       let gameStartTime = performance.now();
       const LIFE_DURATION = 1 * 60 * 1000; // 1 minute in milliseconds
+      const MATRIX_DURATION = 1 * 60 * 1000; // 1 minute in milliseconds
 
       // ===== Conway's Game of Life =====
       let a,b;
@@ -625,6 +626,65 @@
         }
       }
 
+      // ===== Matrix Rain Effect =====
+      let matrixDrops = [];
+      function matrixInit(){
+        matrixDrops = [];
+        // Create drops for each column
+        for (let x = 0; x < COLS; x++) {
+          matrixDrops.push({
+            x: x,
+            y: Math.random() * ROWS,
+            speed: 0.5 + Math.random() * 1.5,
+            length: 3 + Math.floor(Math.random() * Math.min(27, ROWS - 3)),
+            opacity: 0.6 + Math.random() * 0.4
+          });
+        }
+      }
+      function matrixStep(){
+        // Update drops
+        for (let i = 0; i < matrixDrops.length; i++) {
+          const drop = matrixDrops[i];
+          drop.y += drop.speed;
+          
+          // Reset drop when it goes off screen
+          if (drop.y > ROWS + drop.length) {
+            drop.y = -drop.length;
+            drop.x = Math.floor(Math.random() * COLS);
+            drop.speed = 0.5 + Math.random() * 1.5;
+            drop.length = 3 + Math.floor(Math.random() * Math.min(27, ROWS - 3));
+            drop.opacity = 0.6 + Math.random() * 0.4;
+          }
+        }
+      }
+      function matrixDraw(){
+        ctx.clearRect(0,0,W,H);
+        
+        // Draw drops
+        for (let i = 0; i < matrixDrops.length; i++) {
+          const drop = matrixDrops[i];
+          
+          // Draw drop trail
+          for (let j = 0; j < drop.length; j++) {
+            const y = Math.floor(drop.y - j);
+            if (y >= 0 && y < ROWS) {
+              const px = drop.x * CELL;
+              const py = y * CELL;
+              const fade = 1 - (j / drop.length);
+              const alpha = drop.opacity * fade;
+              
+              // Brighter matrix cells
+              ctx.fillStyle = `rgba(154,255,179,${alpha * 1.5})`;
+              ctx.fillRect(px, py, CELL, CELL);
+              ctx.fillStyle = 'rgba(0,0,0,0.85)';
+              ctx.fillRect(px+1, py+1, Math.max(1,CELL-2), Math.max(1,CELL-2));
+              ctx.fillStyle = `rgba(154,255,179,${alpha * 0.8})`;
+              ctx.fillRect(px+1, py+1, Math.max(1,CELL-2), Math.max(1,CELL-2));
+            }
+          }
+        }
+      }
+
       // orchestrate with performance optimization
       let last=0, acc=0, frameCount=0, lastFPS=0;
       let interval = prefersReduce ? 1000 : 120; // ms per frame
@@ -653,8 +713,14 @@
           }
         }
         
-        // Check if it's time to switch from life to snake
-        if (GAME === 'life' && (performance.now() - gameStartTime) > LIFE_DURATION) {
+        // Check if it's time to switch games
+        const elapsed = performance.now() - gameStartTime;
+        
+        if (GAME === 'life' && elapsed > LIFE_DURATION) {
+          GAME = 'matrix';
+          gameStartTime = performance.now();
+          matrixInit();
+        } else if (GAME === 'matrix' && elapsed > MATRIX_DURATION) {
           GAME = 'snake';
           gameStartTime = performance.now();
           snakeInit();
@@ -663,6 +729,7 @@
         if (acc >= interval){
           acc = 0;
           if (GAME==='life') { lifeStep(); lifeDraw(); }
+          else if (GAME==='matrix') { matrixStep(); matrixDraw(); }
           else { snakeStep(); snakeDraw(); }
         }
         requestAnimationFrame(loop);
@@ -670,11 +737,13 @@
 
       function boot(){
         gameStartTime = performance.now();
-        if (Math.random()<0.5) { // re-randomize slightly toward variety
-          if (GAME==='life') lifeInit(); else snakeInit();
-        } else { if (GAME==='life') lifeInit(); else snakeInit(); }
+        if (GAME==='life') lifeInit(); 
+        else if (GAME==='matrix') matrixInit();
+        else snakeInit();
         // draw first frame
-        if (GAME==='life') lifeDraw(); else snakeDraw();
+        if (GAME==='life') lifeDraw(); 
+        else if (GAME==='matrix') matrixDraw();
+        else snakeDraw();
         requestAnimationFrame(loop);
       }
 
@@ -683,7 +752,9 @@
       addEventListener('resize', ()=>{
         clearTimeout(resizeTO);
         resizeTO = setTimeout(()=>{
-          if (GAME==='life') lifeInit(); else snakeInit();
+          if (GAME==='life') lifeInit(); 
+          else if (GAME==='matrix') matrixInit();
+          else snakeInit();
         }, 150);
       });
 
