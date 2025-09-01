@@ -52,6 +52,7 @@
 <li class="toctree-l2 current"><a class="current reference internal" href="#">Thoughts on keyboards</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#pin-mapping-din-5-ps-2">Pin mapping (DIN-5 → PS/2)</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#existing-adapters">Existing adapters</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#cool-modern-keyboards">Cool modern keyboards</a></li>
 </ul>
 </li>
 </ul>
@@ -99,13 +100,36 @@
 </div><p>Unfortunately, the Chicony KB-5911 is quite outdated and uses a DIN-5 connector, which you practically never see nowadays. But here’s the good news: it’s fairly easy to connect a DIN-5 keyboard to a PS/2 port, which is still relatively common (and if you don’t have one, you can find a USB adapter). To do this, you can build an adapter like this:</p>
 <section id="pin-mapping-din-5-ps-2">
 <h2>Pin mapping (DIN-5 → PS/2)<a class="headerlink" href="#pin-mapping-din-5-ps-2" title="Link to this heading"></a></h2>
-<ul class="simple">
-<li><p>DIN-5 Pin 1 → PS/2 Data</p></li>
-<li><p>DIN-5 Pin 2 → Not connected</p></li>
-<li><p>DIN-5 Pin 3 → Ground</p></li>
-<li><p>DIN-5 Pin 4 → +5V (VCC)</p></li>
-<li><p>DIN-5 Pin 5 → Clock</p></li>
-</ul>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>DIN-5</p></th>
+<th class="head"><p>PS/2</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Pin 1</p></td>
+<td><p>Data</p></td>
+<td><p>Data line</p></td>
+</tr>
+<tr class="row-odd"><td><p>Pin 2</p></td>
+<td><p>Not used</p></td>
+<td><p>Not connected</p></td>
+</tr>
+<tr class="row-even"><td><p>Pin 3</p></td>
+<td><p>Ground</p></td>
+<td><p>Common ground</p></td>
+</tr>
+<tr class="row-odd"><td><p>Pin 4</p></td>
+<td><p>+5V (VCC)</p></td>
+<td><p>Power supply</p></td>
+</tr>
+<tr class="row-even"><td><p>Pin 5</p></td>
+<td><p>Clock</p></td>
+<td><p>Clock signal</p></td>
+</tr>
+</tbody>
+</table>
 <p>So the PS/2 connector uses 4 active wires: Data, Clock, Ground, and +5V.</p>
 </section>
 <section id="existing-adapters">
@@ -113,6 +137,12 @@
 <p>Alternatively, you can use a DIN-5 to PS/2 adapter.</p>
 <img alt="../_images/full_din-ps2.jpg" src="../_images/full_din-ps2.jpg" />
 </section>
+<section id="cool-modern-keyboards">
+<h2>Cool modern keyboards<a class="headerlink" href="#cool-modern-keyboards" title="Link to this heading"></a></h2>
+<p>That being said, there are some modern (mechanical!) keyboards that are still cool and have a good design.</p>
+<div class="swiper-slider-container" style="width: 100%; height: 480px; margin: 20px 0;">
+    <img src="/docs/_static/images/newkbs/1.jpg" alt="Modern keyboard 1">
+</div></section>
 </section>
 
 

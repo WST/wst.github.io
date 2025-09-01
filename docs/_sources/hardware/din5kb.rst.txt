@@ -23,11 +23,19 @@ Unfortunately, the Chicony KB-5911 is quite outdated and uses a DIN-5 connector,
 Pin mapping (DIN-5 → PS/2)
 --------------------------
 
-* DIN-5 Pin 1 → PS/2 Data
-* DIN-5 Pin 2 → Not connected
-* DIN-5 Pin 3 → Ground
-* DIN-5 Pin 4 → +5V (VCC)
-* DIN-5 Pin 5 → Clock
++--------+-------------+------------------+
+| DIN-5  | PS/2        | Description      |
++========+=============+==================+
+| Pin 1  | Data        | Data line        |
++--------+-------------+------------------+
+| Pin 2  | Not used    | Not connected    |
++--------+-------------+------------------+
+| Pin 3  | Ground      | Common ground    |
++--------+-------------+------------------+
+| Pin 4  | +5V (VCC)   | Power supply     |
++--------+-------------+------------------+
+| Pin 5  | Clock       | Clock signal     |
++--------+-------------+------------------+
 
 So the PS/2 connector uses 4 active wires: Data, Clock, Ground, and +5V.
 
@@ -37,3 +45,14 @@ Existing adapters
 Alternatively, you can use a DIN-5 to PS/2 adapter.
 
 .. image:: /_static/images/full_din-ps2.jpg
+
+Cool modern keyboards
+---------------------
+
+That being said, there are some modern (mechanical!) keyboards that are still cool and have a good design.
+
+.. raw:: html
+
+   <div class="swiper-slider-container" style="width: 100%; height: 480px; margin: 20px 0;">
+       <img src="/docs/_static/images/newkbs/1.jpg" alt="Modern keyboard 1">
+   </div>
