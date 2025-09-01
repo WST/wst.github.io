@@ -1,6 +1,0 @@
-Routing Protocols
-=================
-
-This article will cover common routing protocols including OSPF, BGP, EIGRP, and RIP.
-
-Content coming soon... 

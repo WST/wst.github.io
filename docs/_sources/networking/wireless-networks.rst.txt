@@ -1,6 +1,0 @@
-Wireless Networks
-=================
-
-This article will cover wireless networking technologies, standards, and configuration.
-
-Content coming soon... 

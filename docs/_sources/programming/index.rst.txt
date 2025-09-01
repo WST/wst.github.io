@@ -2,38 +2,3 @@ Programming
 ===========
 
 This section contains programming guides, tutorials, and best practices for software development.
-
-.. toctree::
-   :maxdepth: 2
-   :caption: Programming Articles:
-
-   python-basics
-   web-development
-   data-structures
-   algorithms
-   software-design
-
-Python Basics
--------------
-
-Introduction to Python programming language and core concepts.
-
-Web Development
-----------------
-
-Modern web development with HTML, CSS, JavaScript, and frameworks.
-
-Data Structures
----------------
-
-Essential data structures and their implementations.
-
-Algorithms
-----------
-
-Common algorithms and their complexity analysis.
-
-Software Design
-----------------
-
-Software architecture patterns and design principles. 

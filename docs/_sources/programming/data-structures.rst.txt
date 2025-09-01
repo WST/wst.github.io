@@ -1,6 +1,0 @@
-Data Structures
-===============
-
-This article will cover essential data structures and their implementations.
-
-Content coming soon... 

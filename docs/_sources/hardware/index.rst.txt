@@ -7,33 +7,4 @@ This section contains information about computer components, hardware specificat
    :maxdepth: 2
    :caption: Hardware Articles:
 
-   cpu-architecture
-   memory-systems
-   storage-devices
-   graphics-cards
-   motherboards
-
-CPU Architecture
-----------------
-
-Understanding processor architecture and performance characteristics.
-
-Memory Systems
---------------
-
-RAM types, memory hierarchy, and performance optimization.
-
-Storage Devices
----------------
-
-Hard drives, SSDs, and storage technologies.
-
-Graphics Cards
---------------
-
-GPU architecture and graphics processing units.
-
-Motherboards
--------------
-
-System board components and chipset architecture. 
+   din5kb

@@ -1,6 +1,0 @@
-Graphics Cards
-==============
-
-This article will cover GPU architecture and graphics processing units.
-
-Content coming soon... 
