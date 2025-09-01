@@ -49,7 +49,7 @@ Alternatively, you can use a DIN-5 to PS/2 adapter.
 Cool modern keyboards
 ---------------------
 
-That being said, there are some modern (mechanical!) keyboards that are still cool and have a good design.
+That being said, there are some modern (mechanical!) keyboards that are still cool and have a good design. If you want to get one, I strongly recommend you making a custom build. The idea behind is that you can buy some base, and then you can replace the switches and the keycaps.
 
 .. raw:: html
 
