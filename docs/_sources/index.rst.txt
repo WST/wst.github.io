@@ -3,11 +3,12 @@ Knowledge Base
 
 This is the personal knowledge base of `Ilya Averkov <https://averkov.net/>`_, where I document and share insights on programming, network administration, computer hardware, and electronics in a broad sense.
 
-This documentation is organized into three main sections:
+This documentation is organized into the following sections:
 
 * **Networking** — Articles about network protocols, software, and administration.
 * **Programming** — Programming guides, tutorials, and best practices.
 * **Computer Hardware** — Information about computer components and hardware
+* **DIY** — Information about my DIY projects and experiments.
 
 .. toctree::
    :maxdepth: 2
@@ -16,3 +17,4 @@ This documentation is organized into three main sections:
    networking/index
    programming/index
    hardware/index
+   diy/index
