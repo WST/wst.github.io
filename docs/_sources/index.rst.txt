@@ -1,13 +1,13 @@
-Knowledge Base Documentation
-============================
+Knowledge Base
+==============
 
-Welcome to the comprehensive knowledge base covering networking, programming, and computer hardware topics.
+This is the personal knowledge base of Ilya Averkov, where I document and share insights on programming, network administration, computer hardware, and electronics in a broad sense.
 
 This documentation is organized into three main sections:
 
-* **Networking** - Articles about network protocols, configurations, and administration
-* **Programming** - Programming guides, tutorials, and best practices
-* **Computer Hardware** - Information about computer components and hardware
+* **Networking** — Articles about network protocols, software, and administration.
+* **Programming** — Programming guides, tutorials, and best practices.
+* **Computer Hardware** — Information about computer components and hardware
 
 .. toctree::
    :maxdepth: 2
@@ -16,4 +16,3 @@ This documentation is organized into three main sections:
    networking/index
    programming/index
    hardware/index
-
