@@ -1,17 +1,19 @@
-.. Knowledge Base documentation master file, created by
-   sphinx-quickstart on Mon Sep  1 17:21:16 2025.
-   You can adapt this file completely to your liking, but it should at least
-   contain the root `toctree` directive.
-
-Knowledge Base documentation
+Knowledge Base Documentation
 ============================
 
-Add your content using ``reStructuredText`` syntax. See the
-`reStructuredText <https://www.sphinx-doc.org/en/master/usage/restructuredtext/index.html>`_
-documentation for details.
+Welcome to the comprehensive knowledge base covering networking, programming, and computer hardware topics.
 
+This documentation is organized into three main sections:
+
+* **Networking** - Articles about network protocols, configurations, and administration
+* **Programming** - Programming guides, tutorials, and best practices
+* **Computer Hardware** - Information about computer components and hardware
 
 .. toctree::
    :maxdepth: 2
    :caption: Contents:
+
+   networking/index
+   programming/index
+   hardware/index
 

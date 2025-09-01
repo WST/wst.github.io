@@ -1,0 +1,76 @@
+TCP/IP Basics
+=============
+
+The TCP/IP (Transmission Control Protocol/Internet Protocol) suite is the fundamental communication protocol of the internet. It provides a set of rules that govern how data is transmitted between devices on a network.
+
+TCP/IP Layers
+-------------
+
+The TCP/IP model consists of four layers:
+
+1. **Application Layer**
+   - Contains protocols like HTTP, FTP, SMTP, DNS
+   - Provides services directly to user applications
+
+2. **Transport Layer**
+   - TCP (Transmission Control Protocol) - reliable, connection-oriented
+   - UDP (User Datagram Protocol) - unreliable, connectionless
+
+3. **Internet Layer**
+   - IP (Internet Protocol) - handles addressing and routing
+   - ICMP (Internet Control Message Protocol) - error reporting
+
+4. **Network Access Layer**
+   - Handles physical transmission of data
+   - Includes Ethernet, Wi-Fi, and other link-layer protocols
+
+IP Addressing
+-------------
+
+IPv4 addresses are 32-bit numbers divided into four octets:
+
+.. code-block:: text
+
+   192.168.1.1
+
+Common IP address classes:
+
+- **Class A**: 1.0.0.0 to 126.255.255.255
+- **Class B**: 128.0.0.0 to 191.255.255.255  
+- **Class C**: 192.0.0.0 to 223.255.255.255
+
+Subnetting
+----------
+
+Subnetting allows you to divide a network into smaller, more manageable networks:
+
+.. code-block:: text
+
+   Network: 192.168.1.0/24
+   Subnet mask: 255.255.255.0
+   Available hosts: 254 (1-254)
+
+TCP vs UDP
+----------
+
+**TCP (Transmission Control Protocol)**
+- Connection-oriented
+- Reliable delivery
+- Ordered data transmission
+- Used for: web browsing, email, file transfer
+
+**UDP (User Datagram Protocol)**
+- Connectionless
+- Unreliable delivery
+- No ordering guarantee
+- Used for: streaming, gaming, DNS queries
+
+Common Ports
+------------
+
+- **Port 80**: HTTP
+- **Port 443**: HTTPS
+- **Port 22**: SSH
+- **Port 21**: FTP
+- **Port 25**: SMTP
+- **Port 53**: DNS 

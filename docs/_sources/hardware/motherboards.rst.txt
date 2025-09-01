@@ -1,0 +1,6 @@
+Motherboards
+=============
+
+This article will cover system board components and chipset architecture.
+
+Content coming soon... 

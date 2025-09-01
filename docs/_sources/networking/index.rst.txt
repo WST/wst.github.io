@@ -1,0 +1,39 @@
+Networking
+==========
+
+This section contains articles about computer networking, protocols, and network administration.
+
+.. toctree::
+   :maxdepth: 2
+   :caption: Networking Articles:
+
+   tcp-ip-basics
+   network-security
+   routing-protocols
+   wireless-networks
+   network-troubleshooting
+
+TCP/IP Basics
+-------------
+
+Understanding the fundamental protocols that power the internet.
+
+Network Security
+----------------
+
+Best practices for securing network infrastructure and data.
+
+Routing Protocols
+-----------------
+
+Overview of common routing protocols like OSPF, BGP, and EIGRP.
+
+Wireless Networks
+-----------------
+
+Configuration and management of wireless network infrastructure.
+
+Network Troubleshooting
+-----------------------
+
+Common network issues and their solutions. 

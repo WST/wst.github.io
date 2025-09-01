@@ -1,0 +1,117 @@
+CPU Architecture
+================
+
+The Central Processing Unit (CPU) is the brain of the computer, responsible for executing instructions and performing calculations. Understanding CPU architecture is essential for optimizing system performance.
+
+CPU Components
+--------------
+
+**Control Unit (CU)**
+- Manages the execution of instructions
+- Coordinates between different CPU components
+- Controls the flow of data
+
+**Arithmetic Logic Unit (ALU)**
+- Performs mathematical operations (addition, subtraction, multiplication, division)
+- Handles logical operations (AND, OR, NOT, XOR)
+- Processes comparison operations
+
+**Registers**
+- Small, fast memory locations within the CPU
+- Store data and instructions being processed
+- Include general-purpose, special-purpose, and control registers
+
+**Cache Memory**
+- High-speed memory between CPU and RAM
+- Stores frequently accessed data and instructions
+- Levels: L1 (fastest, smallest), L2, L3 (largest, slower)
+
+Instruction Cycle
+-----------------
+
+The CPU follows a four-step instruction cycle:
+
+1. **Fetch**: Retrieve instruction from memory
+2. **Decode**: Interpret the instruction
+3. **Execute**: Perform the operation
+4. **Write Back**: Store results in memory or registers
+
+CPU Architecture Types
+----------------------
+
+**RISC (Reduced Instruction Set Computing)**
+- Simple, fixed-length instructions
+- Fewer instructions, faster execution
+- Examples: ARM, MIPS, RISC-V
+
+**CISC (Complex Instruction Set Computing)**
+- Complex, variable-length instructions
+- More instructions, slower execution
+- Examples: x86, x86-64
+
+**Modern Hybrid Approach**
+- Combines RISC and CISC concepts
+- Uses microcode to translate complex instructions
+- Examples: Intel Core, AMD Ryzen
+
+CPU Performance Factors
+-----------------------
+
+**Clock Speed**
+- Measured in Hertz (Hz)
+- Higher frequency = more instructions per second
+- Modern CPUs: 2-5 GHz range
+
+**Cores**
+- Multiple processing units on a single chip
+- Parallel processing capabilities
+- Common: 4, 6, 8, 16 cores
+
+**Cache Size**
+- Larger cache = better performance
+- Reduces memory access latency
+- L3 cache: 8-32 MB typical
+
+**Architecture Efficiency**
+- Instructions per cycle (IPC)
+- Pipeline efficiency
+- Branch prediction accuracy
+
+CPU Manufacturing Process
+-------------------------
+
+**Process Node**
+- Measured in nanometers (nm)
+- Smaller nodes = more transistors, less power
+- Current: 5-7 nm, moving to 3 nm
+
+**Transistor Count**
+- More transistors = more complex operations
+- Modern CPUs: 10-50 billion transistors
+
+**Power Efficiency**
+- Performance per watt
+- Thermal design power (TDP)
+- Dynamic frequency scaling
+
+Common CPU Sockets
+------------------
+
+**Intel Sockets**
+- LGA 1700 (12th/13th gen Core)
+- LGA 1200 (10th/11th gen Core)
+- LGA 1151 (6th-9th gen Core)
+
+**AMD Sockets**
+- AM5 (Ryzen 7000 series)
+- AM4 (Ryzen 1000-5000 series)
+- TR4/sTRX4 (Threadripper)
+
+CPU Selection Criteria
+----------------------
+
+1. **Intended Use**: Gaming, productivity, server
+2. **Budget**: Price-performance ratio
+3. **Compatibility**: Socket, motherboard, RAM
+4. **Future-proofing**: Upgrade path considerations
+5. **Power requirements**: TDP and cooling needs 

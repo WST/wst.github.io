@@ -1,0 +1,268 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Memory Systems &mdash; Knowledge Base  documentation</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=e59714d7" />
+
+  
+      <script src="../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../_static/documentation_options.js?v=5929fcd5"></script>
+      <script src="../_static/doctools.js?v=9bcbadda"></script>
+      <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Storage Devices" href="storage-devices.html" />
+    <link rel="prev" title="CPU Architecture" href="cpu-architecture.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            Knowledge Base
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../networking/index.html">Networking</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../programming/index.html">Programming</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Computer Hardware</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="cpu-architecture.html">CPU Architecture</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Memory Systems</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#memory-hierarchy">Memory Hierarchy</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#ram-types">RAM Types</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#memory-channels">Memory Channels</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#memory-timing">Memory Timing</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#virtual-memory">Virtual Memory</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#memory-optimization">Memory Optimization</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#memory-selection-criteria">Memory Selection Criteria</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="storage-devices.html">Storage Devices</a></li>
+<li class="toctree-l2"><a class="reference internal" href="graphics-cards.html">Graphics Cards</a></li>
+<li class="toctree-l2"><a class="reference internal" href="motherboards.html">Motherboards</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#cpu-architecture">CPU Architecture</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#memory-systems">Memory Systems</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#storage-devices">Storage Devices</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#graphics-cards">Graphics Cards</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#motherboards">Motherboards</a></li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Knowledge Base</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="index.html">Computer Hardware</a></li>
+      <li class="breadcrumb-item active">Memory Systems</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/hardware/memory-systems.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="memory-systems">
+<h1>Memory Systems<a class="headerlink" href="#memory-systems" title="Link to this heading"></a></h1>
+<p>Computer memory systems are hierarchical storage solutions that balance speed, capacity, and cost to provide optimal performance for different types of data access.</p>
+<section id="memory-hierarchy">
+<h2>Memory Hierarchy<a class="headerlink" href="#memory-hierarchy" title="Link to this heading"></a></h2>
+<p><strong>CPU Registers</strong>
+- Fastest access (1-2 clock cycles)
+- Smallest capacity (32-64 bits per register)
+- Located within the CPU
+- Used for immediate calculations</p>
+<p><strong>Cache Memory</strong>
+- Very fast access (2-10 clock cycles)
+- Small capacity (KB to MB)
+- Located on CPU die or nearby
+- Stores frequently accessed data</p>
+<p><strong>Main Memory (RAM)</strong>
+- Fast access (50-100 clock cycles)
+- Large capacity (GB to TB)
+- Volatile storage
+- Primary working memory</p>
+<p><strong>Storage (SSD/HDD)</strong>
+- Slow access (milliseconds)
+- Very large capacity (GB to TB)
+- Non-volatile storage
+- Long-term data storage</p>
+</section>
+<section id="ram-types">
+<h2>RAM Types<a class="headerlink" href="#ram-types" title="Link to this heading"></a></h2>
+<p><strong>DDR4 (Double Data Rate 4)</strong>
+- Current standard for most systems
+- Speeds: 2133-3200 MHz
+- Lower power consumption
+- Higher bandwidth than DDR3</p>
+<p><strong>DDR5 (Double Data Rate 5)</strong>
+- Latest generation
+- Speeds: 4800-6400 MHz
+- Higher bandwidth and efficiency
+- Error correction capabilities</p>
+<p><strong>LPDDR (Low Power DDR)</strong>
+- Used in mobile devices
+- Lower power consumption
+- Integrated into system-on-chip
+- LPDDR4, LPDDR5 variants</p>
+<p><strong>ECC Memory (Error-Correcting Code)</strong>
+- Detects and corrects memory errors
+- Used in servers and workstations
+- Slightly slower than non-ECC
+- Higher reliability</p>
+</section>
+<section id="memory-channels">
+<h2>Memory Channels<a class="headerlink" href="#memory-channels" title="Link to this heading"></a></h2>
+<p><strong>Single Channel</strong>
+- One memory channel
+- Basic configuration
+- Lower bandwidth
+- Suitable for basic systems</p>
+<p><strong>Dual Channel</strong>
+- Two memory channels
+- Doubles bandwidth
+- Most common configuration
+- Requires matched memory modules</p>
+<p><strong>Quad Channel</strong>
+- Four memory channels
+- High-end desktop and server
+- Maximum bandwidth
+- Requires specific motherboard support</p>
+</section>
+<section id="memory-timing">
+<h2>Memory Timing<a class="headerlink" href="#memory-timing" title="Link to this heading"></a></h2>
+<p><strong>CAS Latency (CL)</strong>
+- Number of clock cycles for data access
+- Lower is better
+- CL16, CL18, CL20 common values</p>
+<p><strong>Memory Speed</strong>
+- Measured in MHz
+- Higher speed = more bandwidth
+- Must be supported by CPU and motherboard</p>
+<p><strong>Timing Example</strong>
+- DDR4-3200 CL16
+- 3200 MHz speed
+- 16 clock cycle latency
+- 10 ns actual latency</p>
+</section>
+<section id="virtual-memory">
+<h2>Virtual Memory<a class="headerlink" href="#virtual-memory" title="Link to this heading"></a></h2>
+<p><strong>Paging System</strong>
+- Extends RAM using storage
+- Page files and swap partitions
+- Memory management unit (MMU)
+- Translation lookaside buffer (TLB)</p>
+<p><strong>Memory Mapping</strong>
+- Maps files to memory addresses
+- Shared memory between processes
+- Memory-mapped I/O
+- Demand paging</p>
+<p><strong>Memory Protection</strong>
+- Process isolation
+- Read/write permissions
+- Memory segmentation
+- Address space layout randomization (ASLR)</p>
+</section>
+<section id="memory-optimization">
+<h2>Memory Optimization<a class="headerlink" href="#memory-optimization" title="Link to this heading"></a></h2>
+<p><strong>Memory Pooling</strong>
+- Pre-allocated memory blocks
+- Reduces allocation overhead
+- Common in game engines
+- Database systems</p>
+<p><strong>Garbage Collection</strong>
+- Automatic memory management
+- Mark and sweep algorithms
+- Reference counting
+- Generational collection</p>
+<p><strong>Memory Alignment</strong>
+- Data structure optimization
+- Cache line alignment
+- SIMD instruction requirements
+- Performance benefits</p>
+<p><strong>Memory Compression</strong>
+- Compress inactive memory pages
+- Increase effective memory capacity
+- CPU overhead trade-off
+- Windows, Linux, macOS support</p>
+</section>
+<section id="memory-selection-criteria">
+<h2>Memory Selection Criteria<a class="headerlink" href="#memory-selection-criteria" title="Link to this heading"></a></h2>
+<ol class="arabic simple">
+<li><p><strong>Capacity</strong>: Match workload requirements</p></li>
+<li><p><strong>Speed</strong>: Balance with CPU capabilities</p></li>
+<li><p><strong>Compatibility</strong>: Check motherboard specifications</p></li>
+<li><p><strong>Channels</strong>: Dual/quad channel configuration</p></li>
+<li><p><strong>ECC</strong>: Error correction for critical systems</p></li>
+<li><p><strong>Latency</strong>: Lower CAS latency for better performance</p></li>
+<li><p><strong>Brand</strong>: Reliable manufacturers</p></li>
+<li><p><strong>Warranty</strong>: Long-term support</p></li>
+</ol>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="cpu-architecture.html" class="btn btn-neutral float-left" title="CPU Architecture" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="storage-devices.html" class="btn btn-neutral float-right" title="Storage Devices" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2025, Ilya Averkov.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
