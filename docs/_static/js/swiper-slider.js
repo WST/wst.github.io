@@ -62,7 +62,7 @@ function initializeSwipers() {
         // Pagination removed for cleaner interface
         
         // Initialize Swiper
-        new Swiper(container, {
+        const swiper = new Swiper(container, {
             loop: true,
             autoplay: {
                 delay: 30000, // 30 seconds for comfortable viewing
@@ -84,6 +84,38 @@ function initializeSwipers() {
                 enabled: true,
             },
         });
+
+        // Force apply custom styles to navigation buttons
+        setTimeout(() => {
+            const prevBtn = container.querySelector('.swiper-button-prev');
+            const nextBtn = container.querySelector('.swiper-button-next');
+            
+            if (prevBtn) {
+                prevBtn.style.cssText = `
+                    background-color: rgba(0,0,0,0.7) !important;
+                    color: white !important;
+                    width: 40px !important;
+                    height: 40px !important;
+                    padding: 8px !important;
+                    border: none !important;
+                    border-radius: 0 !important;
+                    box-shadow: none !important;
+                `;
+            }
+            
+            if (nextBtn) {
+                nextBtn.style.cssText = `
+                    background-color: rgba(0,0,0,0.7) !important;
+                    color: white !important;
+                    width: 40px !important;
+                    height: 40px !important;
+                    padding: 8px !important;
+                    border: none !important;
+                    border-radius: 0 !important;
+                    box-shadow: none !important;
+                `;
+            }
+        }, 100);
     });
 }
 

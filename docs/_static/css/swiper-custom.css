@@ -14,27 +14,36 @@
     display: block;
 }
 
-/* Navigation buttons */
-.swiper-button-next,
-.swiper-button-prev {
-    background-color: rgba(0,0,0,0.7);
-    color: white;
-    width: 40px;
-    height: 40px;
-    padding: 8px;
-    transition: all 0.3s ease;
+/* Navigation buttons - more specific selectors */
+.swiper-slider-container .swiper-button-next,
+.swiper-slider-container .swiper-button-prev,
+div.swiper-slider-container .swiper-button-next,
+div.swiper-slider-container .swiper-button-prev {
+    background-color: rgba(0,0,0,0.7) !important;
+    color: white !important;
+    width: 40px !important;
+    height: 40px !important;
+    padding: 8px !important;
+    transition: all 0.3s ease !important;
+    border: none !important;
+    border-radius: 0 !important;
+    box-shadow: none !important;
 }
 
-.swiper-button-next:hover,
-.swiper-button-prev:hover {
-    background-color: rgba(0,0,0,0.9);
+.swiper-slider-container .swiper-button-next:hover,
+.swiper-slider-container .swiper-button-prev:hover,
+div.swiper-slider-container .swiper-button-next:hover,
+div.swiper-slider-container .swiper-button-prev:hover {
+    background-color: rgba(0,0,0,0.9) !important;
 }
 
-.swiper-button-next::after,
-.swiper-button-prev::after {
-    font-size: 16px;
-    font-weight: bold;
-    color: white;
+.swiper-slider-container .swiper-button-next::after,
+.swiper-slider-container .swiper-button-prev::after,
+div.swiper-slider-container .swiper-button-next::after,
+div.swiper-slider-container .swiper-button-prev::after {
+    font-size: 16px !important;
+    font-weight: bold !important;
+    color: white !important;
 }
 
 /* Pagination removed for cleaner interface */
