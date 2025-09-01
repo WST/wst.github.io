@@ -1,7 +1,7 @@
 Knowledge Base
 ==============
 
-This is the personal knowledge base of Ilya Averkov, where I document and share insights on programming, network administration, computer hardware, and electronics in a broad sense.
+This is the personal knowledge base of `Ilya Averkov <https://averkov.net/>`_, where I document and share insights on programming, network administration, computer hardware, and electronics in a broad sense.
 
 This documentation is organized into three main sections:
 
