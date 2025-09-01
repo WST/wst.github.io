@@ -46,7 +46,11 @@
 <li class="toctree-l1"><a class="reference internal" href="../networking/index.html">Networking</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../programming/index.html">Programming</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="index.html">Computer Hardware</a><ul class="current">
-<li class="toctree-l2 current"><a class="current reference internal" href="#">Thoughts on keyboards</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Thoughts on keyboards</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#pin-mapping-din-5-ps-2">Pin mapping (DIN-5 → PS/2)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#existing-adapters">Existing adapters</a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -81,6 +85,22 @@
 <p>I’m a big fan of keyboards. Seriously, the keyboard is that very “layer” between you and the digital world. Your digital experience — including your productivity at work and your ability to perform tasks that require pressing complex key combinations — directly depends on its comfort, ergonomics, and efficiency. And, of course, the keyboard also determines how quickly you’ll get tired when writing code or long texts.</p>
 <p>That said, I’m not particularly fond of the fact that nowadays most discussions about keyboards tend to focus almost exclusively on the underlying technology of a given device. “Knowledge” about keyboards is often reduced to the notion that mechanical keyboards are the “right” choice, while membrane keyboards are just cheap office gear. I can’t agree with that. I’ve always believed that the most important aspect of a keyboard is, first and foremost, its form factor. Personally, I’m a big enthusiast of the most “classic” layout possible — which, by the way, includes not only the arrangement of the keys but also their color scheme. For me, a kind of benchmark is the Chicony KB-5191. Interestingly, it’s not even a mechanical keyboard, yet it still feels very strict, stylish, and premium. Honestly, when you compare it to something like the Varmilo APT108, it’s hard to believe that the Varmilo actually costs much more.</p>
 <p>Unfortunately, the Chicony KB-5191 is quite outdated and uses a DIN-5 connector, which you practically never see nowadays. But here’s the good news: it’s fairly easy to connect a DIN-5 keyboard to a PS/2 port, which is still relatively common (and if you don’t have one, you can find a USB adapter). To do this, you can build an adapter like this:</p>
+<section id="pin-mapping-din-5-ps-2">
+<h2>Pin mapping (DIN-5 → PS/2)<a class="headerlink" href="#pin-mapping-din-5-ps-2" title="Link to this heading"></a></h2>
+<ul class="simple">
+<li><p>DIN-5 Pin 1 → PS/2 Data</p></li>
+<li><p>DIN-5 Pin 2 → Not connected</p></li>
+<li><p>DIN-5 Pin 3 → Ground</p></li>
+<li><p>DIN-5 Pin 4 → +5V (VCC)</p></li>
+<li><p>DIN-5 Pin 5 → Clock</p></li>
+</ul>
+<p>So the PS/2 connector uses 4 active wires: Data, Clock, Ground, and +5V.</p>
+</section>
+<section id="existing-adapters">
+<h2>Existing adapters<a class="headerlink" href="#existing-adapters" title="Link to this heading"></a></h2>
+<p>Alternatively, you can use a DIN-5 to PS/2 adapter.</p>
+<img alt="../_images/full_din-ps2.jpg" src="../_images/full_din-ps2.jpg" />
+</section>
 </section>
 
 

@@ -6,3 +6,21 @@ I’m a big fan of keyboards. Seriously, the keyboard is that very “layer” b
 That said, I’m not particularly fond of the fact that nowadays most discussions about keyboards tend to focus almost exclusively on the underlying technology of a given device. “Knowledge” about keyboards is often reduced to the notion that mechanical keyboards are the “right” choice, while membrane keyboards are just cheap office gear. I can’t agree with that. I’ve always believed that the most important aspect of a keyboard is, first and foremost, its form factor. Personally, I’m a big enthusiast of the most “classic” layout possible — which, by the way, includes not only the arrangement of the keys but also their color scheme. For me, a kind of benchmark is the Chicony KB-5191. Interestingly, it’s not even a mechanical keyboard, yet it still feels very strict, stylish, and premium. Honestly, when you compare it to something like the Varmilo APT108, it’s hard to believe that the Varmilo actually costs much more.
 
 Unfortunately, the Chicony KB-5191 is quite outdated and uses a DIN-5 connector, which you practically never see nowadays. But here’s the good news: it’s fairly easy to connect a DIN-5 keyboard to a PS/2 port, which is still relatively common (and if you don’t have one, you can find a USB adapter). To do this, you can build an adapter like this:
+
+Pin mapping (DIN-5 → PS/2)
+--------------------------
+
+* DIN-5 Pin 1 → PS/2 Data
+* DIN-5 Pin 2 → Not connected
+* DIN-5 Pin 3 → Ground
+* DIN-5 Pin 4 → +5V (VCC)
+* DIN-5 Pin 5 → Clock
+
+So the PS/2 connector uses 4 active wires: Data, Clock, Ground, and +5V.
+
+Existing adapters
+-----------------
+
+Alternatively, you can use a DIN-5 to PS/2 adapter.
+
+.. image:: /_static/images/full_din-ps2.jpg
