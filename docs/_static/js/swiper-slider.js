@@ -65,7 +65,7 @@ function initializeSwipers() {
         new Swiper(container, {
             loop: true,
             autoplay: {
-                delay: 4000,
+                delay: 30000, // 30 seconds for comfortable viewing
                 disableOnInteraction: false,
             },
             navigation: {
