@@ -9,10 +9,10 @@ function loadSwiper() {
     swiperCSS.href = 'https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css';
     document.head.appendChild(swiperCSS);
 
-    // Load custom CSS
+    // Load custom CSS with version to prevent caching issues
     const customCSS = document.createElement('link');
     customCSS.rel = 'stylesheet';
-    customCSS.href = '/_static/css/swiper-custom.css';
+    customCSS.href = '/_static/css/swiper-custom.css?v=' + Date.now();
     document.head.appendChild(customCSS);
 
     // Load Swiper JS
