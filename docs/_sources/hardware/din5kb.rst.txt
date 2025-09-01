@@ -10,11 +10,11 @@ Here are some examples of classic keyboards that I find particularly appealing:
 .. raw:: html
 
    <div class="swiper-slider-container" style="width: 100%; height: 480px; margin: 20px 0;">
-       <img src="/docs/_static/images/oldkbs/1.jpg" alt="Classic keyboard 1">
-       <img src="/docs/_static/images/oldkbs/2.jpg" alt="Classic keyboard 2">
-       <img src="/docs/_static/images/oldkbs/3.jpg" alt="Classic keyboard 3">
-       <img src="/docs/_static/images/oldkbs/4.jpg" alt="Classic keyboard 4">
-       <img src="/docs/_static/images/oldkbs/5.jpg" alt="Classic keyboard 5">
+       <img src="../../_static/images/oldkbs/1.jpg" alt="Classic keyboard 1">
+       <img src="../../_static/images/oldkbs/2.jpg" alt="Classic keyboard 2">
+       <img src="../../_static/images/oldkbs/3.jpg" alt="Classic keyboard 3">
+       <img src="../../_static/images/oldkbs/4.jpg" alt="Classic keyboard 4">
+       <img src="../../_static/images/oldkbs/5.jpg" alt="Classic keyboard 5">
    </div>
 
 Unfortunately, the Chicony KB-5911 is quite outdated and uses a DIN-5 connector, which you practically never see nowadays. But here’s the good news: it’s fairly easy to connect a DIN-5 keyboard to a PS/2 port, which is still relatively common (and if you don’t have one, you can find a USB adapter). To do this, you can build an adapter like this:
