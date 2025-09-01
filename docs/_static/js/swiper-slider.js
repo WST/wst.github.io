@@ -52,10 +52,7 @@ function initializeSwipers() {
         nextButton.className = 'swiper-button-next';
         container.appendChild(nextButton);
         
-        // Add pagination
-        const pagination = document.createElement('div');
-        pagination.className = 'swiper-pagination';
-        container.appendChild(pagination);
+        // Pagination removed for cleaner interface
         
         // Initialize Swiper
         new Swiper(container, {
@@ -63,14 +60,6 @@ function initializeSwipers() {
             autoplay: {
                 delay: 4000,
                 disableOnInteraction: false,
-            },
-            pagination: {
-                el: '.swiper-pagination',
-                clickable: true,
-                dynamicBullets: true,
-                renderBullet: function (index, className) {
-                    return '<span class="' + className + '"></span>';
-                },
             },
             navigation: {
                 nextEl: '.swiper-button-next',

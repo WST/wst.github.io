@@ -37,38 +37,7 @@
     color: white;
 }
 
-/* Pagination dots */
-.swiper-pagination {
-    position: absolute;
-    bottom: 20px !important;
-    left: 50% !important;
-    transform: translateX(-50%) !important;
-    z-index: 10;
-    display: flex;
-    gap: 8px;
-    align-items: center;
-    justify-content: center;
-}
-
-.swiper-pagination-bullet {
-    width: 10px;
-    height: 10px;
-    background-color: rgba(255,255,255,0.4);
-    cursor: pointer;
-    transition: all 0.3s ease;
-    opacity: 1;
-    border: 1px solid rgba(255,255,255,0.2);
-}
-
-.swiper-pagination-bullet:hover {
-    background-color: rgba(255,255,255,0.6);
-    border-color: rgba(255,255,255,0.4);
-}
-
-.swiper-pagination-bullet-active {
-    background-color: white;
-    border-color: rgba(255,255,255,0.6);
-}
+/* Pagination removed for cleaner interface */
 
 /* Slide transitions */
 .swiper-slide {
