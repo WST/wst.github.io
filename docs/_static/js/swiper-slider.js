@@ -26,6 +26,13 @@ function initializeSwipers() {
     const sliderContainers = document.querySelectorAll('.swiper-slider-container');
     
     sliderContainers.forEach((container, index) => {
+        // Adjust container height for mobile
+        const isMobile = window.innerWidth <= 768;
+        if (isMobile) {
+            container.style.height = 'auto';
+            container.style.maxHeight = '60vh';
+        }
+        
         // Create Swiper structure
         const swiperWrapper = document.createElement('div');
         swiperWrapper.className = 'swiper-wrapper';
