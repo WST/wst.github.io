@@ -626,15 +626,15 @@
         ctx.clearRect(0,0,W,H);
         // food
         drawCell(food.x, food.y, 1);
-        // snake body (same brightness as life)
+        // snake body (brighter than life)
         for (let i=snake.length-1;i>=0;i--){
           const p = snake[i];
           const px = p.x*CELL, py = p.y*CELL;
-          ctx.fillStyle = 'rgba(154,255,179,0.9)';
+          ctx.fillStyle = 'rgba(154,255,179,1.0)';
           ctx.fillRect(px,py,CELL,CELL);
           ctx.fillStyle = 'rgba(0,0,0,0.85)';
           ctx.fillRect(px+1,py+1,Math.max(1,CELL-2),Math.max(1,CELL-2));
-          ctx.fillStyle = 'rgba(154,255,179,0.25)';
+          ctx.fillStyle = 'rgba(154,255,179,0.4)';
           ctx.fillRect(px+1,py+1,Math.max(1,CELL-2),Math.max(1,CELL-2));
         }
       }
