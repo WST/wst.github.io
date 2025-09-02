@@ -115,4 +115,8 @@
 /* Smooth transitions for theme switching */
 a {
     transition: color 0.3s ease, text-shadow 0.3s ease;
-} 
+}
+
+[data-theme="dark"] .wy-side-nav-search {
+    background-color: #012724 !important;
+}
