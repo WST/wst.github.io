@@ -1,4 +1,0 @@
-Networking
-==========
-
-This section contains articles about computer networking, protocols, and network administration.

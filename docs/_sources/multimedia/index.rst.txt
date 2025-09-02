@@ -1,8 +1,0 @@
-Multimedia
-==========
-
-.. toctree::
-   :maxdepth: 2
-   :caption: Multimedia Articles:
-
-   fixingmp4

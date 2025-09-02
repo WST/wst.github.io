@@ -1,4 +1,0 @@
-Programming
-===========
-
-This section contains programming guides, tutorials, and best practices for software development.
