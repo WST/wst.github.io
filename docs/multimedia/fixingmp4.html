@@ -104,11 +104,22 @@
 <section id="installing-untrunc">
 <h2>Installing untrunc<a class="headerlink" href="#installing-untrunc" title="Link to this heading"></a></h2>
 <p>On Linux, you can usually install it from your distribution’s repositories or build it from source:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/ponchio/untrunc.git
+<span class="nb">cd</span><span class="w"> </span>untrunc
+make
+</pre></div>
+</div>
 <p>On macOS, you may also be able to use Homebrew:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>brew<span class="w"> </span>install<span class="w"> </span>untrunc
+</pre></div>
+</div>
 </section>
 <section id="using-untrunc">
 <h2>Using untrunc<a class="headerlink" href="#using-untrunc" title="Link to this heading"></a></h2>
 <p>The basic syntax is straightforward:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>untrunc<span class="w"> </span>&lt;reference.mp4&gt;<span class="w"> </span>&lt;broken.mp4&gt;
+</pre></div>
+</div>
 <p>If successful, <code class="docutils literal notranslate"><span class="pre">untrunc</span></code> will produce a playable file called <code class="docutils literal notranslate"><span class="pre">crashed_recording_fixed.mp4</span></code>.</p>
 </section>
 <section id="limitations">

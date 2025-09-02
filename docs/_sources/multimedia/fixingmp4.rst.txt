@@ -17,26 +17,26 @@ Installing untrunc
 
 On Linux, you can usually install it from your distribution’s repositories or build it from source:
 
-.. code-block:
+.. code-block:: bash
 
-	git clone https://github.com/ponchio/untrunc.git
-	cd untrunc
-	make
+   git clone https://github.com/ponchio/untrunc.git
+   cd untrunc
+   make
 
 On macOS, you may also be able to use Homebrew:
 
-.. code-block:
+.. code-block:: bash
 
-	brew install untrunc
+   brew install untrunc
 
 Using untrunc
 -------------
 
 The basic syntax is straightforward:
 
-.. code-block:
+.. code-block:: bash
 
-	untrunc <reference.mp4> <broken.mp4>
+   untrunc <reference.mp4> <broken.mp4>
 
 If successful, ``untrunc`` will produce a playable file called ``crashed_recording_fixed.mp4``.
 
