@@ -1,0 +1,119 @@
+/* Dark theme link customization for hacker vibe */
+
+/* Dark mode link colors - Hacker Green (only for content) */
+/* General links - keeping sidebar default */
+[data-theme="dark"] a {
+    color: inherit;
+    transition: color 0.3s ease;
+}
+
+[data-theme="dark"] a:hover {
+    color: inherit;
+    text-shadow: none;
+}
+
+[data-theme="dark"] a:visited {
+    color: inherit;
+}
+
+[data-theme="dark"] a:active {
+    color: inherit;
+}
+
+/* Dark mode link colors for specific elements - keeping sidebar default */
+/* Sidebar links keep default dark theme colors */
+[data-theme="dark"] .wy-menu-vertical a {
+    color: inherit;
+}
+
+[data-theme="dark"] .wy-menu-vertical a:hover {
+    color: inherit;
+    text-shadow: none;
+}
+
+[data-theme="dark"] .wy-breadcrumbs a {
+    color: inherit;
+}
+
+[data-theme="dark"] .wy-breadcrumbs a:hover {
+    color: inherit;
+    text-shadow: none;
+}
+
+[data-theme="dark"] .wy-nav-side a {
+    color: inherit;
+}
+
+[data-theme="dark"] .wy-nav-side a:hover {
+    color: inherit;
+    text-shadow: none;
+}
+
+/* Dark mode link colors for content */
+[data-theme="dark"] .document a {
+    color: #66ab5f !important;
+}
+
+[data-theme="dark"] .document a:hover {
+    color: #7bc069 !important;
+    text-shadow: 0 0 5px rgba(102, 171, 95, 0.3);
+}
+
+/* Dark mode link colors for navigation */
+[data-theme="dark"] .wy-nav-content a {
+    color: #66ab5f !important;
+}
+
+[data-theme="dark"] .wy-nav-content a:hover {
+    color: #7bc069 !important;
+    text-shadow: 0 0 5px rgba(102, 171, 95, 0.3);
+}
+
+/* Dark mode link colors for footer */
+[data-theme="dark"] footer a {
+    color: #66ab5f !important;
+}
+
+[data-theme="dark"] footer a:hover {
+    color: #7bc069 !important;
+    text-shadow: 0 0 3px rgba(102, 171, 95, 0.4);
+}
+
+/* Dark mode link colors for code blocks */
+[data-theme="dark"] .highlight a {
+    color: #66ab5f !important;
+}
+
+[data-theme="dark"] .highlight a:hover {
+    color: #7bc069 !important;
+    text-shadow: 0 0 3px rgba(102, 171, 95, 0.4);
+}
+
+/* Dark mode link colors for tables */
+[data-theme="dark"] table a {
+    color: #66ab5f !important;
+}
+
+[data-theme="dark"] table a:hover {
+    color: #7bc069 !important;
+    text-shadow: 0 0 3px rgba(102, 171, 95, 0.4);
+}
+
+/* Ensure light theme uses default RTD colors */
+[data-theme="light"] a {
+    color: inherit;
+}
+
+[data-theme="light"] a:hover {
+    color: inherit;
+    text-shadow: none;
+}
+
+[data-theme="light"] a:visited {
+    color: inherit;
+}
+
+/* Smooth transitions for theme switching */
+a {
+    transition: color 0.3s ease, text-shadow 0.3s ease;
+} 
