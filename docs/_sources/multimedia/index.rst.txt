@@ -3,6 +3,6 @@ Multimedia
 
 .. toctree::
    :maxdepth: 2
-   :caption: Hardware Articles:
+   :caption: Multimedia Articles:
 
    fixingmp4
