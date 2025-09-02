@@ -1,0 +1,55 @@
+Recovering Broken Video Files
+=============================
+
+Imagine this: you’re recording an MP4 video using some app or device, and suddenly it crashes. Or maybe the device freezes. You check your file afterward and—disaster!—your precious video won’t open in any player. Sound familiar?
+
+This is where a little utility called ``untrunc`` comes in handy. It’s a command-line tool that can breathe life back into corrupted MP4 and MOV files. I’ve personally used it to salvage footage I thought was lost forever.
+
+How untrunc Works
+-----------------
+
+When an MP4 file is written, metadata (the so-called *moov atom*) is usually saved at the end of the file. If the recording stops abruptly, that metadata is never finalized—leaving you with a “body” of video data but no “table of contents” to explain how to play it.
+
+``untrunc`` fixes this by borrowing the metadata structure from a *healthy reference file* recorded with the same codec and settings. It then rebuilds the broken file using that structure.
+
+Installing untrunc
+------------------
+
+On Linux, you can usually install it from your distribution’s repositories or build it from source:
+
+.. code-block:
+
+	git clone https://github.com/ponchio/untrunc.git
+	cd untrunc
+	make
+
+On macOS, you may also be able to use Homebrew:
+
+.. code-block:
+
+	brew install untrunc
+
+Using untrunc
+-------------
+
+The basic syntax is straightforward:
+
+.. code-block:
+
+	untrunc <reference.mp4> <broken.mp4>
+
+If successful, ``untrunc`` will produce a playable file called ``crashed_recording_fixed.mp4``.
+
+Limitations
+-----------
+
+* You need a reference file from the same device/app — it’s vital!
+* Very badly corrupted files may not be recoverable.
+* Audio can sometimes desync if settings don’t perfectly match.
+
+Final Thoughts
+--------------
+
+I like to think of untrunc as a defibrillator for broken MP4s: it doesn’t always work, but when it does, it feels like pure magic. If you’re recording something important, it’s worth keeping a “reference clip” handy just in case.
+
+Next time your device betrays you mid-recording, don’t panic. Fire up untrunc—you might just save the day.

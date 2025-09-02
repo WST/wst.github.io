@@ -44,7 +44,8 @@ Existing adapters
 
 Alternatively, you can use a DIN-5 to PS/2 adapter.
 
-.. image:: /_static/images/full_din-ps2.jpg
+.. image:: /_static/images/full_din-ps2.png
+   :width: 320px
 
 Cool modern keyboards
 ---------------------
@@ -56,3 +57,33 @@ That being said, there are some modern (mechanical!) keyboards that are still co
    <div class="swiper-slider-container" style="width: 100%; height: 480px; margin: 20px 0;">
        <img src="/docs/_static/images/newkbs/1.jpg" alt="Modern keyboard 1">
    </div>
+
+Some keyboards are already very good right out of the box. An example is Leopold FC900R BT, which I also can recommend for buying.
+
+The switches I can recommend
+----------------------------
+
+These are just some examples. There are a lot of other possible choices!
+
+* Cherry MX Red (linear)
+* Gateron Yellow (linear)
+* Cherry MX Brown (light-tactile)
+* Cherry MX Blue (clicky)
+* Gateron Melodic (clicky)
+* Kailh Box Navy (clicky)
+
+I don’t recommend cheap Akko switches, because I often experienced switch bounce (unstable work) with them. However, many Akko keyboards themselves are pretty good and can be used as a base.
+
+The keycaps I can recommend
+---------------------------
+
+These are just some examples. There are a lot of other possible choices!
+
+* `Keebox Shenpo cyrillic <https://www.ebay.com/itm/405557225467>`_
+
+Wait, what?
+-----------
+
+Wait a second — you call yourself a keyboard enthusiast, and yet you’re using the most “ordinary” keyboards? That’s it, exactly! I see tons of discussions claiming that a keyboard must be split, that the rows absolutely shouldn’t be staggered, some folks even go all in and make the halves tilted, which they swear is the ultimate ergonomic solution. These people love telling anyone who sticks to the classic form factor: “I’ll look at you in 10 years and see what your hands look like then”.
+
+As for me, I find that kind of reasoning naïve and silly, and honestly, I’d be far more curious (and a bit smug about it) to see *their* hands in those very same 10 years. 😊

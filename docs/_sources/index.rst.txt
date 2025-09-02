@@ -15,6 +15,7 @@ This documentation is organized into the following sections:
    :caption: Contents:
 
    networking/index
+   multimedia/index
    programming/index
    hardware/index
    diy/index
