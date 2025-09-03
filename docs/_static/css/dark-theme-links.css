@@ -125,6 +125,6 @@ a {
     background-color: #012724 !important;
 }
 
-[data-theme="dark"] .wy-menu-vertical header, .wy-menu-vertical p.caption {
+[data-theme="dark"] .wy-menu-vertical p.caption {
     color: #66ab5f !important;
 }
