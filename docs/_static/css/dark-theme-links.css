@@ -1,5 +1,14 @@
 /* Dark theme link customization for hacker vibe */
 
+/* Fix macOS bounce scrolling white background in dark mode */
+[data-theme="dark"] body {
+    background-color: #1a1a1a !important;
+}
+
+[data-theme="dark"] html {
+    background-color: #1a1a1a !important;
+}
+
 /* Dark mode link colors - Hacker Green (only for content) */
 /* General links - keeping sidebar default */
 [data-theme="dark"] a {
