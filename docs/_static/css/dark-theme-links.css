@@ -9,6 +9,18 @@
     background-color: #1a1a1a !important;
 }
 
+/* Fix iPhone status bar color in dark mode */
+[data-theme="dark"] {
+    color-scheme: dark;
+}
+
+/* PWA status bar styling for dark mode */
+@media (display-mode: standalone) {
+    [data-theme="dark"] {
+        --status-bar-color: #1a1a1a;
+    }
+}
+
 /* Dark mode admonition blocks - Hacker Green theme */
 [data-theme="dark"] .rst-content .admonition,
 [data-theme="dark"] .rst-content .note,

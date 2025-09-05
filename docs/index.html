@@ -10,7 +10,7 @@
       <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=b86133f3" />
       <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=e59714d7" />
       <link rel="stylesheet" type="text/css" href="_static/css/swiper-custom.css?v=e840cbaf" />
-      <link rel="stylesheet" type="text/css" href="_static/css/dark-theme-links.css?v=4ba6ddce" />
+      <link rel="stylesheet" type="text/css" href="_static/css/dark-theme-links.css?v=89753a97" />
       <link rel="stylesheet" type="text/css" href="_static/dark_mode_css/general.css?v=c0a7eb24" />
       <link rel="stylesheet" type="text/css" href="_static/dark_mode_css/dark.css?v=70edf1c7" />
 
@@ -26,7 +26,44 @@
     <script src="_static/js/theme.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Networking" href="networking/index.html" /> 
+    <link rel="next" title="Networking" href="networking/index.html" />
+ 
+<!-- Dynamic status bar color based on theme -->
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    function updateStatusBarColor() {
+        const isDark = document.documentElement.getAttribute('data-theme') === 'dark';
+        const statusBarMeta = document.querySelector('meta[name="apple-mobile-web-app-status-bar-style"]');
+        
+        if (statusBarMeta) {
+            statusBarMeta.content = isDark ? 'black-translucent' : 'default';
+        } else {
+            const meta = document.createElement('meta');
+            meta.name = 'apple-mobile-web-app-status-bar-style';
+            meta.content = isDark ? 'black-translucent' : 'default';
+            document.head.appendChild(meta);
+        }
+    }
+    
+    // Update on page load
+    updateStatusBarColor();
+    
+    // Update when theme changes
+    const observer = new MutationObserver(function(mutations) {
+        mutations.forEach(function(mutation) {
+            if (mutation.type === 'attributes' && mutation.attributeName === 'data-theme') {
+                updateStatusBarColor();
+            }
+        });
+    });
+    
+    observer.observe(document.documentElement, {
+        attributes: true,
+        attributeFilter: ['data-theme']
+    });
+});
+</script>
+
 </head>
 
 <body class="wy-body-for-nav"> 
