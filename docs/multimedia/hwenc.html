@@ -141,7 +141,7 @@
 <li><p><code class="docutils literal notranslate"><span class="pre">-maxrate</span> <span class="pre">20M</span></code> — maximum instantaneous bitrate.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">-bufsize</span> <span class="pre">40M</span></code> — buffer size for rate control.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">-c:a</span> <span class="pre">copy</span></code> — copies the audio stream without re‑encoding.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">-movflags</span> <span class="pre">+faststartq</span></code> — rearranges MP4 atoms for faster streaming.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">-movflags</span> <span class="pre">+faststart</span></code> — rearranges MP4 atoms for faster streaming.</p></li>
 </ul>
 </section>
 <section id="cpu-only-example">
@@ -202,7 +202,7 @@
 <span class="w">  </span>-vf<span class="w"> </span><span class="s2">&quot;scale=1920:-2:flags=bicubic&quot;</span><span class="w"> </span><span class="se">\</span>
 <span class="w">  </span>-c:v<span class="w"> </span>libx264<span class="w"> </span>-preset<span class="w"> </span>slow<span class="w"> </span>-crf<span class="w"> </span><span class="m">18</span><span class="w"> </span><span class="se">\</span>
 <span class="w">  </span>-c:a<span class="w"> </span>copy<span class="w"> </span><span class="se">\</span>
-<span class="w">  </span>-movflags<span class="w"> </span>+faststart<span class="p">&amp;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-movflags<span class="w"> </span>+faststart<span class="w"> </span><span class="se">\</span>
 <span class="w">  </span><span class="s2">&quot;SomeVideo-FullHD.mp4&quot;</span>
 </pre></div>
 </div>
