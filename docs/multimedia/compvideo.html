@@ -1,0 +1,422 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Introduction to Computer Video &mdash; Knowledge Base  documentation</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=e59714d7" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/swiper-custom.css?v=e840cbaf" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/dark-theme-links.css?v=4ba6ddce" />
+      <link rel="stylesheet" type="text/css" href="../_static/dark_mode_css/general.css?v=c0a7eb24" />
+      <link rel="stylesheet" type="text/css" href="../_static/dark_mode_css/dark.css?v=70edf1c7" />
+
+  
+      <script src="../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../_static/documentation_options.js?v=7f41d439"></script>
+      <script src="../_static/doctools.js?v=9bcbadda"></script>
+      <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+      <script src="../_static/js/swiper-slider.js?v=0cf9069e"></script>
+      <script src="../_static/dark_mode_js/default_dark.js?v=fd565c74"></script>
+      <script src="../_static/dark_mode_js/theme_switcher.js?v=358d3910"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Recovering Broken Video Files" href="fixingmp4.html" />
+    <link rel="prev" title="Multimedia" href="index.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            Knowledge Base
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../networking/index.html">Networking</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Multimedia</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Introduction to Computer Video</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#the-challenge-of-digital-video">The Challenge of Digital Video</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#video-containers-and-codecs">Video Containers and Codecs</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#example-remuxing-between-containers-without-re-encoding">Example: Remuxing between containers without re-encoding</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#video-compression-fundamentals">Video Compression Fundamentals</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#lossy-vs-lossless-compression">Lossy vs. Lossless Compression</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#color-depth-and-bit-depth">Color Depth and Bit Depth</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#chroma-subsampling">Chroma Subsampling</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#example-converting-between-color-formats">Example: Converting between color formats</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#professional-video-formats">Professional Video Formats</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#apple-prores">Apple ProRes</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#logarithmic-color-profiles">Logarithmic Color Profiles</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#color-grading-log-footage">Color Grading Log Footage</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#modern-video-codecs">Modern Video Codecs</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#example-comparing-codec-efficiency">Example: Comparing codec efficiency</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#streaming-and-adaptive-bitrate">Streaming and Adaptive Bitrate</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#example-creating-adaptive-bitrate-streams">Example: Creating adaptive bitrate streams</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="fixingmp4.html">Recovering Broken Video Files</a></li>
+<li class="toctree-l2"><a class="reference internal" href="hwenc.html">Hardware Video Encoding</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../programming/index.html">Programming</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../server/index.html">Server Management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../hardware/index.html">Computer Hardware</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../diy/index.html">DIY Projects</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Knowledge Base</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="index.html">Multimedia</a></li>
+      <li class="breadcrumb-item active">Introduction to Computer Video</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="introduction-to-computer-video">
+<h1>Introduction to Computer Video<a class="headerlink" href="#introduction-to-computer-video" title="Link to this heading"></a></h1>
+<p>Video has become the dominant form of digital content in our modern world. From streaming platforms and social media to professional filmmaking and video conferencing, digital video technology touches nearly every aspect of our daily lives. Understanding the fundamentals of computer video is essential for anyone working with digital media, whether you’re a content creator, developer, or simply a curious technology enthusiast.</p>
+<p>This comprehensive guide will take you through the essential concepts of computer video, from the basic building blocks to advanced professional workflows. We’ll explore how video data is stored, compressed, and processed, and examine the tools and techniques that make modern digital video possible.</p>
+<section id="the-challenge-of-digital-video">
+<h2>The Challenge of Digital Video<a class="headerlink" href="#the-challenge-of-digital-video" title="Link to this heading"></a></h2>
+<p>Digital video presents a unique challenge: raw, uncompressed video data is enormous. At its core, video is simply a sequence of photographs (called frames) displayed rapidly to create the illusion of motion. This fundamental nature of video—being essentially thousands of individual images—is what creates the storage and bandwidth challenge. Consider a single frame of 4K video at 24 frames per second:</p>
+<ul class="simple">
+<li><p><strong>Resolution</strong>: 3840 × 2160 pixels</p></li>
+<li><p><strong>Color depth</strong>: 8 bits per channel (RGB)</p></li>
+<li><p><strong>Frame size</strong>: 3840 × 2160 × 3 = 24,883,200 bytes ≈ 24.9 MB per frame</p></li>
+<li><p><strong>Data rate</strong>: 24.9 MB × 24 fps = 597.6 MB per second</p></li>
+<li><p><strong>One minute</strong>: 597.6 MB × 60 = 35.8 GB per minute</p></li>
+</ul>
+<p>Even a short 10-second clip would require nearly 6 GB of storage in uncompressed form. This is why video compression is not just important—it’s absolutely essential for practical digital video applications. Imagine trying to stream a movie without compression: you’d need to download over 2 terabytes of data for a typical 2-hour film!</p>
+</section>
+<section id="video-containers-and-codecs">
+<h2>Video Containers and Codecs<a class="headerlink" href="#video-containers-and-codecs" title="Link to this heading"></a></h2>
+<p>Understanding the difference between containers and codecs is fundamental to working with digital video.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p><strong>Container</strong> (also called wrapper or format) is a file format that can hold multiple types of data: video streams, audio streams, subtitles and captions, metadata, and chapter information.</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p><strong>Codec</strong> (coder-decoder) is an algorithm that compresses and decompresses video and audio data. The codec determines how the actual video/audio data is stored within the container.</p>
+</div>
+<p>Common containers include:</p>
+<ul class="simple">
+<li><p><strong>MP4</strong> — Most widely supported, good for web delivery</p></li>
+<li><p><strong>MKV</strong> — Open source, supports almost any codec</p></li>
+<li><p><strong>MOV</strong> — Apple’s QuickTime format</p></li>
+<li><p><strong>AVI</strong> — Older Windows format, limited codec support</p></li>
+<li><p><strong>WebM</strong> — Open web standard, good for streaming</p></li>
+</ul>
+<section id="example-remuxing-between-containers-without-re-encoding">
+<h3>Example: Remuxing between containers without re-encoding<a class="headerlink" href="#example-remuxing-between-containers-without-re-encoding" title="Link to this heading"></a></h3>
+<p>You can change the container format without re-encoding the video, which is much faster and preserves quality:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Convert from MKV to MP4 without re-encoding</span>
+ffmpeg<span class="w"> </span>-i<span class="w"> </span>input.mkv<span class="w"> </span>-c<span class="w"> </span>copy<span class="w"> </span>output.mp4
+
+<span class="c1"># Convert from AVI to MP4 without re-encoding</span>
+ffmpeg<span class="w"> </span>-i<span class="w"> </span>input.avi<span class="w"> </span>-c<span class="w"> </span>copy<span class="w"> </span>output.mp4
+
+<span class="c1"># Extract video and audio streams to separate files</span>
+ffmpeg<span class="w"> </span>-i<span class="w"> </span>input.mp4<span class="w"> </span>-c:v<span class="w"> </span>copy<span class="w"> </span>-an<span class="w"> </span>video_only.mp4
+ffmpeg<span class="w"> </span>-i<span class="w"> </span>input.mp4<span class="w"> </span>-c:a<span class="w"> </span>copy<span class="w"> </span>-vn<span class="w"> </span>audio_only.aac
+</pre></div>
+</div>
+</section>
+</section>
+<section id="video-compression-fundamentals">
+<h2>Video Compression Fundamentals<a class="headerlink" href="#video-compression-fundamentals" title="Link to this heading"></a></h2>
+<p>Video compression works by exploiting spatial and temporal redundancy in video data:</p>
+<p><strong>Spatial compression</strong> reduces redundancy within individual frames by:</p>
+<ul class="simple">
+<li><p>Converting RGB to YUV color space</p></li>
+<li><p>Applying discrete cosine transform (DCT)</p></li>
+<li><p>Quantizing frequency coefficients</p></li>
+<li><p>Using entropy coding</p></li>
+</ul>
+<p><strong>Temporal compression</strong> reduces redundancy between frames by:</p>
+<ul class="simple">
+<li><p>Motion estimation and compensation</p></li>
+<li><p>Inter-frame prediction</p></li>
+<li><p>Keyframe (I-frame) insertion</p></li>
+<li><p>Delta frame (P-frame and B-frame) encoding</p></li>
+</ul>
+<section id="lossy-vs-lossless-compression">
+<h3>Lossy vs. Lossless Compression<a class="headerlink" href="#lossy-vs-lossless-compression" title="Link to this heading"></a></h3>
+<p><strong>Lossy compression</strong> permanently removes data to achieve smaller file sizes:</p>
+<ul class="simple">
+<li><p>Irreversible quality loss</p></li>
+<li><p>Much higher compression ratios</p></li>
+<li><p>Used in most consumer applications</p></li>
+<li><p>Examples: H.264, H.265, VP9, AV1</p></li>
+</ul>
+<p><strong>Lossless compression</strong> preserves all original data:</p>
+<ul class="simple">
+<li><p>No quality loss</p></li>
+<li><p>Lower compression ratios</p></li>
+<li><p>Used in professional workflows</p></li>
+<li><p>Examples: FFV1, Huffyuv, Apple ProRes 4444</p></li>
+</ul>
+</section>
+</section>
+<section id="color-depth-and-bit-depth">
+<h2>Color Depth and Bit Depth<a class="headerlink" href="#color-depth-and-bit-depth" title="Link to this heading"></a></h2>
+<p>Color depth (bit depth) determines how many colors can be represented and affects both quality and file size.</p>
+<p><strong>8-bit color</strong> (most common):</p>
+<ul class="simple">
+<li><p>256 levels per color channel</p></li>
+<li><p>16.7 million total colors</p></li>
+<li><p>Standard for web and consumer video</p></li>
+<li><p>Compatible with most displays</p></li>
+</ul>
+<p><strong>10-bit color</strong> (professional):</p>
+<ul class="simple">
+<li><p>1,024 levels per color channel</p></li>
+<li><p>1.07 billion total colors</p></li>
+<li><p>Better gradient representation</p></li>
+<li><p>Used in HDR content and professional workflows</p></li>
+</ul>
+<p>You’ve probably encountered videos on YouTube or Instagram that appear significantly brighter than others—brighter even than the pure white color in the app’s interface! This is 10-bit HDR video in action, showcasing the dramatic difference that higher bit depth can make.</p>
+<p><strong>12-bit and higher</strong> (cinema):</p>
+<ul class="simple">
+<li><p>4,096+ levels per color channel</p></li>
+<li><p>Used in high-end cinema cameras</p></li>
+<li><p>Requires specialized hardware and software</p></li>
+</ul>
+</section>
+<section id="chroma-subsampling">
+<h2>Chroma Subsampling<a class="headerlink" href="#chroma-subsampling" title="Link to this heading"></a></h2>
+<p>Chroma subsampling reduces color information to save bandwidth while maintaining acceptable visual quality.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p><strong>Chroma subsampling</strong> is a technique that reduces color information to save bandwidth while maintaining acceptable visual quality. Common formats include 4:4:4 (no subsampling), 4:2:2 (2:1 horizontal subsampling), and 4:2:0 (2:1 horizontal and vertical subsampling).</p>
+</div>
+<p><strong>4:4:4</strong> — No subsampling:</p>
+<ul class="simple">
+<li><p>Full color resolution</p></li>
+<li><p>Used in professional workflows</p></li>
+<li><p>Larger file sizes</p></li>
+</ul>
+<p><strong>4:2:2</strong> — 2:1 horizontal subsampling:</p>
+<ul class="simple">
+<li><p>Good balance of quality and efficiency</p></li>
+<li><p>Common in professional video</p></li>
+<li><p>Used by many broadcast standards</p></li>
+</ul>
+<p><strong>4:2:0</strong> — 2:1 horizontal and vertical subsampling:</p>
+<ul class="simple">
+<li><p>Most common in consumer video</p></li>
+<li><p>Significant bandwidth savings</p></li>
+<li><p>Standard for web video and streaming</p></li>
+</ul>
+<p>This is why your favorite streaming service can deliver high-quality video even on slower internet connections—the clever reduction of color information allows for much smaller file sizes while maintaining visual quality that’s perfectly acceptable for most viewers.</p>
+<section id="example-converting-between-color-formats">
+<h3>Example: Converting between color formats<a class="headerlink" href="#example-converting-between-color-formats" title="Link to this heading"></a></h3>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Convert to 10-bit H.264 with 4:2:2 chroma subsampling</span>
+ffmpeg<span class="w"> </span>-i<span class="w"> </span>input.mp4<span class="w"> </span>-c:v<span class="w"> </span>libx264<span class="w"> </span>-pix_fmt<span class="w"> </span>yuv422p10le<span class="w"> </span>-crf<span class="w"> </span><span class="m">18</span><span class="w"> </span>output.mp4
+
+<span class="c1"># Convert to 8-bit with 4:2:0 subsampling (web standard)</span>
+ffmpeg<span class="w"> </span>-i<span class="w"> </span>input.mp4<span class="w"> </span>-c:v<span class="w"> </span>libx264<span class="w"> </span>-pix_fmt<span class="w"> </span>yuv420p<span class="w"> </span>-crf<span class="w"> </span><span class="m">23</span><span class="w"> </span>output.mp4
+
+<span class="c1"># Check pixel format of existing video</span>
+ffprobe<span class="w"> </span>-v<span class="w"> </span>quiet<span class="w"> </span>-select_streams<span class="w"> </span>v:0<span class="w"> </span>-show_entries<span class="w"> </span><span class="nv">stream</span><span class="o">=</span>pix_fmt<span class="w"> </span>-of<span class="w"> </span><span class="nv">csv</span><span class="o">=</span><span class="nv">p</span><span class="o">=</span><span class="m">0</span><span class="w"> </span>input.mp4
+</pre></div>
+</div>
+</section>
+</section>
+<section id="professional-video-formats">
+<h2>Professional Video Formats<a class="headerlink" href="#professional-video-formats" title="Link to this heading"></a></h2>
+<p>Professional video workflows often use specialized formats designed for high quality and efficient processing.</p>
+<section id="apple-prores">
+<h3>Apple ProRes<a class="headerlink" href="#apple-prores" title="Link to this heading"></a></h3>
+<p>Apple ProRes is a family of professional video codecs designed for post-production workflows:</p>
+<ul class="simple">
+<li><p><strong>ProRes 422 Proxy</strong> — Low bitrate, good for offline editing</p></li>
+<li><p><strong>ProRes 422 LT</strong> — Light version, good for online editing</p></li>
+<li><p><strong>ProRes 422</strong> — Standard version, balanced quality/size</p></li>
+<li><p><strong>ProRes 422 HQ</strong> — High quality version</p></li>
+<li><p><strong>ProRes 4444</strong> — Lossless, supports alpha channel</p></li>
+<li><p><strong>ProRes 4444 XQ</strong> — Highest quality, 12-bit support</p></li>
+</ul>
+</section>
+</section>
+<section id="logarithmic-color-profiles">
+<h2>Logarithmic Color Profiles<a class="headerlink" href="#logarithmic-color-profiles" title="Link to this heading"></a></h2>
+<p>Logarithmic (log) color profiles are designed to capture more dynamic range and provide better color grading flexibility in post-production.</p>
+<p><strong>What is Log?</strong></p>
+<ul class="simple">
+<li><p>Non-linear color encoding that mimics film response</p></li>
+<li><p>Preserves more highlight and shadow detail</p></li>
+<li><p>Requires color grading to look “normal”</p></li>
+<li><p>Used in professional cameras and workflows</p></li>
+</ul>
+<p><strong>Common Log formats:</strong></p>
+<ul class="simple">
+<li><p><strong>S-Log</strong> (Sony)</p></li>
+<li><p><strong>C-Log</strong> (Canon)</p></li>
+<li><p><strong>V-Log</strong> (Panasonic)</p></li>
+<li><p><strong>Log-C</strong> (ARRI)</p></li>
+<li><p><strong>Apple Log</strong> (Apple)</p></li>
+</ul>
+<section id="color-grading-log-footage">
+<h3>Color Grading Log Footage<a class="headerlink" href="#color-grading-log-footage" title="Link to this heading"></a></h3>
+<p>Log footage appears flat and desaturated and requires color grading to achieve the desired look. If you’ve ever seen behind-the-scenes footage from a movie set, you might have noticed how “washed out” and gray the raw footage looks—this is Log in action, preserving all the detail for later color grading. Professional color grading is typically performed using specialized software such as DaVinci Resolve Studio or Final Cut Pro. These applications provide advanced tools for applying Look-Up Tables (LUTs), manual color correction using curves and wheels, converting between different color spaces, and working with HDR content.</p>
+</section>
+</section>
+<section id="modern-video-codecs">
+<h2>Modern Video Codecs<a class="headerlink" href="#modern-video-codecs" title="Link to this heading"></a></h2>
+<p>The video codec landscape continues to evolve, with new formats offering better compression efficiency.</p>
+<p><strong>H.264 (AVC)</strong> — Still widely used:</p>
+<ul class="simple">
+<li><p>Excellent compatibility</p></li>
+<li><p>Good compression efficiency</p></li>
+<li><p>Hardware acceleration widely available</p></li>
+<li><p>Standard for web video</p></li>
+</ul>
+<p><strong>H.265 (HEVC)</strong> — Next generation:</p>
+<ul class="simple">
+<li><p>50% better compression than H.264</p></li>
+<li><p>Better HDR support</p></li>
+<li><p>More complex encoding/decoding</p></li>
+<li><p>Patent licensing issues</p></li>
+</ul>
+<p><strong>VP9</strong> — Google’s open codec:</p>
+<ul class="simple">
+<li><p>Royalty-free</p></li>
+<li><p>Good compression efficiency</p></li>
+<li><p>Limited hardware support (i.e it just hangs on iPhone in Telegram app)</p></li>
+<li><p>Used by YouTube</p></li>
+</ul>
+<p>You might have noticed that some YouTube videos take longer to load or stutter on certain devices—this is often due to VP9’s limited hardware acceleration support, forcing the device to decode the video using software, which is much more demanding on the processor.</p>
+<p><strong>AV1</strong> — Next-generation open codec:</p>
+<ul class="simple">
+<li><p>Best compression efficiency</p></li>
+<li><p>Royalty-free</p></li>
+<li><p>Growing hardware support</p></li>
+<li><p>Future of web video</p></li>
+</ul>
+<section id="example-comparing-codec-efficiency">
+<h3>Example: Comparing codec efficiency<a class="headerlink" href="#example-comparing-codec-efficiency" title="Link to this heading"></a></h3>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># H.264 encoding</span>
+ffmpeg<span class="w"> </span>-i<span class="w"> </span>input.mp4<span class="w"> </span>-c:v<span class="w"> </span>libx264<span class="w"> </span>-crf<span class="w"> </span><span class="m">23</span><span class="w"> </span>-preset<span class="w"> </span>medium<span class="w"> </span>output_h264.mp4
+
+<span class="c1"># H.265 encoding (better compression)</span>
+ffmpeg<span class="w"> </span>-i<span class="w"> </span>input.mp4<span class="w"> </span>-c:v<span class="w"> </span>libx265<span class="w"> </span>-crf<span class="w"> </span><span class="m">28</span><span class="w"> </span>-preset<span class="w"> </span>medium<span class="w"> </span>output_h265.mp4
+
+<span class="c1"># VP9 encoding (open source)</span>
+ffmpeg<span class="w"> </span>-i<span class="w"> </span>input.mp4<span class="w"> </span>-c:v<span class="w"> </span>libvpx-vp9<span class="w"> </span>-crf<span class="w"> </span><span class="m">30</span><span class="w"> </span>-b:v<span class="w"> </span><span class="m">0</span><span class="w"> </span>output_vp9.webm
+
+<span class="c1"># AV1 encoding (best compression)</span>
+ffmpeg<span class="w"> </span>-i<span class="w"> </span>input.mp4<span class="w"> </span>-c:v<span class="w"> </span>libaom-av1<span class="w"> </span>-crf<span class="w"> </span><span class="m">30</span><span class="w"> </span>-b:v<span class="w"> </span><span class="m">0</span><span class="w"> </span>output_av1.mkv
+</pre></div>
+</div>
+</section>
+</section>
+<section id="streaming-and-adaptive-bitrate">
+<h2>Streaming and Adaptive Bitrate<a class="headerlink" href="#streaming-and-adaptive-bitrate" title="Link to this heading"></a></h2>
+<p>Modern video delivery relies heavily on adaptive bitrate streaming, which adjusts video quality based on available bandwidth.</p>
+<p><strong>Key concepts:</strong></p>
+<ul class="simple">
+<li><p>Multiple quality versions of the same content</p></li>
+<li><p>Automatic switching between qualities</p></li>
+<li><p>Reduced buffering and improved user experience</p></li>
+<li><p>Used by Netflix, YouTube, and other major platforms</p></li>
+</ul>
+<section id="example-creating-adaptive-bitrate-streams">
+<h3>Example: Creating adaptive bitrate streams<a class="headerlink" href="#example-creating-adaptive-bitrate-streams" title="Link to this heading"></a></h3>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Create multiple quality versions</span>
+ffmpeg<span class="w"> </span>-i<span class="w"> </span>input.mp4<span class="w"> </span>-c:v<span class="w"> </span>libx264<span class="w"> </span>-crf<span class="w"> </span><span class="m">23</span><span class="w"> </span>-preset<span class="w"> </span>fast<span class="w"> </span>-s<span class="w"> </span>1920x1080<span class="w"> </span>output_1080p.mp4
+ffmpeg<span class="w"> </span>-i<span class="w"> </span>input.mp4<span class="w"> </span>-c:v<span class="w"> </span>libx264<span class="w"> </span>-crf<span class="w"> </span><span class="m">26</span><span class="w"> </span>-preset<span class="w"> </span>fast<span class="w"> </span>-s<span class="w"> </span>1280x720<span class="w"> </span>output_720p.mp4
+ffmpeg<span class="w"> </span>-i<span class="w"> </span>input.mp4<span class="w"> </span>-c:v<span class="w"> </span>libx264<span class="w"> </span>-crf<span class="w"> </span><span class="m">28</span><span class="w"> </span>-preset<span class="w"> </span>fast<span class="w"> </span>-s<span class="w"> </span>854x480<span class="w"> </span>output_480p.mp4
+
+<span class="c1"># Create HLS playlist for adaptive streaming</span>
+ffmpeg<span class="w"> </span>-i<span class="w"> </span>input.mp4<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-c:v<span class="w"> </span>libx264<span class="w"> </span>-c:a<span class="w"> </span>aac<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-b:v<span class="w"> </span>1000k<span class="w"> </span>-b:a<span class="w"> </span>128k<span class="w"> </span>-s<span class="w"> </span>1280x720<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-f<span class="w"> </span>hls<span class="w"> </span>-hls_time<span class="w"> </span><span class="m">10</span><span class="w"> </span>-hls_playlist_type<span class="w"> </span>vod<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>output_720p.m3u8
+</pre></div>
+</div>
+</section>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="index.html" class="btn btn-neutral float-left" title="Multimedia" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="fixingmp4.html" class="btn btn-neutral float-right" title="Recovering Broken Video Files" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2025, Ilya Averkov.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
