@@ -1,0 +1,275 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Hardware Video Encoding &mdash; Knowledge Base  documentation</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=e59714d7" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/swiper-custom.css?v=e840cbaf" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/dark-theme-links.css?v=713b75f1" />
+      <link rel="stylesheet" type="text/css" href="../_static/dark_mode_css/general.css?v=c0a7eb24" />
+      <link rel="stylesheet" type="text/css" href="../_static/dark_mode_css/dark.css?v=70edf1c7" />
+
+  
+      <script src="../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../_static/documentation_options.js?v=7f41d439"></script>
+      <script src="../_static/doctools.js?v=9bcbadda"></script>
+      <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+      <script src="../_static/js/swiper-slider.js?v=0cf9069e"></script>
+      <script src="../_static/dark_mode_js/default_dark.js?v=fd565c74"></script>
+      <script src="../_static/dark_mode_js/theme_switcher.js?v=358d3910"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Programming" href="../programming/index.html" />
+    <link rel="prev" title="Recovering Broken Video Files" href="fixingmp4.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            Knowledge Base
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../networking/index.html">Networking</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Multimedia</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="fixingmp4.html">Recovering Broken Video Files</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Hardware Video Encoding</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#example-1-linux-bsd-pc">Example 1: Linux/BSD PC</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#flag-explanations">Flag explanations</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#cpu-only-example">CPU-only example</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#encoding-time-benchmark">Encoding time benchmark</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#example-2-macbook-air-m1">Example 2: MacBook Air M1</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id1">Flag explanations</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id2">CPU-only example</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#videotoolbox-codec-support-table-macbook-air-m1">VideoToolbox codec support table (MacBook Air M1)</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../programming/index.html">Programming</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../server/index.html">Server Management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../hardware/index.html">Computer Hardware</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../diy/index.html">DIY Projects</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Knowledge Base</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="index.html">Multimedia</a></li>
+      <li class="breadcrumb-item active">Hardware Video Encoding</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="hardware-video-encoding">
+<h1>Hardware Video Encoding<a class="headerlink" href="#hardware-video-encoding" title="Link to this heading"></a></h1>
+<p>I often encode video. Sometimes these are very large 4K-resolution files that need to be quickly downscaled to 1080p. Transcoding them using only the CPU takes a lot of time. What can we do? A graphics card and hardware acceleration of video operations come to the rescue. Let’s look at a simple example. We have a large, nearly 20‑gigabyte 4K video file. Codec — VP9, color depth — 8 bits per channel (not HDR; HDR is usually 10‑bit color). To transcode it into Full HD (1080p), the following steps are required:</p>
+<ul class="simple">
+<li><p>Decode the source stream into video frames</p></li>
+<li><p>Rescale each frame to the target size</p></li>
+<li><p>Encode the new frame sequence into the target codec</p></li>
+</ul>
+<p>If you use only the CPU for all this, it will inevitably take several hours. Let’s see how we can speed up the process using hardware acceleration.</p>
+<section id="example-1-linux-bsd-pc">
+<h2>Example 1: Linux/BSD PC<a class="headerlink" href="#example-1-linux-bsd-pc" title="Link to this heading"></a></h2>
+<p>On a desktop PC with an NVIDIA GPU (e.g., Core i3-14100F + RTX 4060) and a Linux/BSD operating system with the proprietary NVIDIA driver, you can use CUDA acceleration.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>ffmpeg<span class="w"> </span>-y<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-hwaccel<span class="w"> </span>cuda<span class="w"> </span>-hwaccel_output_format<span class="w"> </span>cuda<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-i<span class="w"> </span><span class="s2">&quot;SomeVideo-4K.webm&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-i<span class="w"> </span><span class="s2">&quot;audio.m4a&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-vf<span class="w"> </span><span class="s2">&quot;scale_cuda=1920:-2&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-c:v<span class="w"> </span>h264_nvenc<span class="w"> </span>-preset<span class="w"> </span>p7<span class="w"> </span>-tune<span class="w"> </span>hq<span class="w"> </span>-profile:v<span class="w"> </span>high<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-rc<span class="w"> </span>vbr<span class="w"> </span>-cq<span class="w"> </span><span class="m">18</span><span class="w"> </span>-b:v<span class="w"> </span><span class="m">0</span><span class="w"> </span>-maxrate<span class="w"> </span>20M<span class="w"> </span>-bufsize<span class="w"> </span>40M<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-c:a<span class="w"> </span>copy<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-movflags<span class="w"> </span>+faststart<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span><span class="s2">&quot;SomeVideo-FullHD.mp4&quot;</span>
+</pre></div>
+</div>
+<section id="flag-explanations">
+<h3>Flag explanations<a class="headerlink" href="#flag-explanations" title="Link to this heading"></a></h3>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">-hwaccel</span> <span class="pre">cuda</span></code> — enables CUDA hardware-accelerated decoding.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">-hwaccel_output_format</span> <span class="pre">cuda</span></code> — outputs decoded frames in a CUDA-friendly format.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">-vf</span> <span class="pre">&quot;scale_cuda=1920:-2&quot;</span></code> — resizes video frames on the GPU, width = 1920, height auto-scaled to even number.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">-c:v</span> <span class="pre">h264_nvenc</span></code> — encode video using NVIDIA’s NVENC H.264 hardware encoder.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">-preset</span> <span class="pre">p7</span></code> — slowest but highest quality preset for NVENC.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">-tune</span> <span class="pre">hq</span></code> — tunes encoder for high quality.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">-profile:v</span> <span class="pre">high</span></code> — H.264 High profile for maximum compatibility.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">-rc</span> <span class="pre">vbr</span></code> — variable bitrate mode.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">-cq</span> <span class="pre">18</span></code> — constant quality factor (lower = better quality).</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">-b:v</span> <span class="pre">0</span></code> — disables strict target bitrate (lets CQ control quality).</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">-maxrate</span> <span class="pre">20M</span></code> — maximum instantaneous bitrate.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">-bufsize</span> <span class="pre">40M</span></code> — buffer size for rate control.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">-c:a</span> <span class="pre">copy</span></code> — copies the audio stream without re‑encoding.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">q-movflags</span> <span class="pre">+faststartq</span></code> — rearranges MP4 atoms for faster streaming.</p></li>
+</ul>
+</section>
+<section id="cpu-only-example">
+<h3>CPU-only example<a class="headerlink" href="#cpu-only-example" title="Link to this heading"></a></h3>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>ffmpeg<span class="w"> </span>-y<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-i<span class="w"> </span><span class="s2">&quot;SomeVideo-4K.webm&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-i<span class="w"> </span><span class="s2">&quot;audio.m4a&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-vf<span class="w"> </span><span class="s2">&quot;scale=1920:-2:flags=bicubic&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-c:v<span class="w"> </span>libx264<span class="w"> </span>-preset<span class="w"> </span>slow<span class="w"> </span>-crf<span class="w"> </span><span class="m">18</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-c:a<span class="w"> </span>copy<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-movflags<span class="w"> </span>+faststart<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span><span class="s2">&quot;SomeVideo-FullHD.mp4&quot;</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>You may have noticed the difference in the <code class="docutils literal notranslate"><span class="pre">-vf</span></code> option value: the CPU example has <code class="docutils literal notranslate"><span class="pre">flags=bicubic</span></code>, while the GPU example doesn’t. This sets the resampling method used while resizing the frames, and the hardware resizers often don’t let you select the resampling method, while the CPU filter allows you to select from <code class="docutils literal notranslate"><span class="pre">bilinear</span></code>, <code class="docutils literal notranslate"><span class="pre">bicubic</span></code>, <code class="docutils literal notranslate"><span class="pre">spline</span></code>, <code class="docutils literal notranslate"><span class="pre">lanczos</span></code> and probably some others.</p>
+</div>
+</section>
+<section id="encoding-time-benchmark">
+<h3>Encoding time benchmark<a class="headerlink" href="#encoding-time-benchmark" title="Link to this heading"></a></h3>
+<ul class="simple">
+<li><p>GPU accelerated: 35 minutes 3 seconds</p></li>
+<li><p>CPU only: 3 hours 18 minutes 35 seconds</p></li>
+</ul>
+</section>
+</section>
+<section id="example-2-macbook-air-m1">
+<h2>Example 2: MacBook Air M1<a class="headerlink" href="#example-2-macbook-air-m1" title="Link to this heading"></a></h2>
+<p>Even a MacBook Air M1 contains hardware acceleration for video.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>ffmpeg<span class="w"> </span>-y<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-hwaccel<span class="w"> </span>videotoolbox<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-i<span class="w"> </span><span class="s2">&quot;SomeVideo-4K.webm&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-i<span class="w"> </span><span class="s2">&quot;audio.m4a&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-vf<span class="w"> </span><span class="s2">&quot;scale_videotoolbox=1920:-2:flags=bicubic&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-c:v<span class="w"> </span>h264_videotoolbox<span class="w"> </span>-b:v<span class="w"> </span>10M<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-c:a<span class="w"> </span>copy<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-movflags<span class="w"> </span>+faststart<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span><span class="s2">&quot;SomeVideo-FullHD.mp4&quot;</span>
+</pre></div>
+</div>
+<section id="id1">
+<h3>Flag explanations<a class="headerlink" href="#id1" title="Link to this heading"></a></h3>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">-hwaccel</span> <span class="pre">videotoolbox</span></code> — enables Apple VideoToolbox hardware decoding.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">-vf</span> <span class="pre">&quot;scale_videotoolbox=1920:-2:flags=bicubic&quot;</span></code> — scales using VideoToolbox hardware (if supported).</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">-c:v</span> <span class="pre">h264_videotoolbox</span></code> — encodes video using Apple’s VideoToolbox H.264 encoder.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">-b:v</span> <span class="pre">10M</span></code> — sets target bitrate to 10 Mbps.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">-c:a</span> <span class="pre">copy</span></code> — copies the audio stream without re‑encoding.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">-movflags</span> <span class="pre">+faststart</span></code> — rearranges MP4 atoms for faster streaming.</p></li>
+</ul>
+</section>
+<section id="id2">
+<h3>CPU-only example<a class="headerlink" href="#id2" title="Link to this heading"></a></h3>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>ffmpeg<span class="w"> </span>-y<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-i<span class="w"> </span><span class="s2">&quot;SomeVideo-4K.webm&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-i<span class="w"> </span><span class="s2">&quot;audio.m4a&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-vf<span class="w"> </span><span class="s2">&quot;scale=1920:-2:flags=bicubic&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-c:v<span class="w"> </span>libx264<span class="w"> </span>-preset<span class="w"> </span>slow<span class="w"> </span>-crf<span class="w"> </span><span class="m">18</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-c:a<span class="w"> </span>copy<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-movflags<span class="w"> </span>+faststart<span class="p">&amp;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span><span class="s2">&quot;SomeVideo-FullHD.mp4&quot;</span>
+</pre></div>
+</div>
+</section>
+<section id="videotoolbox-codec-support-table-macbook-air-m1">
+<h3>VideoToolbox codec support table (MacBook Air M1)<a class="headerlink" href="#videotoolbox-codec-support-table-macbook-air-m1" title="Link to this heading"></a></h3>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Codec</p></th>
+<th class="head"><p>Decode support</p></th>
+<th class="head"><p>Encode support</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>H.264</p></td>
+<td><p>Yes (hardware)</p></td>
+<td><p>Yes (hardware)</p></td>
+</tr>
+<tr class="row-odd"><td><p>HEVC (H.265)</p></td>
+<td><p>Yes (hardware)</p></td>
+<td><p>Yes (hardware)</p></td>
+</tr>
+<tr class="row-even"><td><p>VP9</p></td>
+<td><p>Partial (8-bit only)</p></td>
+<td><p>No</p></td>
+</tr>
+<tr class="row-odd"><td><p>AV1</p></td>
+<td><p>No (M1 only; later
+chips support)</p></td>
+<td><p>No (M1 only; later
+chips support)</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="fixingmp4.html" class="btn btn-neutral float-left" title="Recovering Broken Video Files" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="../programming/index.html" class="btn btn-neutral float-right" title="Programming" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2025, Ilya Averkov.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
