@@ -160,7 +160,6 @@ document.addEventListener('DOMContentLoaded', function() {
   <section id="introduction-to-computer-video">
 <h1>Introduction to Computer Video<a class="headerlink" href="#introduction-to-computer-video" title="Link to this heading"></a></h1>
 <p>Video has become the dominant form of digital content in our modern world. From streaming platforms and social media to professional filmmaking and video conferencing, digital video technology touches nearly every aspect of our daily lives. Understanding the fundamentals of computer video is essential for anyone working with digital media, whether you’re a content creator, developer, or simply a curious technology enthusiast.</p>
-<p>This comprehensive guide will take you through the essential concepts of computer video, from the basic building blocks to advanced professional workflows. We’ll explore how video data is stored, compressed, and processed, and examine the tools and techniques that make modern digital video possible.</p>
 <section id="the-challenge-of-digital-video">
 <h2>The Challenge of Digital Video<a class="headerlink" href="#the-challenge-of-digital-video" title="Link to this heading"></a></h2>
 <p>Digital video presents a unique challenge: raw, uncompressed video data is enormous. At its core, video is simply a sequence of photographs (called frames) displayed rapidly to create the illusion of motion. This fundamental nature of video—being essentially thousands of individual images—is what creates the storage and bandwidth challenge. Consider a single frame of 4K video at 24 frames per second:</p>
@@ -202,8 +201,11 @@ ffmpeg<span class="w"> </span>-i<span class="w"> </span>input.mkv<span class="w"
 ffmpeg<span class="w"> </span>-i<span class="w"> </span>input.avi<span class="w"> </span>-c<span class="w"> </span>copy<span class="w"> </span>output.mp4
 
 <span class="c1"># Extract video and audio streams to separate files</span>
-ffmpeg<span class="w"> </span>-i<span class="w"> </span>input.mp4<span class="w"> </span>-c:v<span class="w"> </span>copy<span class="w"> </span>-an<span class="w"> </span>video_only.mp4
-ffmpeg<span class="w"> </span>-i<span class="w"> </span>input.mp4<span class="w"> </span>-c:a<span class="w"> </span>copy<span class="w"> </span>-vn<span class="w"> </span>audio_only.aac
+ffmpeg<span class="w"> </span>-i<span class="w"> </span>input.mp4<span class="w"> </span>-c:v<span class="w"> </span>copy<span class="w"> </span>-an<span class="w"> </span>video-only.mp4
+ffmpeg<span class="w"> </span>-i<span class="w"> </span>input.mp4<span class="w"> </span>-c:a<span class="w"> </span>copy<span class="w"> </span>-vn<span class="w"> </span>audio-only.aac
+
+<span class="c1"># Combine video and audio into a single file</span>
+ffmpeg<span class="w"> </span>-i<span class="w"> </span>video-only.mp4<span class="w"> </span>-i<span class="w"> </span>audio-only.aac<span class="w"> </span>-c:a<span class="w"> </span>copy<span class="w"> </span>-c:v<span class="w"> </span>copy<span class="w"> </span>output.mp4
 </pre></div>
 </div>
 </section>
@@ -253,7 +255,7 @@ ffmpeg<span class="w"> </span>-i<span class="w"> </span>input.mp4<span class="w"
 <li><p>Standard for web and consumer video</p></li>
 <li><p>Compatible with most displays</p></li>
 </ul>
-<p><strong>10-bit color</strong> (professional):</p>
+<p><strong>10-bit color</strong>:</p>
 <ul class="simple">
 <li><p>1,024 levels per color channel</p></li>
 <li><p>1.07 billion total colors</p></li>
@@ -261,7 +263,7 @@ ffmpeg<span class="w"> </span>-i<span class="w"> </span>input.mp4<span class="w"
 <li><p>Used in HDR content and professional workflows</p></li>
 </ul>
 <p>You’ve probably encountered videos on YouTube or Instagram that appear significantly brighter than others—brighter even than the pure white color in the app’s interface! This is 10-bit HDR video in action, showcasing the dramatic difference that higher bit depth can make.</p>
-<p><strong>12-bit and higher</strong> (cinema):</p>
+<p><strong>12-bit and higher</strong> (professional):</p>
 <ul class="simple">
 <li><p>4,096+ levels per color channel</p></li>
 <li><p>Used in high-end cinema cameras</p></li>
