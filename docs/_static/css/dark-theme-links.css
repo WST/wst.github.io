@@ -71,6 +71,21 @@
     color: #71b382 !important; /* Bright green text */
 }
 
+/* Link colors for both themes */
+/* Light theme - default RTD colors (only for content area) */
+[data-theme="light"] .rst-content a {
+    color: #3091d1 !important;
+    transition: color 0.3s ease;
+}
+
+[data-theme="light"] .rst-content a:visited {
+    color: #551A8B !important;
+}
+
+[data-theme="light"] .rst-content a:hover {
+    color: #3091d1 !important;
+}
+
 /* Dark mode link colors - Hacker Green (only for content) */
 /* General links - keeping sidebar default */
 [data-theme="dark"] a {
