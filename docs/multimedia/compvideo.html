@@ -93,6 +93,7 @@ document.addEventListener('DOMContentLoaded', function() {
 <li class="toctree-l1 current"><a class="reference internal" href="index.html">Multimedia</a><ul class="current">
 <li class="toctree-l2 current"><a class="current reference internal" href="#">Introduction to Computer Video</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#the-challenge-of-digital-video">The Challenge of Digital Video</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#ffmpeg-the-swiss-army-knife-of-video-processing">ffmpeg: the Swiss Army Knife of Video Processing</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#video-containers-and-codecs">Video Containers and Codecs</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="#example-remuxing-between-containers-without-re-encoding">Example: Remuxing between containers without re-encoding</a></li>
 </ul>
@@ -173,6 +174,13 @@ document.addEventListener('DOMContentLoaded', function() {
 <li><p><strong>One minute</strong>: 597.6 MB × 60 = 35.8 GB per minute</p></li>
 </ul>
 <p>Even a short 10-second clip would require nearly 6 GB of storage in uncompressed form. This is why video compression is not just important—it’s absolutely essential for practical digital video applications. Imagine trying to stream a movie without compression: you’d need to download over 2 terabytes of data for a typical 2-hour film!</p>
+</section>
+<section id="ffmpeg-the-swiss-army-knife-of-video-processing">
+<h2>ffmpeg: the Swiss Army Knife of Video Processing<a class="headerlink" href="#ffmpeg-the-swiss-army-knife-of-video-processing" title="Link to this heading"></a></h2>
+<p>When people talk about essential tools in the world of media, few names carry the same weight as ffmpeg. It is more than just a program you run from the command line: it is a full-fledged multimedia framework capable of decoding, encoding, transcoding, muxing, demuxing, filtering, and streaming almost any video or audio format you can think of. From YouTube rippers and screen recorders to large-scale media platforms, ffmpeg quietly works in the background, making the flow of video across the internet seamless.</p>
+<p>What makes ffmpeg so powerful is its universality. It is not tied to a single operating system or vendor, and it supports an astonishing variety of codecs and containers. Developers rely on it to implement video processing pipelines in web services, desktop applications, and even embedded devices. In modern infrastructure, ffmpeg often plays a hidden but vital role: transcoding user uploads into multiple formats for adaptive streaming, generating thumbnails for video previews, normalizing audio levels, or re-encoding live streams on the fly. If you watch video online today, there is a good chance that ffmpeg has touched it somewhere along the path from creator to viewer.</p>
+<p>Using ffmpeg may feel intimidating at first, with its long strings of options and parameters, but once you understand its syntax, it becomes a remarkably flexible tool. Need to convert a giant video archive to a different format? Cut clips from an interview? Add subtitles, apply filters, or resize content for mobile devices? ffmpeg handles all of that with a single command. Its performance is impressive too, as it can leverage hardware acceleration on modern CPUs and GPUs, making large-scale processing practical.</p>
+<p>During my years at Orgtechservice, LLC, I worked extensively with ffmpeg, and it never failed me. No matter how complex or unusual the video processing tasks were, ffmpeg provided the tools to get the job done reliably and efficiently.</p>
 </section>
 <section id="video-containers-and-codecs">
 <h2>Video Containers and Codecs<a class="headerlink" href="#video-containers-and-codecs" title="Link to this heading"></a></h2>
