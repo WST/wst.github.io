@@ -10,7 +10,7 @@
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=b86133f3" />
       <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=e59714d7" />
       <link rel="stylesheet" type="text/css" href="../_static/css/swiper-custom.css?v=e840cbaf" />
-      <link rel="stylesheet" type="text/css" href="../_static/css/dark-theme-links.css?v=32aa3885" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/dark-theme-links.css?v=152afe43" />
       <link rel="stylesheet" type="text/css" href="../_static/dark_mode_css/general.css?v=c0a7eb24" />
       <link rel="stylesheet" type="text/css" href="../_static/dark_mode_css/dark.css?v=70edf1c7" />
 
@@ -35,15 +35,43 @@
 document.addEventListener('DOMContentLoaded', function() {
     function updateStatusBarColor() {
         const isDark = document.documentElement.getAttribute('data-theme') === 'dark';
-        const statusBarMeta = document.querySelector('meta[name="apple-mobile-web-app-status-bar-style"]');
         
+        // Update theme-color meta tag for Android Chrome
+        let themeColorMeta = document.querySelector('meta[name="theme-color"]');
+        if (themeColorMeta) {
+            themeColorMeta.content = isDark ? '#1a1a1a' : '#ffffff';
+        } else {
+            themeColorMeta = document.createElement('meta');
+            themeColorMeta.name = 'theme-color';
+            themeColorMeta.content = isDark ? '#1a1a1a' : '#ffffff';
+            document.head.appendChild(themeColorMeta);
+        }
+        
+        // Update apple-mobile-web-app-status-bar-style for iOS Safari
+        let statusBarMeta = document.querySelector('meta[name="apple-mobile-web-app-status-bar-style"]');
         if (statusBarMeta) {
             statusBarMeta.content = isDark ? 'black-translucent' : 'default';
         } else {
-            const meta = document.createElement('meta');
-            meta.name = 'apple-mobile-web-app-status-bar-style';
-            meta.content = isDark ? 'black-translucent' : 'default';
-            document.head.appendChild(meta);
+            statusBarMeta = document.createElement('meta');
+            statusBarMeta.name = 'apple-mobile-web-app-status-bar-style';
+            statusBarMeta.content = isDark ? 'black-translucent' : 'default';
+            document.head.appendChild(statusBarMeta);
+        }
+        
+        // Update color-scheme CSS property
+        document.documentElement.style.colorScheme = isDark ? 'dark' : 'light';
+        document.documentElement.style.setProperty('-webkit-color-scheme', isDark ? 'dark' : 'light');
+        
+        // Force viewport meta tag update for iOS
+        let viewportMeta = document.querySelector('meta[name="viewport"]');
+        if (viewportMeta) {
+            let content = viewportMeta.content;
+            if (isDark) {
+                content = content.replace(/user-scalable=no/g, 'user-scalable=no, viewport-fit=cover');
+            } else {
+                content = content.replace(/viewport-fit=cover/g, '');
+            }
+            viewportMeta.content = content;
         }
     }
     
@@ -63,6 +91,13 @@ document.addEventListener('DOMContentLoaded', function() {
         attributes: true,
         attributeFilter: ['data-theme']
     });
+    
+    // Additional iOS Safari fix - force status bar update
+    if (/iPad|iPhone|iPod/.test(navigator.userAgent)) {
+        setTimeout(function() {
+            updateStatusBarColor();
+        }, 100);
+    }
 });
 </script>
 

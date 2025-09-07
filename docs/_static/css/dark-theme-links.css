@@ -14,10 +14,40 @@
     color-scheme: dark;
 }
 
+[data-theme="light"] {
+    color-scheme: light;
+}
+
 /* PWA status bar styling for dark mode */
 @media (display-mode: standalone) {
     [data-theme="dark"] {
         --status-bar-color: #1a1a1a;
+    }
+}
+
+/* Mobile-specific status bar fixes */
+@media screen and (max-width: 768px) {
+    [data-theme="dark"] {
+        color-scheme: dark;
+        -webkit-color-scheme: dark;
+    }
+    
+    [data-theme="light"] {
+        color-scheme: light;
+        -webkit-color-scheme: light;
+    }
+}
+
+/* iOS Safari specific fixes */
+@supports (-webkit-touch-callout: none) {
+    [data-theme="dark"] {
+        color-scheme: dark;
+        -webkit-color-scheme: dark;
+    }
+    
+    [data-theme="light"] {
+        color-scheme: light;
+        -webkit-color-scheme: light;
     }
 }
 
