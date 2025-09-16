@@ -1,0 +1,261 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>UV PROM Erasing &mdash; Knowledge Base  documentation</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=e59714d7" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/swiper-custom.css?v=e840cbaf" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/dark-theme-links.css?v=152afe43" />
+      <link rel="stylesheet" type="text/css" href="../_static/dark_mode_css/general.css?v=c0a7eb24" />
+      <link rel="stylesheet" type="text/css" href="../_static/dark_mode_css/dark.css?v=70edf1c7" />
+
+  
+    <link rel="shortcut icon" href="https://wst.github.io/static/icon.png"/>
+      <script src="../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../_static/documentation_options.js?v=7f41d439"></script>
+      <script src="../_static/doctools.js?v=9bcbadda"></script>
+      <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+      <script src="../_static/js/swiper-slider.js?v=0cf9069e"></script>
+      <script src="../_static/dark_mode_js/default_dark.js?v=fd565c74"></script>
+      <script src="../_static/dark_mode_js/theme_switcher.js?v=358d3910"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="prev" title="DIY Projects" href="index.html" />
+ 
+<!-- Dynamic status bar color based on theme -->
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    function updateStatusBarColor() {
+        const isDark = document.documentElement.getAttribute('data-theme') === 'dark';
+        
+        // Update theme-color meta tag for Android Chrome
+        let themeColorMeta = document.querySelector('meta[name="theme-color"]');
+        if (themeColorMeta) {
+            themeColorMeta.content = isDark ? '#1a1a1a' : '#ffffff';
+        } else {
+            themeColorMeta = document.createElement('meta');
+            themeColorMeta.name = 'theme-color';
+            themeColorMeta.content = isDark ? '#1a1a1a' : '#ffffff';
+            document.head.appendChild(themeColorMeta);
+        }
+        
+        // Update apple-mobile-web-app-status-bar-style for iOS Safari
+        let statusBarMeta = document.querySelector('meta[name="apple-mobile-web-app-status-bar-style"]');
+        if (statusBarMeta) {
+            statusBarMeta.content = isDark ? 'black-translucent' : 'default';
+        } else {
+            statusBarMeta = document.createElement('meta');
+            statusBarMeta.name = 'apple-mobile-web-app-status-bar-style';
+            statusBarMeta.content = isDark ? 'black-translucent' : 'default';
+            document.head.appendChild(statusBarMeta);
+        }
+        
+        // Update color-scheme CSS property
+        document.documentElement.style.colorScheme = isDark ? 'dark' : 'light';
+        document.documentElement.style.setProperty('-webkit-color-scheme', isDark ? 'dark' : 'light');
+        
+        // Force viewport meta tag update for iOS
+        let viewportMeta = document.querySelector('meta[name="viewport"]');
+        if (viewportMeta) {
+            let content = viewportMeta.content;
+            if (isDark) {
+                content = content.replace(/user-scalable=no/g, 'user-scalable=no, viewport-fit=cover');
+            } else {
+                content = content.replace(/viewport-fit=cover/g, '');
+            }
+            viewportMeta.content = content;
+        }
+    }
+    
+    // Update on page load
+    updateStatusBarColor();
+    
+    // Update when theme changes
+    const observer = new MutationObserver(function(mutations) {
+        mutations.forEach(function(mutation) {
+            if (mutation.type === 'attributes' && mutation.attributeName === 'data-theme') {
+                updateStatusBarColor();
+            }
+        });
+    });
+    
+    observer.observe(document.documentElement, {
+        attributes: true,
+        attributeFilter: ['data-theme']
+    });
+    
+    // Additional iOS Safari fix - force status bar update
+    if (/iPad|iPhone|iPod/.test(navigator.userAgent)) {
+        setTimeout(function() {
+            updateStatusBarColor();
+        }, 100);
+    }
+});
+</script>
+
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            Knowledge Base
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../networking/index.html">Networking</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../multimedia/index.html">Multimedia</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../photography/index.html">Photography</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../programming/index.html">Programming</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../server/index.html">Server Management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../hardware/index.html">Computer Hardware</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">DIY Projects</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="#">UV PROM Erasing</a></li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Knowledge Base</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="index.html">DIY Projects</a></li>
+      <li class="breadcrumb-item active">UV PROM Erasing</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="uv-prom-erasing">
+<h1>UV PROM Erasing<a class="headerlink" href="#uv-prom-erasing" title="Link to this heading"></a></h1>
+<p>I’ve long dreamed of creating a working device based on a very ancient microprocessor, such as the КР580ВМ80А, Z80, or 6502. It would be great if it didn’t just run some primitive program (I’ve already managed to blink an LED long ago), but somehow interacted with the outside world, for example, responding via HTTP protocol through Ethernet. Sounds complicated? Yes, perhaps, but let’s not forget that nowadays there are a whole host of gadgets that can significantly simplify such tasks — for example, this Ethernet-to-UART adapter:</p>
+<a class="reference internal image-reference" href="../_images/2-ch-uart-to-eth-1.png"><img alt="../_images/2-ch-uart-to-eth-1.png" src="../_images/2-ch-uart-to-eth-1.png" style="width: 320px;" />
+</a>
+<p>Such a project would essentially be a full-fledged small computer: it would have a processor, permanent memory, random access memory, and an I/O port.</p>
+<p>The project implementation began with component selection. I chose the Z80 as the processor because it can work at any low clock frequency and is generally easy to clock (unlike the КР580ВМ80А) and, moreover, requires only one supply voltage (as opposed to the same КР580ВМ80А). Honestly, I find it somewhat difficult to perceive the Z80 as a central processor — I’m used to thinking of it as a “sound chip”, since that’s exactly the role it plays in my deeply beloved and thoroughly played Sega Genesis, but ZX Spectrum fans will probably be offended at this point.</p>
+<p>Then came the question of selecting RAM and ROM. Random Access Memory (RAM) is memory whose data changes dynamically during computer operation. Read-Only Memory (ROM) is memory whose data is written once during device assembly and never changes again.</p>
+<p>The Z80 processor has a 16-bit address bus. This means it can directly address 64 kilobytes of memory without any tricks. Typically, such an address space organization structure is used where some part of it is “mapped” to permanent memory, some to RAM, and the rest to I/O ports. That is, for the processor there will be no difference between permanent and RAM — for it, all this will simply be “memory” with addresses from <code class="docutils literal notranslate"><span class="pre">0x0000</span></code> to <code class="docutils literal notranslate"><span class="pre">0xFFFF</span></code>, and we determine the specific structure of this address space.</p>
+<p>The simplest option would be to take RAM and ROM chips that have the same capacity and “switch” them through the higher bit of the data bus. But first, I decided to rummage through my stash and see what memory chips I actually had.</p>
+<p>RAM chips of those years are divided into two main types: DRAM and SRAM — dynamic and static RAM. Static RAM is simpler to manage, and I wanted a relatively simple design, so I didn’t consider DRAM chips. ROM chips, in turn, are also divided into subtypes, the most interesting of which are memory representing a matrix of fusible links and memory erasable by UV radiation.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Strictly speaking, both ROM and RAM are also divided into 2 types by interface type: parallel and serial. But since working with a parallel interface is significantly simpler, we’ll only consider chips with a parallel interface.</p>
+</div>
+<p>Fusible links are, of course, cool, but — alas — one-time use. They do have their advantages — for example, the highest resistance to ionizing radiation, but in our case this is completely unnecessary. But memory erasable by ultraviolet radiation — you must agree, there’s something romantic about it, something cyberpunk-ish. So let’s start with selecting permanent memory erasable by UV radiation. I found these classic chips in my workshop:</p>
+<div class="swiper-slider-container" style="width: 100%; height: 295px; margin: 20px 0;">
+   <img src="/docs/_static/images/uverasing/1.jpg" alt="PROM ICs 1">
+</div><p>At this point, I should tell you an interesting story.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Once in March 2022, a stalker was exploring an abandoned electronics components factory in Engels. He stumbled upon a room where boxes of microchips were lying around. As luck would have it, this stalker was quite a skilled electronics engineer, so he immediately went online to find out the characteristics of these chips. Imagine his surprise when a search for “КС573РТ81В” returned not a single page on the entire world wide web! And yet the chips were literally right in front of him. He guessed that he had stumbled upon some experimental batch that simply hadn’t made it to market. The chips were successfully taken home for study. Through experimentation, it was established that this is a Russian analog of the popular M27C256. The stalker decided to sell these chips through Avito — and that’s exactly how (along with him telling me this story) I got my several specimens. At the moment, absolutely all mentions of КС573РТ81В on the internet are related to this case. Including the <a class="reference external" href="http://rdk.regionsv.ru/muzeumpzuozu.htm">stalker’s own website</a>.</p>
+</div>
+<p>Let’s look at a comparison table of the main characteristics of the found chips:</p>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Name</p></th>
+<th class="head"><p>Address Bus</p></th>
+<th class="head"><p>Data Bus</p></th>
+<th class="head"><p>Capacity</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>КС573РФ2</p></td>
+<td><p>11 bits</p></td>
+<td><p>8 bits</p></td>
+<td><p>2 KB</p></td>
+</tr>
+<tr class="row-odd"><td><p>КС573РФ4А</p></td>
+<td><p>13 bits</p></td>
+<td><p>8 bits</p></td>
+<td><p>8 KB</p></td>
+</tr>
+<tr class="row-even"><td><p>КС573РТ81В</p></td>
+<td><p>15 bits</p></td>
+<td><p>8 bits</p></td>
+<td><p>32 KB</p></td>
+</tr>
+<tr class="row-odd"><td><p>M27C256</p></td>
+<td><p>15 bits</p></td>
+<td><p>8 bits</p></td>
+<td><p>32 KB</p></td>
+</tr>
+<tr class="row-even"><td><p>M27C801</p></td>
+<td><p>20 bits</p></td>
+<td><p>8 bits</p></td>
+<td><p>1 MB</p></td>
+</tr>
+</tbody>
+</table>
+<p>It would probably be cool to first test these chips in action, somehow visualizing the process of writing and erasing them. But how to do this? Oh, let’s just write some image into the chip and repeatedly read it with a programmer while shining a UV lamp into the window. Actually, this mode of using ROM is not recommended — erasing should happen outside the reading procedure, but after all, we have a just-for-fun project and no one will forbid us to experiment.</p>
+<p>In GIMP’s image export window, there’s a “Raw Image Data” option. Using it, we’ll save the image as a pixel array, write it to ROM using the XGecu Pro programmer, and then write a script that will read the image from ROM every few seconds while we shine UV radiation into the window. Then we’ll compile all the resulting frames into a video using ffmpeg. Let’s go!</p>
+<video controls style="width: 100%; max-width: 800px; margin: 20px 0; image-rendering: pixelated; image-rendering: -moz-crisp-edges; image-rendering: crisp-edges;">
+  <source src="/docs/_static/images/uverasing/erasing.mp4" type="video/mp4">
+  Your browser does not support the video tag.
+</video><p>I should note another interesting point. I was only able to successfully erase the chip using so-called far ultraviolet — radiation with a wavelength of 254 nanometers. This is quite dangerous radiation, as at this wavelength ultraviolet light begins to exhibit some properties of X-ray radiation — in particular, you can easily get skin cancer, so I strongly recommend that you do not work with such radiation, at least not without isolating yourself from it. Unfortunately, all my attempts to erase the chip with less dangerous wavelength radiation — 365nm, as well as using direct sunlight, were unsuccessful — even after several hours of intense illumination directly into the window, the byte-by-byte dump read from the chip exactly matched what had been written there previously.</p>
+<p>That’s all for now, unfortunately. Due to some circumstances, work on the project has been temporarily suspended, however, I decided to share the erasing visualization and still formatted it into a full article. This article may still be expanded in the future, but we’ll see how it goes.</p>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="index.html" class="btn btn-neutral float-left" title="DIY Projects" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2025, Ilya Averkov.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
