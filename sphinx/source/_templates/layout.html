@@ -1,0 +1,75 @@
+{% extends "!layout.html" %}
+
+{% block extrahead %}
+{{ super() }}
+<!-- Dynamic status bar color based on theme -->
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    function updateStatusBarColor() {
+        const isDark = document.documentElement.getAttribute('data-theme') === 'dark';
+        
+        // Update theme-color meta tag for Android Chrome
+        let themeColorMeta = document.querySelector('meta[name="theme-color"]');
+        if (themeColorMeta) {
+            themeColorMeta.content = isDark ? '#1a1a1a' : '#ffffff';
+        } else {
+            themeColorMeta = document.createElement('meta');
+            themeColorMeta.name = 'theme-color';
+            themeColorMeta.content = isDark ? '#1a1a1a' : '#ffffff';
+            document.head.appendChild(themeColorMeta);
+        }
+        
+        // Update apple-mobile-web-app-status-bar-style for iOS Safari
+        let statusBarMeta = document.querySelector('meta[name="apple-mobile-web-app-status-bar-style"]');
+        if (statusBarMeta) {
+            statusBarMeta.content = isDark ? 'black-translucent' : 'default';
+        } else {
+            statusBarMeta = document.createElement('meta');
+            statusBarMeta.name = 'apple-mobile-web-app-status-bar-style';
+            statusBarMeta.content = isDark ? 'black-translucent' : 'default';
+            document.head.appendChild(statusBarMeta);
+        }
+        
+        // Update color-scheme CSS property
+        document.documentElement.style.colorScheme = isDark ? 'dark' : 'light';
+        document.documentElement.style.setProperty('-webkit-color-scheme', isDark ? 'dark' : 'light');
+        
+        // Force viewport meta tag update for iOS
+        let viewportMeta = document.querySelector('meta[name="viewport"]');
+        if (viewportMeta) {
+            let content = viewportMeta.content;
+            if (isDark) {
+                content = content.replace(/user-scalable=no/g, 'user-scalable=no, viewport-fit=cover');
+            } else {
+                content = content.replace(/viewport-fit=cover/g, '');
+            }
+            viewportMeta.content = content;
+        }
+    }
+    
+    // Update on page load
+    updateStatusBarColor();
+    
+    // Update when theme changes
+    const observer = new MutationObserver(function(mutations) {
+        mutations.forEach(function(mutation) {
+            if (mutation.type === 'attributes' && mutation.attributeName === 'data-theme') {
+                updateStatusBarColor();
+            }
+        });
+    });
+    
+    observer.observe(document.documentElement, {
+        attributes: true,
+        attributeFilter: ['data-theme']
+    });
+    
+    // Additional iOS Safari fix - force status bar update
+    if (/iPad|iPhone|iPod/.test(navigator.userAgent)) {
+        setTimeout(function() {
+            updateStatusBarColor();
+        }, 100);
+    }
+});
+</script>
+{% endblock %}

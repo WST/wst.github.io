@@ -1,0 +1,77 @@
+/* Custom styles for Swiper.js in Sphinx documentation */
+
+/* Container styling */
+.swiper-slider-container {
+    position: relative;
+    overflow: hidden;
+}
+
+/* Image styling */
+.swiper-slider-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+/* Navigation buttons - more specific selectors */
+.swiper-slider-container .swiper-button-next,
+.swiper-slider-container .swiper-button-prev,
+div.swiper-slider-container .swiper-button-next,
+div.swiper-slider-container .swiper-button-prev {
+    background-color: rgba(0,0,0,0.7) !important;
+    color: white !important;
+    width: 40px !important;
+    height: 40px !important;
+    padding: 8px !important;
+    transition: all 0.3s ease !important;
+    border: none !important;
+    border-radius: 0 !important;
+    box-shadow: none !important;
+}
+
+.swiper-slider-container .swiper-button-next:hover,
+.swiper-slider-container .swiper-button-prev:hover,
+div.swiper-slider-container .swiper-button-next:hover,
+div.swiper-slider-container .swiper-button-prev:hover {
+    background-color: rgba(0,0,0,0.9) !important;
+}
+
+.swiper-slider-container .swiper-button-next::after,
+.swiper-slider-container .swiper-button-prev::after,
+div.swiper-slider-container .swiper-button-next::after,
+div.swiper-slider-container .swiper-button-prev::after {
+    font-size: 16px !important;
+    font-weight: bold !important;
+    color: white !important;
+}
+
+/* Pagination removed for cleaner interface */
+
+/* Slide transitions */
+.swiper-slide {
+    transition: transform 0.6s ease;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .swiper-button-next,
+    .swiper-button-prev {
+        width: 36px;
+        height: 36px;
+    }
+    
+    .swiper-button-next::after,
+    .swiper-button-prev::after {
+        font-size: 14px;
+    }
+    
+    .swiper-pagination {
+        bottom: 15px !important;
+    }
+    
+    .swiper-pagination-bullet {
+        width: 10px;
+        height: 10px;
+    }
+} 

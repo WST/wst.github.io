@@ -1,5 +1,3 @@
-
-
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" data-content_root="../">
 <head>
@@ -7,8 +5,8 @@
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>UV PROM Erasing &mdash; Knowledge Base  documentation</title>
-      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=b86133f3" />
-      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=e59714d7" />
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=19f00094" />
       <link rel="stylesheet" type="text/css" href="../_static/css/swiper-custom.css?v=e840cbaf" />
       <link rel="stylesheet" type="text/css" href="../_static/css/dark-theme-links.css?v=152afe43" />
       <link rel="stylesheet" type="text/css" href="../_static/dark_mode_css/general.css?v=c0a7eb24" />
@@ -16,14 +14,18 @@
 
   
     <link rel="shortcut icon" href="https://wst.github.io/static/icon.png"/>
-      <script src="../_static/jquery.js?v=5d32c60e"></script>
-      <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
-      <script src="../_static/documentation_options.js?v=7f41d439"></script>
-      <script src="../_static/doctools.js?v=9bcbadda"></script>
-      <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
-      <script src="../_static/js/swiper-slider.js?v=0cf9069e"></script>
-      <script src="../_static/dark_mode_js/default_dark.js?v=fd565c74"></script>
-      <script src="../_static/dark_mode_js/theme_switcher.js?v=358d3910"></script>
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../_static/documentation_options.js?v=7f41d439"></script>
+        <script src="../_static/doctools.js?v=9a2dae69"></script>
+        <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+        <script src="../_static/js/swiper-slider.js?v=0cf9069e"></script>
+        <script src="../_static/dark_mode_js/default_dark.js?v=fd565c74"></script>
+        <script src="../_static/dark_mode_js/theme_switcher.js?v=358d3910"></script>
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
@@ -162,8 +164,7 @@ document.addEventListener('DOMContentLoaded', function() {
   <section id="uv-prom-erasing">
 <h1>UV PROM Erasing<a class="headerlink" href="#uv-prom-erasing" title="Link to this heading"></a></h1>
 <p>I’ve long dreamed of creating a working device based on a very ancient microprocessor, such as the КР580ВМ80А, Z80, or 6502. It would be great if it didn’t just run some primitive program (I’ve already managed to blink an LED long ago), but somehow interacted with the outside world, for example, responding via HTTP protocol through Ethernet. Sounds complicated? Yes, perhaps, but let’s not forget that nowadays there are a whole host of gadgets that can significantly simplify such tasks — for example, this Ethernet-to-UART adapter:</p>
-<a class="reference internal image-reference" href="../_images/2-ch-uart-to-eth-1.png"><img alt="../_images/2-ch-uart-to-eth-1.png" src="../_images/2-ch-uart-to-eth-1.png" style="width: 320px;" />
-</a>
+<a class="reference internal image-reference" href="../_images/2-ch-uart-to-eth-1.png"><img alt="../_images/2-ch-uart-to-eth-1.png" src="../_images/2-ch-uart-to-eth-1.png" style="width: 320px;" /></a>
 <p>Such a project would essentially be a full-fledged small computer: it would have a processor, permanent memory, random access memory, and an I/O port.</p>
 <p>The project implementation began with component selection. I chose the Z80 as the processor because it can work at any low clock frequency and is generally easy to clock (unlike the КР580ВМ80А) and, moreover, requires only one supply voltage (as opposed to the same КР580ВМ80А). Honestly, I find it somewhat difficult to perceive the Z80 as a central processor — I’m used to thinking of it as a “sound chip”, since that’s exactly the role it plays in my deeply beloved and thoroughly played Sega Genesis, but ZX Spectrum fans will probably be offended at this point.</p>
 <p>Then came the question of selecting RAM and ROM. Random Access Memory (RAM) is memory whose data changes dynamically during computer operation. Read-Only Memory (ROM) is memory whose data is written once during device assembly and never changes again.</p>
