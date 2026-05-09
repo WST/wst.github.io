@@ -1,0 +1,205 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Using ExeGate SineTower SN2000 &mdash; Knowledge Base  documentation</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=9edc463e" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/swiper-custom.css?v=e840cbaf" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/dark-theme-links.css?v=152afe43" />
+      <link rel="stylesheet" type="text/css" href="../_static/dark_mode_css/general.css?v=c0a7eb24" />
+      <link rel="stylesheet" type="text/css" href="../_static/dark_mode_css/dark.css?v=70edf1c7" />
+
+  
+    <link rel="shortcut icon" href="https://wst.github.io/static/icon.png"/>
+      <script src="../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../_static/documentation_options.js?v=7f41d439"></script>
+      <script src="../_static/doctools.js?v=fd6eb6e6"></script>
+      <script src="../_static/sphinx_highlight.js?v=6ffebe34"></script>
+      <script src="../_static/js/swiper-slider.js?v=0cf9069e"></script>
+      <script src="../_static/dark_mode_js/default_dark.js?v=fd565c74"></script>
+      <script src="../_static/dark_mode_js/theme_switcher.js?v=358d3910"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="prev" title="UV PROM Erasing" href="uverasing.html" />
+ 
+<!-- Dynamic status bar color based on theme -->
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    function updateStatusBarColor() {
+        const isDark = document.documentElement.getAttribute('data-theme') === 'dark';
+        
+        // Update theme-color meta tag for Android Chrome
+        let themeColorMeta = document.querySelector('meta[name="theme-color"]');
+        if (themeColorMeta) {
+            themeColorMeta.content = isDark ? '#1a1a1a' : '#ffffff';
+        } else {
+            themeColorMeta = document.createElement('meta');
+            themeColorMeta.name = 'theme-color';
+            themeColorMeta.content = isDark ? '#1a1a1a' : '#ffffff';
+            document.head.appendChild(themeColorMeta);
+        }
+        
+        // Update apple-mobile-web-app-status-bar-style for iOS Safari
+        let statusBarMeta = document.querySelector('meta[name="apple-mobile-web-app-status-bar-style"]');
+        if (statusBarMeta) {
+            statusBarMeta.content = isDark ? 'black-translucent' : 'default';
+        } else {
+            statusBarMeta = document.createElement('meta');
+            statusBarMeta.name = 'apple-mobile-web-app-status-bar-style';
+            statusBarMeta.content = isDark ? 'black-translucent' : 'default';
+            document.head.appendChild(statusBarMeta);
+        }
+        
+        // Update color-scheme CSS property
+        document.documentElement.style.colorScheme = isDark ? 'dark' : 'light';
+        document.documentElement.style.setProperty('-webkit-color-scheme', isDark ? 'dark' : 'light');
+        
+        // Force viewport meta tag update for iOS
+        let viewportMeta = document.querySelector('meta[name="viewport"]');
+        if (viewportMeta) {
+            let content = viewportMeta.content;
+            if (isDark) {
+                content = content.replace(/user-scalable=no/g, 'user-scalable=no, viewport-fit=cover');
+            } else {
+                content = content.replace(/viewport-fit=cover/g, '');
+            }
+            viewportMeta.content = content;
+        }
+    }
+    
+    // Update on page load
+    updateStatusBarColor();
+    
+    // Update when theme changes
+    const observer = new MutationObserver(function(mutations) {
+        mutations.forEach(function(mutation) {
+            if (mutation.type === 'attributes' && mutation.attributeName === 'data-theme') {
+                updateStatusBarColor();
+            }
+        });
+    });
+    
+    observer.observe(document.documentElement, {
+        attributes: true,
+        attributeFilter: ['data-theme']
+    });
+    
+    // Additional iOS Safari fix - force status bar update
+    if (/iPad|iPhone|iPod/.test(navigator.userAgent)) {
+        setTimeout(function() {
+            updateStatusBarColor();
+        }, 100);
+    }
+});
+</script>
+
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            Knowledge Base
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../networking/index.html">Networking</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../multimedia/index.html">Multimedia</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../photography/index.html">Photography</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../programming/index.html">Programming</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../server/index.html">Server Management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../hardware/index.html">Computer Hardware</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">DIY Projects</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="uverasing.html">UV PROM Erasing</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Using ExeGate SineTower SN2000</a></li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Knowledge Base</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="index.html">DIY Projects</a></li>
+      <li class="breadcrumb-item active">Using ExeGate SineTower SN2000</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="using-exegate-sinetower-sn2000">
+<h1>Using ExeGate SineTower SN2000<a class="headerlink" href="#using-exegate-sinetower-sn2000" title="Link to this heading"></a></h1>
+<p>The ExeGate SineTower SN2000 is a line-interactive UPS. And, honestly, it’s a pretty good UPS. It costs noticeably less than double-conversion UPSes (the nJoy Aten PRO 2000, for example). It has excellent load capacity, indication of input and output voltage as well as battery charge level. It also features stepwise output voltage stabilization based on a tapped autotransformer. I use it as a backup power source for my computers, printers and other equipment. And on the whole it has never let me down, despite this brand’s generally not-so-stellar reputation.</p>
+<p>Nonetheless, this UPS is not without its flaws. I identified two main issues that I really wanted to do something about. First, this UPS is very noisy: from time to time a fan kicks in whose “roar” reminds me more of server hardware than of a solution for home use. Second, this fan only switches on intermittently: at first the UPS runs for a long time with the fan off, after which the temperature gets so high that the UPS becomes literally painful to touch with your hand. After that the fan kicks in and runs until the insides of the UPS cool down. Then the cycle starts over. I’m no great expert on the factors affecting battery service life, but something tells me that such an operating mode is, to put it mildly, not the most favorable for them.</p>
+<p>So I decided to take the UPS apart and make the simplest possible mod: replace the noisy fan with a quiet one and make it run continuously.</p>
+<p>Inside, I found a fan with the following markings:</p>
+<div class="swiper-slider-container" style="width: 100%; height: auto; margin: 20px 0;">
+   <img src="/docs/_static/images/exegate/disenshitong-cooler.jpg" alt="Original cooler">
+</div><p>All my attempts to find a quieter 3000 RPM fan turned out to be unsuccessful: they were all just as noisy. Then I decided to try a fan with a lower rotation speed, or simply to lower the supply voltage using a DC-DC step-down converter. I also found a 12V rail on the board and connected the fan directly to it instead of to the “Fan” pins, which allowed the fan to run continuously and thus avoid the heating-and-cooling cycles I described earlier.</p>
+<p>In the end, the DeepCool XFan80 turned out to be a perfect fit — its noise level makes it practically inaudible. As a result, this dead-simple mod made the ExeGate SineTower SN2000 much more comfortable for home use.</p>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="uverasing.html" class="btn btn-neutral float-left" title="UV PROM Erasing" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2025, Ilya Averkov.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

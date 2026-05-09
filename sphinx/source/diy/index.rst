@@ -10,3 +10,4 @@ This section contains information about my DIY projects and experiments.
    :caption: DIY Articles:
 
    uverasing
+   exegate-sinetower-sn2000-usage
