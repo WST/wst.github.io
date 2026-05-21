@@ -12,9 +12,18 @@ Inside, I found a fan with the following markings:
 .. raw:: html
 
    <div class="swiper-slider-container" style="width: 100%; height: auto; margin: 20px 0;">
-      <img src="/docs/_static/images/exegate/disenshitong-cooler.jpg" alt="Original cooler">
+      <img src="/docs/_static/images/exegate/disenshitong-cooler.jpg" alt="Original cooler" />
    </div>
 
 All my attempts to find a quieter 3000 RPM fan turned out to be unsuccessful: they were all just as noisy. Then I decided to try a fan with a lower rotation speed, or simply to lower the supply voltage using a DC-DC step-down converter. I also found a 12V rail on the board and connected the fan directly to it instead of to the “Fan” pins, which allowed the fan to run continuously and thus avoid the heating-and-cooling cycles I described earlier.
 
-In the end, the DeepCool XFan80 turned out to be a perfect fit — its noise level makes it practically inaudible. As a result, this dead-simple mod made the ExeGate SineTower SN2000 much more comfortable for home use.
+In the end, the DeepCool XFan80 turned out to be a perfect fit — its noise level makes it practically inaudible.
+
+.. raw:: html
+
+   <div class="swiper-slider-container" style="width: 100%; height: auto; margin: 20px 0;">
+      <img src="/docs/_static/images/exegate/new-cooler.jpg" alt="New cooler" />
+      <img src="/docs/_static/images/exegate/cooler-connection.jpg" alt="New cooler" />
+   </div>
+
+As a result, this dead-simple mod made the ExeGate SineTower SN2000 much more comfortable for home use.
