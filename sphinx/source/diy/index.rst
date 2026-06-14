@@ -6,7 +6,7 @@ I’m one of those many guys from the CIS whose childhood was filled with things
 This section contains information about my DIY projects and experiments.
 
 .. toctree::
-   :maxdepth: 2
+   :maxdepth: 1
    :caption: DIY Articles:
 
    uverasing

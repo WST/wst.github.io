@@ -4,5 +4,5 @@ Networking
 This section contains articles about computer networking, protocols, and network administration.
 
 .. toctree::
-   :maxdepth: 2
+   :maxdepth: 1
    :caption: Networking Articles:
