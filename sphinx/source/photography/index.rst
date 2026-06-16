@@ -6,3 +6,5 @@ This section explores photography techniques, film processes, and insights into 
 .. toctree::
    :maxdepth: 1
    :caption: Photography Articles:
+
+   photo-printing
