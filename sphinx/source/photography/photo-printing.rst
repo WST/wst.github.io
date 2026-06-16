@@ -28,6 +28,8 @@ The first problem is that color paper is *panchromatic* — it has to be sensiti
 
 Put together, this meant color printing demanded darkness, expensive filtration and analyzers, temperature-controlled chemistry, and a great deal of patience and wasted paper. It was perfectly doable for a dedicated enthusiast or a professional lab, but it was never going to be a casual home activity the way black-and-white was. For decades, that complexity was simply the price of a color photograph.
 
+It is worth pausing on just how long that price held things back. Color photography itself is not a late invention at all — it dates back to the very start of the 20th century, and Sergey Prokudin-Gorsky famously worked out a way to store color images on ordinary black-and-white media, shooting a scene three times through red, green and blue filters and recombining the results. And yet, despite the science being there that early, color stayed a rare and niche curiosity for decade after decade — precisely because of the difficulties described above. The idea was solved long before the *practicality* was; what was missing was a way to make a color print easy and cheap enough for ordinary people, and that is exactly the gap the rest of this story is about.
+
 .. note ::
 
    None of this is to say color darkroom printing is bad — beautiful work was and is made this way. The point is purely about *accessibility*: the barrier to a good color print by hand was high enough that it kept the process out of ordinary homes.
