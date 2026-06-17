@@ -7,7 +7,7 @@
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#project-information
 
 project = 'Knowledge Base'
-copyright = '2025, Ilya Averkov'
+copyright = '2026, Ilya Averkov'
 author = 'Ilya Averkov'
 
 # -- General configuration ---------------------------------------------------
