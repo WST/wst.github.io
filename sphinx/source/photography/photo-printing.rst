@@ -6,6 +6,10 @@ For most of photography’s history the photograph was, by definition, a *print*
 Manual optical printing of black-and-white
 ------------------------------------------
 
+.. raw:: html
+
+   <img src="/docs/_static/images/photo-printing/analog.png" alt="Classic optical printing" style="width: 300px; height: auto; float: right; margin-left: 12px; margin-bottom: 12px;" />
+
 The classic darkroom print starts with an enlarger — essentially a projector pointed downwards. The negative is clamped in the enlarger head, a lamp shines through it, and a lens focuses the image down onto a sheet of light-sensitive silver-gelatin paper on the baseboard. You expose the paper for a few seconds, then move it through a sequence of trays: developer, where the image gradually swims into view; a stop bath to halt development; and fixer to make the image permanent and no longer sensitive to light. A wash and a dry, and you have a print.
 
 What makes black-and-white printing so approachable — and so beloved by hobbyists to this day — is that the paper is essentially blind to red and amber light. That means you can work under a dim safelight and actually *see what you are doing*: you watch the image appear in the developer tray, and you can intervene. This is where the craft lives. By holding back light from part of the image with your hand or a piece of card (“dodging”) or giving an area extra exposure (“burning”), you can lighten or darken specific regions of the print. Two people can pull two completely different pictures out of the same negative. It is slow, hands-on, slightly magical, and entirely forgiving — which is exactly why it never went away.
@@ -36,6 +40,10 @@ It is worth pausing on just how long that price held things back. Color photogra
 
 Minilabs
 --------
+
+.. raw:: html
+
+   <img src="/docs/_static/images/photo-printing/minilab.png" alt="Minilab" title="Minilabs generally look somewhat like this" style="width: 300px; height: auto; float: right; margin-left: 12px; margin-bottom: 12px;" />
 
 What broke the deadlock wasn’t a better manual technique but a machine that took the human out of the hard parts entirely. The **minilab**, which spread explosively in the 1990s, is an automated printing line compact enough to sit in a corner of a pharmacy, a supermarket, or a dedicated “one-hour photo” shop. You handed over a roll of film and came back later to a stack of prints.
 
@@ -71,5 +79,11 @@ A personal afterword
 --------------------
 
 I’ve always been an IT guy by trade, but for many years I did photo-lab work on the side from home, and I’ll admit it openly: as a geek, I am a huge fan of the digital minilab. Some friends of mine owned a Fujifilm Frontier 340 — not the most cutting-edge machine in the world, perhaps, but one that turned out absolutely stunning prints all the same. So it makes me a little sad to watch minilab printing slowly fade away. A big part of why it’s dying, I think, is that people don’t understand the difference between the technologies and simply chase “prints” rather than a *particular kind* of print — and once all you’re asking for is “a print”, that demand can be satisfied by anything at all, cheap inkjets included. In fairness, inkjets have come remarkably close to minilab quality these days, but they still don’t match the sheer longevity of a minilab print.
+
+.. raw:: html
+
+   <div class="swiper-slider-container" style="width: 100%; height: auto; margin: 20px 0;">
+      <img src="/docs/_static/images/photo-printing/twi.jpg" alt="Fujifilm Frontier interface" />
+   </div>
 
 I also still do manual optical printing, even after moving from Maykop to Vanadzor, and I keep an Epson L8050 on hand whose output is honestly hard to tell apart from a minilab print — and yet, without a minilab, it always feels like something is missing. For me, the minilab has an even stronger *vibe* than waving my hands over a sheet of paper under the red glow of a safelight.
