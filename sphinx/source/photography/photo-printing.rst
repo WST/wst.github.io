@@ -56,6 +56,10 @@ This is the fundamental shift. Color printing didn’t get *easier* so much as i
 Inkjet photo printing
 ---------------------
 
+.. raw:: html
+
+   <img src="/docs/_static/images/photo-printing/inkjet.png" alt="Inkjet printing" style="width: 200px; height: auto; float: right; margin-left: 12px; margin-bottom: 12px;" />
+
 The next turn was digital capture, and with it printing moved out of the chemical world altogether and onto the desktop. **Inkjet** photo printing builds the image by firing microscopic droplets of ink onto specially coated photo paper, laying down color from separate ink channels. Modern photo inkjets use anywhere from a handful to a dozen or so inks — including additional shades and dedicated gray or “photo black” inks — precisely because more channels mean smoother gradients and a wider, more accurate color range.
 
 The advantages are considerable, and they explain why inkjet now owns the serious-amateur and fine-art end of printing. You can print at home, on demand, with no darkroom and no chemistry. You have complete control over the file before it prints, and through color management you can get predictable results. Pigment-based inks in particular are genuinely archival, lasting many decades without noticeable fading, and inkjet scales beautifully from small prints up to large exhibition pieces, on an enormous variety of papers and other media.
