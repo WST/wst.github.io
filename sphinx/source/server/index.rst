@@ -6,5 +6,3 @@ This section covers server administration, deployment practices, performance tun
 .. toctree::
    :maxdepth: 1
    :caption: Server Management Articles:
-
-   amongsrc
